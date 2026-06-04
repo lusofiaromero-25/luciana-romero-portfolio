@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Luciana Romero — Graphic Designer & Social Media Specialist. UX/UI, Branding, Social Media Strategy. 4+ years. Remote.">
+<meta name="keywords" content="diseñadora grafica, social media specialist, community manager, UX UI designer, Mendoza Argentina, remote work, inteligencia artificial diseño">
+<title>Luciana Romero — Diseñadora Gráfica & Social Media</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,900&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--lime:#C8F135;--lila:#C4AAFF;--naranja:#FF5C28;--negro:#111111;--crema:#F5F0E8;--blanco:#FFFFFF;--rosa:#FFB3C6;--azul:#A8D8FF}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--crema);color:var(--negro);overflow-x:hidden;cursor:none}
+.cursor{width:12px;height:12px;background:var(--naranja);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9999;transition:transform 0.15s;transform:translate(-50%,-50%)}
+.cursor-f{width:36px;height:36px;border:1.5px solid var(--negro);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9998;transition:transform 0.35s,border-color 0.2s;transform:translate(-50%,-50%)}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.1rem 2.5rem;display:flex;align-items:center;justify-content:space-between;background:rgba(245,240,232,0.93);backdrop-filter:blur(14px);border-bottom:1px solid rgba(0,0,0,0.07)}
+.nav-logo{font-family:'Fraunces',serif;font-weight:900;font-size:1.05rem;letter-spacing:-0.02em;color:var(--negro);text-decoration:none}
+.nav-links{display:flex;gap:1.8rem;list-style:none}
+.nav-links a{font-size:0.78rem;font-weight:500;color:var(--negro);text-decoration:none;letter-spacing:0.07em;text-transform:uppercase;transition:opacity 0.2s}
+.nav-links a:hover{opacity:0.4}
+.nav-links a.cv-link{color:var(--naranja);font-weight:700}
+.lang-toggle{display:flex;background:var(--negro);border-radius:100px;padding:4px;gap:2px}
+.lang-btn{font-size:0.7rem;font-weight:700;letter-spacing:0.07em;padding:5px 11px;border-radius:100px;border:none;cursor:none;background:transparent;color:rgba(255,255,255,0.4);transition:background 0.2s,color 0.2s}
+.lang-btn.active{background:var(--lime);color:var(--negro)}
+
+/* HERO */
+.hero{min-height:100vh;padding:7rem 2.5rem 4rem;display:grid;grid-template-columns:1.1fr 0.9fr;gap:3rem;align-items:center;position:relative;overflow:hidden}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;background:var(--negro);color:var(--lime);font-size:0.73rem;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;padding:7px 18px;border-radius:100px;margin-bottom:1.5rem;white-space:nowrap}
+.hero-tag span.dot{width:7px;height:7px;background:var(--lime);border-radius:50%;flex-shrink:0;animation:blink 1.5s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
+h1{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(3rem,6vw,5.5rem);line-height:0.95;letter-spacing:-0.03em;margin-bottom:1.8rem}
+h1 em{font-style:normal;color:var(--naranja);display:block}
+.hero-desc{font-size:0.975rem;font-weight:300;line-height:1.85;max-width:450px;margin-bottom:2.5rem;opacity:0.75}
+.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-p{background:var(--negro);color:var(--lime);font-family:'DM Sans',sans-serif;font-weight:500;font-size:0.87rem;padding:13px 26px;border-radius:100px;text-decoration:none;border:none;cursor:none;transition:transform 0.2s,background 0.2s}
+.btn-p:hover{transform:scale(1.04);background:var(--naranja);color:var(--blanco)}
+.btn-o{background:transparent;color:var(--negro);font-family:'DM Sans',sans-serif;font-weight:500;font-size:0.87rem;padding:13px 26px;border-radius:100px;border:1.5px solid var(--negro);text-decoration:none;cursor:none;transition:transform 0.2s,background 0.2s}
+.btn-o:hover{transform:scale(1.04);background:var(--lila);border-color:var(--lila)}
+.hero-right{display:flex;flex-direction:column;gap:1rem;align-items:flex-end}
+.photo-wrap{width:100%;max-width:370px;aspect-ratio:3/4;border-radius:28px;overflow:hidden;background:var(--lila)}
+.photo-wrap img{width:100%;height:100%;object-fit:cover;object-position:center 15%}
+.hero-badge{background:var(--lime);border-radius:20px;padding:16px 20px;max-width:370px;width:100%}
+.hero-badge strong{font-weight:700;display:block;margin-bottom:3px;font-size:0.87rem}
+.hero-badge p{font-size:0.82rem;font-weight:300;line-height:1.5}
+
+/* MARQUEE */
+.mwrap{background:var(--negro);padding:0.85rem 0;overflow:hidden;white-space:nowrap}
+.mi{display:inline-flex;animation:mq 22s linear infinite}
+.mi span{font-family:'Fraunces',serif;font-weight:700;font-size:0.95rem;color:var(--crema);letter-spacing:0.04em;padding:0 1rem;text-transform:uppercase}
+.mi .ac{color:var(--lime)}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* COMMONS */
+.sl{font-size:0.7rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--naranja);margin-bottom:1rem;display:flex;align-items:center;gap:8px}
+.sl::before{content:'';display:block;width:20px;height:1.5px;background:var(--naranja)}
+.sh2{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(1.9rem,3.5vw,3rem);line-height:1.05;letter-spacing:-0.025em;margin-bottom:1.5rem}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.65s ease,transform 0.65s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+section{padding:6rem 2.5rem}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ABOUT */
+.about{background:var(--crema)}
+.about p{font-size:0.955rem;font-weight:300;line-height:1.88;opacity:0.73;margin-bottom:1.1rem}
+.pills{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1.2rem}
+.pill{font-size:0.78rem;font-weight:600;padding:7px 16px;border-radius:100px;border:1.5px solid var(--negro);background:transparent;cursor:default}
+.pill.lime{background:var(--lime);border-color:var(--lime)}
+.pill.lila{background:var(--lila);border-color:var(--lila)}
+.pill.naranja{background:var(--naranja);border-color:var(--naranja);color:var(--blanco)}
+.pill.rosa{background:var(--rosa);border-color:var(--rosa)}
+.vg{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.vc{border-radius:18px;padding:1.3rem}
+.vc1{background:var(--lila)}.vc2{background:var(--lime)}.vc3{background:var(--rosa)}.vc4{background:var(--negro);color:var(--crema)}
+.vc .icon{font-size:1.4rem;margin-bottom:0.65rem}
+.vc h4{font-family:'Fraunces',serif;font-weight:700;font-size:0.9rem;margin-bottom:0.3rem}
+.vc p{font-size:0.78rem;font-weight:300;line-height:1.6;opacity:0.8}
+
+/* EXPERIENCE */
+.exp{background:var(--negro);color:var(--crema)}
+.exp .sl{color:var(--lime)}.exp .sl::before{background:var(--lime)}
+.tl{position:relative;max-width:820px}
+.tl::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1.5px;background:rgba(255,255,255,0.1)}
+.tli{padding:0 0 2.8rem 2.4rem;position:relative}
+.tli:last-child{padding-bottom:0}
+.tld{position:absolute;left:-6px;top:4px;width:13px;height:13px;border-radius:50%;background:var(--lime);border:2px solid var(--negro)}
+.tly{font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--naranja);margin-bottom:4px}
+.tlr{font-family:'Fraunces',serif;font-weight:700;font-size:1.15rem;margin-bottom:3px}
+.tlc{font-size:0.85rem;color:rgba(255,255,255,0.4);margin-bottom:0.8rem}
+.tldesc{font-size:0.85rem;font-weight:300;line-height:1.78;color:rgba(255,255,255,0.6);max-width:580px}
+.tlts{display:flex;flex-wrap:wrap;gap:0.35rem;margin-top:0.8rem}
+.tlt{font-size:0.68rem;padding:3px 10px;border-radius:100px;border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.45)}
+.tlt.hl{background:var(--lime);color:var(--negro);border-color:var(--lime);font-weight:700}
+.tlt.hl2{background:var(--lila);color:var(--negro);border-color:var(--lila);font-weight:600}
+
+/* SERVICES — only 4 */
+.svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:3rem}
+.svc{border:1.5px solid rgba(0,0,0,0.1);padding:1.8rem 1.6rem;border-radius:20px;position:relative;transition:background 0.3s,border-color 0.3s}
+.svc:hover{background:var(--negro);color:var(--crema);border-color:var(--negro)}
+.svc:hover .svc-p{color:rgba(255,255,255,0.52)}
+.svc:hover .stag{border-color:rgba(255,255,255,0.15);color:rgba(255,255,255,0.38)}
+.svc:hover .sarr{opacity:1}
+.sn{font-family:'Fraunces',serif;font-weight:900;font-size:0.68rem;letter-spacing:0.1em;color:var(--naranja);margin-bottom:1rem}
+.sico{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:0.9rem;font-size:1.25rem}
+.svc h3{font-family:'Fraunces',serif;font-weight:700;font-size:1rem;margin-bottom:0.6rem}
+.svc-p{font-size:0.83rem;font-weight:300;line-height:1.72;opacity:0.6;transition:color 0.3s}
+.stags{display:flex;flex-wrap:wrap;gap:0.3rem;margin-top:0.85rem}
+.stag{font-size:0.67rem;padding:3px 9px;border-radius:100px;border:1px solid rgba(0,0,0,0.13);color:rgba(0,0,0,0.4);transition:all 0.3s}
+.sarr{position:absolute;top:1.2rem;right:1.2rem;width:27px;height:27px;border-radius:50%;background:var(--lime);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.3s;font-size:0.82rem}
+
+/* COMO DISEÑO — ACCORDION */
+.work-section{background:var(--crema)}
+.work-intro{font-size:0.95rem;font-weight:300;line-height:1.8;opacity:0.65;max-width:580px;margin-bottom:2.5rem}
+.brand-pills{display:flex;flex-wrap:wrap;gap:0.6rem;margin-bottom:2.5rem}
+.bpill{font-size:0.82rem;font-weight:600;padding:9px 20px;border-radius:100px;border:1.5px solid rgba(0,0,0,0.18);background:transparent;cursor:pointer;transition:background 0.22s,color 0.22s,border-color 0.22s;font-family:'DM Sans',sans-serif;color:var(--negro)}
+.bpill:hover{border-color:var(--negro);background:var(--negro);color:var(--crema)}
+.bpill.active{background:var(--negro);color:var(--crema);border-color:var(--negro)}
+.bpill.current{background:var(--lime);color:var(--negro);border-color:var(--lime)}
+.bpill.current.active{background:var(--negro);color:var(--lime);border-color:var(--negro)}
+.proc-tab{font-family:'DM Sans',sans-serif;font-size:0.83rem;font-weight:600;padding:9px 22px;border-radius:100px;border:1.5px solid rgba(0,0,0,0.18);background:transparent;cursor:pointer;transition:background 0.22s,color 0.22s,border-color 0.22s;color:var(--negro)}
+.proc-tab:hover{border-color:var(--negro)}
+.proc-tab.active{background:var(--negro);color:var(--crema);border-color:var(--negro)}
+.pstep-detail{margin-top:0.6rem;font-size:0.78rem;font-weight:400;color:rgba(0,0,0,0.5);line-height:1.72;border-left:2px solid var(--negro);padding-left:0.75rem}
+.brand-pill{font-size:0.82rem;font-weight:700;padding:9px 20px;border-radius:100px;border:1.5px solid var(--negro);cursor:none;transition:background 0.2s,color 0.2s,border-color 0.2s;background:transparent;font-family:'DM Sans',sans-serif}
+.brand-pill:hover,.brand-pill.active{background:var(--negro);color:var(--crema);border-color:var(--negro)}
+.brand-pill.active{background:var(--naranja);border-color:var(--naranja)}
+/* current work pills */
+.brand-pill.work-pill{border-color:rgba(0,0,0,0.2);color:rgba(0,0,0,0.6)}
+.brand-pill.work-pill:hover,.brand-pill.work-pill.active{background:var(--negro);color:var(--crema);border-color:var(--negro)}
+.brand-gallery{display:none;animation:fadeIn 0.3s ease}
+.brand-gallery.open{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.brand-gallery-header{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:1.5rem;padding:1.5rem;background:var(--negro);border-radius:20px;color:var(--crema)}
+.bgh-name{font-family:'Fraunces',serif;font-weight:900;font-size:1.5rem;color:var(--blanco);margin-bottom:4px}
+.bgh-desc{font-size:0.82rem;font-weight:300;color:rgba(255,255,255,0.5);line-height:1.6;max-width:400px}
+.bgh-tags{display:flex;gap:0.4rem;flex-wrap:wrap;margin-top:8px}
+.bgtag{font-size:0.68rem;font-weight:600;padding:4px 11px;border-radius:100px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;margin-top:1rem}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:0.75rem;margin-top:1rem}
+.gi{border-radius:14px;overflow:hidden;aspect-ratio:1/1;position:relative}
+.gi img{width:100%;height:100%;object-fit:cover;transition:transform 0.4s}
+.gi:hover img{transform:scale(1.05)}
+.cm-notice{background:rgba(0,0,0,0.05);border-radius:14px;padding:1.5rem;display:flex;align-items:center;gap:1rem;margin-top:1rem;border-left:3px solid var(--naranja)}
+.cm-notice p{font-size:0.85rem;font-weight:300;line-height:1.7;opacity:0.7}
+.section-divider{margin:3rem 0 2rem;padding-top:2rem;border-top:1.5px solid rgba(0,0,0,0.08)}
+.section-divider h3{font-family:'Fraunces',serif;font-weight:900;font-size:1.4rem;letter-spacing:-0.02em;margin-bottom:0.5rem}
+.section-divider p{font-size:0.88rem;font-weight:300;opacity:0.55;margin-bottom:1.5rem}
+
+/* PROCESS — tabbed by type */
+.process{background:var(--lila)}
+.process-intro{font-size:0.95rem;font-weight:300;line-height:1.82;opacity:0.7;max-width:620px;margin-bottom:2.5rem}
+.ptabs{display:flex;gap:0.5rem;margin-bottom:2rem;flex-wrap:wrap}
+.ptab{font-size:0.8rem;font-weight:700;padding:8px 20px;border-radius:100px;border:1.5px solid var(--negro);cursor:none;transition:background 0.2s;background:transparent;font-family:'DM Sans',sans-serif}
+.ptab.active{background:var(--negro);color:var(--crema);border-color:var(--negro)}
+.ptab-content{display:none}
+.ptab-content.active{display:block;animation:fadeIn 0.3s ease}
+.psteps{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
+.pstep{background:rgba(255,255,255,0.35);border-radius:18px;padding:1.4rem}
+.pstep .num{font-family:'Fraunces',serif;font-weight:900;font-size:2.5rem;color:rgba(0,0,0,0.12);line-height:1;margin-bottom:0.4rem}
+.pstep h4{font-family:'Fraunces',serif;font-weight:700;font-size:0.94rem;margin-bottom:0.5rem}
+.pstep .step-desc{font-size:0.8rem;font-weight:300;line-height:1.72;opacity:0.65;margin-bottom:0.75rem}
+.step-type{font-size:0.75rem;font-weight:500;padding:4px 0;display:flex;align-items:flex-start;gap:6px;line-height:1.5;opacity:0.75}
+.step-type+.step-type{margin-top:4px}
+
+/* SPOTIFY */
+.spo{background:var(--negro);display:flex;align-items:center;gap:3rem}
+.spo h3{font-family:'Fraunces',serif;font-weight:900;font-size:1.8rem;color:var(--blanco);margin-bottom:0.65rem;letter-spacing:-0.02em}
+.spo p{font-size:0.9rem;font-weight:300;color:rgba(255,255,255,0.46);line-height:1.75;max-width:370px}
+.spo-btn{display:inline-flex;align-items:center;gap:10px;background:#1DB954;color:var(--blanco);font-family:'DM Sans',sans-serif;font-weight:700;font-size:0.85rem;padding:12px 22px;border-radius:100px;text-decoration:none;margin-top:1.3rem;transition:transform 0.2s}
+.spo-btn:hover{transform:scale(1.05)}
+.spo-btn svg{width:18px;height:18px;fill:white;flex-shrink:0}
+.bars{display:flex;gap:0.5rem;align-items:flex-end;height:64px;flex-shrink:0}
+.bar{width:6px;border-radius:3px;background:var(--lime);animation:bounce 1.4s ease-in-out infinite}
+.bar:nth-child(2){height:40%;animation-delay:0.1s}
+.bar:nth-child(3){height:70%;animation-delay:0.2s;background:var(--lila)}
+.bar:nth-child(4){height:55%;animation-delay:0.05s}
+.bar:nth-child(5){height:90%;animation-delay:0.3s;background:var(--naranja)}
+.bar:nth-child(6){height:45%;animation-delay:0.15s}
+.bar:nth-child(7){height:75%;animation-delay:0.25s;background:var(--rosa)}
+.bar:nth-child(8){height:60%;animation-delay:0.08s}
+@keyframes bounce{0%,100%{transform:scaleY(1)}50%{transform:scaleY(0.35)}}
+
+/* CV */
+.cv-sec{background:var(--crema)}
+.puzzles{background:var(--negro);border-radius:22px;padding:2rem 2.4rem;margin-bottom:3rem;display:flex;align-items:flex-start;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+.pu-label{font-size:0.67rem;font-weight:700;letter-spacing:0.13em;text-transform:uppercase;color:var(--lime);margin-bottom:0.4rem}
+.pu-role{font-family:'Fraunces',serif;font-weight:900;font-size:1.35rem;color:var(--blanco);line-height:1.1;margin-bottom:0.3rem}
+.pu-co{font-size:0.92rem;font-weight:500;color:var(--lime);margin-bottom:0.55rem}
+.pu-desc{font-size:0.85rem;font-weight:300;color:rgba(255,255,255,0.55);line-height:1.8;max-width:540px}
+.pu-badge{background:var(--lime);color:var(--negro);font-size:0.73rem;font-weight:700;padding:7px 16px;border-radius:100px;white-space:nowrap;display:inline-block}
+.pu-remote{font-size:0.7rem;color:rgba(255,255,255,0.28);letter-spacing:0.07em;text-transform:uppercase;margin-top:5px}
+.cv-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem}
+.cvh{font-family:'Fraunces',serif;font-weight:800;font-size:0.98rem;letter-spacing:-0.01em;margin-bottom:1.7rem;padding-bottom:0.65rem;border-bottom:2px solid var(--negro)}
+.tl2{display:flex;flex-direction:column;gap:1.5rem}
+.tl2i{display:flex;gap:1rem}
+.tl2d{flex-shrink:0;width:9px;height:9px;border-radius:50%;margin-top:5px}
+.tl2y{font-size:0.67rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(0,0,0,0.35);margin-bottom:2px}
+.tl2y.or{color:var(--naranja)}
+.tl2r{font-family:'Fraunces',serif;font-weight:700;font-size:0.95rem;margin-bottom:2px}
+.tl2s{font-size:0.79rem;color:rgba(0,0,0,0.42);margin-bottom:5px;line-height:1.4}
+.tl2p{font-size:0.81rem;font-weight:300;line-height:1.75;opacity:0.67}
+.sk-bars{display:flex;flex-direction:column;gap:0.72rem}
+.sk-row{display:flex;align-items:center;gap:12px}
+.sk-name{font-size:0.74rem;font-weight:500;min-width:120px;opacity:0.55}
+.sk-track{flex:1;height:4px;background:rgba(0,0,0,0.08);border-radius:2px;overflow:hidden}
+.sk-fill{height:100%;border-radius:2px}
+.lng-pills{display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:0.85rem}
+.lp{font-size:0.78rem;font-weight:600;padding:5px 13px;border-radius:100px}
+
+/* CONTACT */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.contact h2{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(2.3rem,4.5vw,4rem);line-height:0.95;letter-spacing:-0.03em;margin-bottom:1.3rem}
+.contact h2 em{font-style:normal;color:var(--naranja)}
+.contact>div:first-child>p{font-size:0.95rem;font-weight:300;line-height:1.85;opacity:0.56;margin-bottom:1.7rem}
+.clinks{display:flex;flex-direction:column;gap:0.65rem}
+.clink{display:flex;align-items:center;gap:1rem;text-decoration:none;color:var(--negro);font-size:0.88rem;font-weight:500;padding:0.8rem 1.1rem;border:1.5px solid rgba(0,0,0,0.13);border-radius:13px;transition:background 0.2s,color 0.2s,border-color 0.2s}
+.clink:hover{background:var(--negro);color:var(--crema);border-color:var(--negro)}
+.cico{width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:0.92rem;flex-shrink:0}
+.cf{background:var(--lime);border-radius:26px;padding:2.2rem}
+.cf h3{font-family:'Fraunces',serif;font-weight:800;font-size:1.25rem;margin-bottom:1.3rem}
+.fg{margin-bottom:0.95rem}
+.fg label{display:block;font-size:0.72rem;font-weight:700;margin-bottom:5px;letter-spacing:0.08em;text-transform:uppercase;opacity:0.62}
+.fg input,.fg textarea{width:100%;padding:10px 13px;border:1.5px solid rgba(0,0,0,0.17);border-radius:10px;background:rgba(255,255,255,0.52);font-family:'DM Sans',sans-serif;font-size:0.88rem;color:var(--negro);outline:none;transition:border-color 0.2s,background 0.2s;resize:none}
+.fg input:focus,.fg textarea:focus{border-color:var(--negro);background:rgba(255,255,255,0.88)}
+.bs{width:100%;background:var(--negro);color:var(--lime);font-family:'DM Sans',sans-serif;font-weight:700;font-size:0.88rem;padding:13px;border:none;border-radius:10px;cursor:none;transition:opacity 0.2s,transform 0.2s}
+.bs:hover{opacity:0.8;transform:translateY(-1px)}
+
+footer{padding:1.7rem 2.5rem;display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(0,0,0,0.07)}
+footer p{font-size:0.74rem;opacity:0.36}
+.fback{display:flex;align-items:center;gap:8px;font-size:0.76rem;font-weight:500;text-decoration:none;color:var(--negro);transition:gap 0.2s}
+.fback:hover{gap:12px}
+
+@media(max-width:1000px){
+  nav{padding:1rem 1.5rem}
+  .hero{grid-template-columns:1fr;padding:6rem 1.5rem 3rem}
+  .hero-right{align-items:center}
+  section{padding:4rem 1.5rem}
+  .about>div{width:100%}
+  .about{display:flex;flex-direction:column;gap:2rem}
+  .svc-grid{grid-template-columns:1fr}
+  .grid3{grid-template-columns:1fr 1fr}
+  .psteps{grid-template-columns:1fr 1fr}
+  .contact{grid-template-columns:1fr}
+  .cv-grid{grid-template-columns:1fr;gap:2.5rem}
+  .spo{flex-direction:column;gap:2rem}
+}
+@media(max-width:600px){
+  .svc-grid,.grid3,.grid2,.vg,.psteps{grid-template-columns:1fr}
+  .nav-links{display:none}
+}
+</style>
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-f" id="follower"></div>
+
+<nav>
+  <a href="#" class="nav-logo">LR ✦</a>
+  <ul class="nav-links">
+    <li><a href="#sobre-mi" data-es="Sobre mí" data-en="About">Sobre mí</a></li>
+    <li><a href="#experiencia" data-es="Experiencia" data-en="Experience">Experiencia</a></li>
+    <li><a href="#servicios" data-es="Servicios" data-en="Services">Servicios</a></li>
+    <li><a href="#como-diseno" data-es="¿Cómo diseño?" data-en="How I design">¿Cómo diseño?</a></li>
+    <li><a href="#curriculum" class="cv-link">CV</a></li>
+    <li><a href="#contacto" data-es="Contacto" data-en="Contact">Contacto</a></li>
+  </ul>
+  <div class="lang-toggle">
+    <button class="lang-btn active" id="btn-es" onclick="setLang('es')">ES</button>
+    <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <div class="hero-tag">
+      <span class="dot"></span>
+      <span data-es="Diseñadora Gráfica · Social Media · UX/UI" data-en="Graphic Designer · Social Media · UX/UI">Diseñadora Gráfica · Social Media · UX/UI</span>
+    </div>
+    <h1>Luciana<br><em>Romero</em></h1>
+    <p class="hero-desc" data-es="¡Hola! Ayudo a las marcas a hablar el idioma de sus usuarios. Fusiono el diseño gráfico estratégico, la optimización UX/UI y el manejo de redes sociales para crear ecosistemas digitales coherentes. Con más de 4 años de trayectoria, mi objetivo es transformar la presencia de tu marca en una experiencia visual atractiva, funcional e intencional en cada pantalla." data-en="Hi! I help brands speak their users' language. I merge strategic graphic design, UX/UI optimization and social media management to create coherent digital ecosystems. With 4+ years of experience, my goal is to transform your brand's presence into an attractive, functional and intentional visual experience on every screen.">¡Hola! Ayudo a las marcas a hablar el idioma de sus usuarios. Fusiono el diseño gráfico estratégico, la optimización UX/UI y el manejo de redes sociales para crear ecosistemas digitales coherentes. Con más de 4 años de trayectoria, mi objetivo es transformar la presencia de tu marca en una experiencia visual atractiva, funcional e intencional en cada pantalla.</p>
+    <div class="hero-ctas">
+      <a href="#como-diseno" class="btn-p" data-es="Ver cómo diseño →" data-en="See how I design →">Ver cómo diseño →</a>
+      <a href="#contacto" class="btn-o" data-es="Hablemos" data-en="Let's talk">Hablemos</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="photo-wrap"><img src="img/imagen_1.jpeg" alt="Luciana Romero" loading="lazy"></div>
+    <div class="hero-badge">
+      <strong data-es="✦ 100% Remoto · Argentina & Internacional" data-en="✦ 100% Remote · Argentina & International">✦ 100% Remoto · Argentina & Internacional</strong>
+      <p data-es="Mendoza, Argentina — clientes en AR, CL y EE.UU." data-en="Mendoza, Argentina — clients in AR, CL and USA.">Mendoza, Argentina — clientes en AR, CL y EE.UU.</p>
+    </div>
+  </div>
+  <div style="position:absolute;top:13%;right:47%;pointer-events:none"><span style="font-size:2.6rem;color:var(--naranja);animation:spin 12s linear infinite;display:inline-block">✦</span></div>
+  <div style="position:absolute;bottom:18%;left:2%;pointer-events:none"><span style="font-size:1.8rem;color:var(--lila);animation:spin 14s linear infinite reverse;display:inline-block">✶</span></div>
+</section>
+
+<!-- MARQUEE -->
+<div class="mwrap" aria-hidden="true">
+  <div class="mi">
+    <span>Diseño Gráfico</span><span class="ac">✦</span><span>Social Media</span><span class="ac">✦</span><span>UX / UI</span><span class="ac">✦</span><span>Community Manager</span><span class="ac">✦</span><span>IA Avanzada</span><span class="ac">✦</span><span>Identidad Visual</span><span class="ac">✦</span><span>Content Strategy</span><span class="ac">✦</span><span>Diseño para Redes</span><span class="ac">✦</span>
+    <span>Diseño Gráfico</span><span class="ac">✦</span><span>Social Media</span><span class="ac">✦</span><span>UX / UI</span><span class="ac">✦</span><span>Community Manager</span><span class="ac">✦</span><span>IA Avanzada</span><span class="ac">✦</span><span>Identidad Visual</span><span class="ac">✦</span><span>Content Strategy</span><span class="ac">✦</span><span>Diseño para Redes</span><span class="ac">✦</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="sobre-mi" style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start">
+  <div class="reveal">
+    <div class="sl" data-es="Sobre mí" data-en="About me">Sobre mí</div>
+    <h2 class="sh2" data-es="Diseño con criterio,<br>IA como aliada" data-en="Design with purpose,<br>AI as an ally">Diseño con criterio,<br>IA como aliada</h2>
+    <p data-es="Soy Luciana Romero y entiendo el entorno digital como un espacio para conectar de forma honesta y cercana. Mi valor diferencial está en la evolución constante: domino las herramientas de Inteligencia Artificial de vanguardia para potenciar mi proceso creativo. Esto me permite explorar conceptos disruptivos, predecir tendencias y agilizar los flujos de trabajo de forma inteligente." data-en="I'm Luciana Romero and I understand the digital space as a place to connect honestly and closely. My differentiating value is constant evolution: I master cutting-edge Artificial Intelligence tools to enhance my creative process. This lets me explore disruptive concepts, predict trends and streamline workflows intelligently.">Soy Luciana Romero y entiendo el entorno digital como un espacio para conectar de forma honesta y cercana. Mi valor diferencial está en la evolución constante: domino las herramientas de Inteligencia Artificial de vanguardia para potenciar mi proceso creativo. Esto me permite explorar conceptos disruptivos, predecir tendencias y agilizar los flujos de trabajo de forma inteligente.</p>
+    <p data-es="Para ti, trabajar conmigo significa entrar en un proceso seguro, transparente y colaborativo. La IA es mi aliada técnica para llevar las ideas más lejos, pero el criterio estético, la sensibilidad y la estrategia que hacen latir a tu proyecto son 100% humanos. Juntos, creamos algo único, escalable y preparado para el futuro." data-en="For you, working with me means entering a safe, transparent and collaborative process. AI is my technical ally for taking ideas further, but the aesthetic judgment, sensibility and strategy that make your project come alive are 100% human. Together, we create something unique, scalable and future-ready.">Para ti, trabajar conmigo significa entrar en un proceso seguro, transparente y colaborativo. La IA es mi aliada técnica para llevar las ideas más lejos, pero el criterio estético, la sensibilidad y la estrategia que hacen latir a tu proyecto son 100% humanos. Juntos, creamos algo único, escalable y preparado para el futuro.</p>
+    <div class="pills">
+      <span class="pill lime">Diseño + IA avanzada</span>
+      <span class="pill lila">Pensamiento sistémico</span>
+      <span class="pill naranja">+4 años de trayectoria</span>
+      <span class="pill rosa">Estética con propósito</span>
+      <span class="pill">Remoto ✓</span>
+    </div>
+  </div>
+  <div class="reveal">
+    <div class="vg">
+      <div class="vc vc1"><div class="icon">🤖</div><h4>Diseño + IA avanzada</h4><p>Uso Claude, Gemini y herramientas generativas para expandir posibilidades creativas y optimizar cada proceso.</p></div>
+      <div class="vc vc2"><div class="icon">🔗</div><h4>Pensamiento sistémico</h4><p>Cada decisión visual responde a una lógica de marca coherente que se sostiene en el tiempo.</p></div>
+      <div class="vc vc3"><div class="icon">🎨</div><h4>Estética con propósito</h4><p>El criterio estético y la estrategia siempre 100% humanos. La belleza que comunica y convierte.</p></div>
+      <div class="vc vc4"><div class="icon">🌎</div><h4>Alcance global</h4><p>Clientes activos en Argentina, Chile y Estados Unidos. Trabajo remoto con la rigurosidad de un equipo presencial.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="exp" id="experiencia">
+  <div class="sl" data-es="Trayectoria" data-en="Experience">Trayectoria</div>
+  <h2 class="sh2 reveal" style="color:var(--crema)"><span data-es="Más de 4 años" data-en="4+ years">Más de 4 años</span> <em style="color:var(--lime);font-style:normal"> <span data-es="construyendo marcas" data-en="building brands">construyendo marcas</span></em></h2>
+  <div class="tl reveal">
+
+    <!-- Puzzles Consulting -->
+    <div class="tli">
+      <div class="tld"></div>
+      <div class="tly">Dic 2024 — Actualidad</div>
+      <div class="tlr">Social Media Specialist &amp; UX/UI Designer</div>
+      <div class="tlc">Puzzles Consulting · Estados Unidos · Remoto</div>
+      <p class="tldesc">Gestión de redes sociales y diseño UX/UI para empresa de consultoría con sede en EE.UU. Trabajo con 7 clientes activos, desarrollando estrategia de contenido en inglés, producción visual de marca y diseño de interfaces para audiencias internacionales.</p>
+      <div class="tlts"><span class="tlt hl">🌎 Internacional</span><span class="tlt hl">7 clientes activos</span><span class="tlt hl">UX/UI Design</span><span class="tlt hl">Social Media Strategy</span><span class="tlt">Inglés B2</span><span class="tlt">Figma</span></div>
+    </div>
+
+    <!-- Community Manager -->
+    <div class="tli">
+      <div class="tld" style="background:rgba(255,255,255,0.35)"></div>
+      <div class="tly">Actualidad</div>
+      <div class="tlr">Community Manager</div>
+      <div class="tlc">Freelance · San Rafael, Mendoza</div>
+      <p class="tldesc">Gestión e implementación de la estrategia digital y comunicación en redes sociales. Responsable de la planificación de contenidos, moderación de comunidades, atención al cliente y análisis de métricas para optimizar el alcance y el engagement general de las marcas.</p>
+      <div class="tlts"><span class="tlt hl2">Berlín Bar</span><span class="tlt hl2">Agencia Lucero</span></div>
+    </div>
+
+    <!-- Social Media Specialist | Diseño + CM -->
+    <div class="tli">
+      <div class="tld" style="background:rgba(255,255,255,0.35)"></div>
+      <div class="tly">Actualidad</div>
+      <div class="tlr">Social Media Specialist | Diseño + CM</div>
+      <div class="tlc">Freelance · Argentina</div>
+      <p class="tldesc">Rol integral que fusiona el diseño visual con la estrategia de contenidos. Desarrollo de la identidad estética para redes sociales, creación de piezas gráficas y audiovisuales, y gestión activa de las plataformas, asegurando una comunicación cohesiva y alineada a los objetivos de cada proyecto.</p>
+      <div class="tlts"><span class="tlt hl2">Brutal</span><span class="tlt hl2">Chapa Club</span><span class="tlt hl2">Cápsulas Aura</span><span class="tlt hl2">Marta Bassols</span><span class="tlt hl2">Inpar</span></div>
+    </div>
+
+    <!-- Diseñadora Gráfica & Social Media -->
+    <div class="tli">
+      <div class="tld" style="background:rgba(255,255,255,0.22)"></div>
+      <div class="tly">2020 — 2023</div>
+      <div class="tlr">Diseñadora Gráfica &amp; Social Media</div>
+      <div class="tlc">Múltiples marcas · San Rafael, Mendoza &amp; Chile</div>
+      <p class="tldesc">Desarrollo de proyectos visuales y estratégicos para múltiples marcas. Creación y ejecución de propuestas de identidad corporativa, gestión de social media y diseño de papelería comercial, logrando soluciones integrales para la comunicación institucional y comercial de los clientes.</p>
+      <div class="tlts"><span class="tlt">Antídoto Gintonería</span><span class="tlt">Bony&#39;s Pizza</span><span class="tlt">El Pinito Heladería</span><span class="tlt">Sueños de Estación</span><span class="tlt">Kyra</span><span class="tlt">Mercado Pádel Chile</span><span class="tlt">Dr. Parra</span><span class="tlt">Smart</span><span class="tlt">Biancotti</span><span class="tlt">Estética Láser</span><span class="tlt">Anahí</span><span class="tlt">Josselin</span></div>
+    </div>
+
+  </div>
+
+
+
+  </div>
+</section>
+
+<!-- SERVICES — 4 only -->
+<section class="svc-section" id="servicios">
+  <div class="reveal">
+    <div class="sl" data-es="Servicios" data-en="Services">Servicios</div>
+    <h2 class="sh2"><span data-es="Lo que" data-en="What">Lo que</span> <em style="color:var(--naranja);font-style:normal" data-es="ofrezco" data-en="I offer">ofrezco</em></h2>
+  </div>
+  <div class="svc-grid reveal">
+    <div class="svc"><div class="sn">01</div><div class="sico" style="background:var(--naranja)">📱</div><h3 data-es="Diseño para Redes Sociales" data-en="Social Media Design">Diseño para Redes Sociales</h3><p class="svc-p" data-es="Producción de piezas gráficas, carousels, stories y reels con coherencia visual sistémica y orientación estratégica al engagement." data-en="Production of graphic pieces, carousels, stories and reels with systemic visual consistency and strategic orientation toward engagement.">Producción de piezas gráficas, carousels, stories y reels con coherencia visual sistémica y orientación estratégica al engagement.</p><div class="stags"><span class="stag">Feed</span><span class="stag">Carousels</span><span class="stag">Stories</span><span class="stag">Reels</span><span class="stag">Calendario editorial</span></div><div class="sarr">→</div></div>
+    <div class="svc"><div class="sn">02</div><div class="sico" style="background:var(--lime)">👥</div><h3 data-es="Community Management" data-en="Community Management">Community Management</h3><p class="svc-p" data-es="Gestión integral de redes: planificación editorial, producción de contenido, análisis de métricas y crecimiento de comunidades activas." data-en="Full social media management: editorial planning, content production, metrics analysis and active community growth.">Gestión integral de redes: planificación editorial, producción de contenido, análisis de métricas y crecimiento de comunidades activas.</p><div class="stags"><span class="stag">Instagram</span><span class="stag">LinkedIn</span><span class="stag">Estrategia</span><span class="stag">Métricas</span><span class="stag">Notion</span><span class="stag">Asana</span></div><div class="sarr">→</div></div>
+    <div class="svc"><div class="sn">03</div><div class="sico" style="background:var(--lila)">🖥️</div><h3 data-es="UX / UI Design" data-en="UX / UI Design">UX / UI Design</h3><p class="svc-p" data-es="Interfaces web y mobile centradas en el usuario: arquitectura de información, wireframes, prototipado interactivo y handoff para desarrollo." data-en="User-centered web and mobile interfaces: information architecture, wireframes, interactive prototyping and development handoff.">Interfaces web y mobile centradas en el usuario: arquitectura de información, wireframes, prototipado interactivo y handoff para desarrollo.</p><div class="stags"><span class="stag">Figma</span><span class="stag">Wireframes</span><span class="stag">Prototipado</span><span class="stag">Web Design</span></div><div class="sarr">→</div></div>
+    <div class="svc"><div class="sn">04</div><div class="sico" style="background:var(--rosa)">✉️</div><h3 data-es="Email Marketing & Templates" data-en="Email Marketing & Templates">Email Marketing & Templates</h3><p class="svc-p" data-es="Newsletters y sistemas de templates reutilizables para Mailchimp, Klaviyo y plataformas similares." data-en="Newsletters and reusable template systems for Mailchimp, Klaviyo and similar platforms.">Newsletters y sistemas de templates reutilizables para Mailchimp, Klaviyo y plataformas similares.</p><div class="stags"><span class="stag">Newsletters</span><span class="stag">Templates</span><span class="stag">Campañas</span></div><div class="sarr">→</div></div>
+  </div>
+</section>
+
+<!-- COMO DISENO -->
+<section class="work-section" id="como-diseno" style="padding:6rem 2.5rem">
+  <div class="reveal">
+    <div class="sl" data-es="Portfolio" data-en="Portfolio">Portfolio</div>
+    <h2 class="sh2" data-es="¿Cómo diseño?" data-en="How I design">¿Cómo diseño?</h2>
+    <p style="font-size:0.95rem;font-weight:300;line-height:1.8;opacity:0.65;max-width:600px;margin-bottom:2.5rem" data-es="Cada marca tiene su propio sistema visual. Seleccioná una marca para ver cómo trabajo el diseño para redes sociales, la coherencia gráfica y la estrategia visual." data-en="Each brand has its own visual system. Select a brand to see how I approach social media design, visual consistency and strategy.">Cada marca tiene su propio sistema visual. Seleccioná una marca para ver cómo trabajo el diseño para redes sociales, la coherencia gráfica y la estrategia visual.</p>
+  </div>
+
+  <div class="reveal">
+    <p style="font-size:0.68rem;font-weight:700;letter-spacing:0.13em;text-transform:uppercase;opacity:0.35;margin-bottom:0.8rem">Trabajos anteriores</p>
+    <div class="brand-pills">
+      <button class="bpill active" onclick="showBrand('antidoto')">Antídoto Gintonería</button>
+      <button class="bpill" onclick="showBrand('bonys')">Bony&#39;s Pizza</button>
+      <button class="bpill" onclick="showBrand('pinito')">El Pinito Heladería</button>
+      <button class="bpill" onclick="showBrand('suenos')">Sueños de Estación</button>
+      <button class="bpill" onclick="showBrand('kyra')">Kyra</button>
+      <button class="bpill" onclick="showBrand('mercado')">Mercado Pádel Chile</button>
+    </div>
+    <p style="font-size:0.68rem;font-weight:700;letter-spacing:0.13em;text-transform:uppercase;opacity:0.35;margin-bottom:0.8rem;margin-top:1.6rem">Clientes actuales</p>
+    <div class="brand-pills">
+      <button class="bpill current" onclick="showBrand('brutal')">Brutal</button>
+      <button class="bpill current" onclick="showBrand('chapa')">Chapa Club</button>
+      <button class="bpill current" onclick="showBrand('marta')">Marta Bassols Coach</button>
+      <button class="bpill current" onclick="showBrand('capsulas')">Cápsulas Aura</button>
+      <button class="bpill current" onclick="showBrand('inpar')">InPar</button>
+      <button class="bpill current" onclick="showBrand('berlin')">Berlín Bar</button>
+      <button class="bpill current" onclick="showBrand('lucero')">Agencia Lucero</button>
+    </div>
+  </div>
+
+  <div style="margin-top:2.8rem">
+
+    <!-- ANTÍDOTO -->
+    <div id="panel-antidoto" class="brand-panel active reveal">
+      <div class="bp-header">
+        <div class="bp-name">Antídoto Gintonería</div>
+        <div class="bp-sub">Diseño para redes sociales · 2021 · San Rafael, Mendoza</div>
+        <div class="bp-tags"><span class="bpt" style="background:var(--lila)">Social Media Design</span><span class="bpt" style="background:var(--lime)">Contenido Visual</span><span class="bpt" style="background:var(--rosa)">Gastronomía</span></div>
+      </div>
+      <div class="brand-slider" id="slider-ant">
+  <div class="slider-track" id="track-ant" style="transform:translateX(0%)"><div class="slide"><img src="img/imagen_2.jpeg" alt="Semana del Malbec" loading="lazy"></div>
+<div class="slide"><img src="img/imagen_3.jpeg" alt="DJ Set Duende" loading="lazy"></div>
+<div class="slide"><img src="img/imagen_4.jpeg" alt="Noche de Oriente" loading="lazy"></div>
+<div class="slide"><img src="img/imagen_5.jpeg" alt="Miércoles Gintonero" loading="lazy"></div>
+<div class="slide"><img src="img/imagen_6.jpeg" alt="Sandwich Argento" loading="lazy"></div>
+<div class="slide"><img src="img/imagen_7.jpeg" alt="Sorteo Gintonero" loading="lazy"></div>
+</div>
+</div>
+<div class="slider-nav">
+  <button class="slider-btn" onclick="slideStep('ant',-1)">←</button>
+  <div class="slider-dots" id="dots-ant"><button class="slider-dot  active" onclick="slideTo('ant',0)"></button><button class="slider-dot" onclick="slideTo('ant',1)"></button><button class="slider-dot" onclick="slideTo('ant',2)"></button><button class="slider-dot" onclick="slideTo('ant',3)"></button><button class="slider-dot" onclick="slideTo('ant',4)"></button><button class="slider-dot" onclick="slideTo('ant',5)"></button></div>
+  <span class="slider-count" id="count-ant">1 / 6</span>
+  <button class="slider-btn" onclick="slideStep('ant',1)">→</button>
+</div>
+    </div>
+
+    <!-- BONY'S -->
+    <div id="panel-bonys" class="brand-panel reveal">
+      <div class="bp-header">
+        <div class="bp-name">Bony&#39;s Pizza</div>
+        <div class="bp-sub">Diseño para redes sociales · Gastronomía · San Rafael, Mendoza</div>
+        <div class="bp-tags"><span class="bpt" style="background:var(--naranja);color:white">Social Media Design</span><span class="bpt" style="background:var(--rosa)">Gastronomía</span><span class="bpt" style="background:var(--lime)">Contenido Visual</span></div>
+      </div>
+      <div class="brand-slider" id="slider-bon">
+  <div class="slider-track" id="track-bon" style="transform:translateX(0%)"><div class="slide"><img src="img/imagen_8.jpeg" alt="Delivery feed" loading="lazy"></div><div class="slide"><img src="img/imagen_9.jpeg" alt="Apostá por una pizza" loading="lazy"></div><div class="slide"><img src="img/imagen_10.jpeg" alt="Maridar vino con pizza" loading="lazy"></div><div class="slide"><img src="img/imagen_11.jpeg" alt="Nuevo horario" loading="lazy"></div><div class="slide"><img src="img/imagen_12.jpeg" alt="Seguimos conectados" loading="lazy"></div><div class="slide"><img src="img/imagen_13.jpeg" alt="Elegí tu pizza" loading="lazy"></div><div class="slide"><img src="img/imagen_14.jpeg" alt="Pizza + Fútbol" loading="lazy"></div></div>
+</div>
+<div class="slider-nav">
+  <button class="slider-btn" onclick="slideStep('bon',-1)">←</button>
+  <div class="slider-dots" id="dots-bon"><button class="slider-dot  active" onclick="slideTo('bon',0)"></button><button class="slider-dot" onclick="slideTo('bon',1)"></button><button class="slider-dot" onclick="slideTo('bon',2)"></button><button class="slider-dot" onclick="slideTo('bon',3)"></button><button class="slider-dot" onclick="slideTo('bon',4)"></button><button class="slider-dot" onclick="slideTo('bon',5)"></button><button class="slider-dot" onclick="slideTo('bon',6)"></button></div>
+  <span class="slider-count" id="count-bon">1 / 7</span>
+  <button class="slider-btn" onclick="slideStep('bon',1)">→</button>
+</div>
+    </div>
+
+    <!-- EL PINITO -->
+   
+    <div id="panel-pinito" class="brand-panel reveal">
+      <div class="bp-header">
+        <div class="bp-name">El Pinito Heladería</div>
+        <div class="bp-sub">Diseño para redes sociales · Helados Artesanales · San Rafael, Mendoza</div>
+        <div class="bp-tags"><span class="bpt" style="background:var(--azul)">Social Media Design</span><span class="bpt" style="background:var(--rosa)">Gastronomía</span><span class="bpt" style="background:var(--lime)">Contenido Visual</span></div>
+      </div>
+      <div class="brand-slider" id="slider-pin"><div class="slider-track" id="track-pin" style="transform:translateX(0%)"><div class="slide"><img src="img/imagen_15.jpeg" alt="Helado en casa" loading="lazy"></div><div class="slide"><img src="img/imagen_16.jpeg" alt="Contenido fotográfico" loading="lazy"></div><div class="slide"><img src="img/imagen_17.jpeg" alt="Copa Helada" loading="lazy"></div><div class="slide"><img src="img/imagen_18.jpeg" alt="Sorteo Día del Padre" loading="lazy"></div><div class="slide"><img src="img/imagen_19.jpeg" alt="Sorteo Semana de la Amistad" loading="lazy"></div><div class="slide"><img src="img/imagen_20.jpeg" alt="Qué helado sos según tu personalidad" loading="lazy"></div></div></div><div class="slider-nav"><button class="slider-btn" onclick="slideStep('pin',-1)">←</button><div class="slider-dots" id="dots-pin"><button class="slider-dot  active" onclick="slideTo('pin',0)"></button><button class="slider-dot" onclick="slideTo('pin',1)"></button><button class="slider-dot" onclick="slideTo('pin',2)"></button><button class="slider-dot" onclick="slideTo('pin',3)"></button><button class="slider-dot" onclick="slideTo('pin',4)"></button><button class="slider-dot" onclick="slideTo('pin',5)"></button></div><span class="slider-count" id="count-pin">1 / 6</span><button class="slider-btn" onclick="slideStep('pin',1)">→</button></div>
+    </div>
+
+    <!-- SUEÑOS DE ESTACIÓN -->
+   
+    <div id="panel-suenos" class="brand-panel reveal">
+      <div class="bp-header">
+        <div class="bp-name">Sueños de Estación Cabañas</div>
+        <div class="bp-sub">Diseño para redes sociales · Turismo &amp; Alojamiento · San Rafael, Mendoza</div>
+        <div class="bp-tags"><span class="bpt" style="background:var(--lime)">Social Media Design</span><span class="bpt" style="background:var(--lila)">Turismo</span><span class="bpt" style="background:var(--azul)">Contenido Visual</span></div>
+      </div>
+      <div class="brand-slider" id="slider-sue"><div class="slider-track" id="track-sue" style="transform:translateX(0%)"><div class="slide"><img src="img/imagen_21.jpeg" alt="Como en casa" loading="lazy"></div><div class="slide"><img src="img/imagen_22.jpeg" alt="Reseñas — Qué dice la gente" loading="lazy"></div><div class="slide"><img src="img/imagen_23.jpeg" alt="Autumn Sale" loading="lazy"></div><div class="slide"><img src="img/imagen_24.jpeg" alt="Hospedaje paradisíaco" loading="lazy"></div><div class="slide"><img src="img/imagen_25.jpeg" alt="Top 3 Bodegas San Rafael" loading="lazy"></div><div class="slide"><img src="img/imagen_26.jpeg" alt="Bodega Alfredo Roca" loading="lazy"></div><div class="slide"><img src="img/imagen_27.jpeg" alt="Bodega Murville" loading="lazy"></div><div class="slide"><img src="img/imagen_28.jpeg" alt="Bodega Valentín Bianchi" loading="lazy"></div><div class="slide"><img src="img/imagen_29.jpeg" alt="Feed" loading="lazy"></div><div class="slide"><img src="img/imagen_30.jpeg" alt="Mayo" loading="lazy"></div></div></div><div class="slider-nav"><button class="slider-btn" onclick="slideStep('sue',-1)">←</button><div class="slider-dots" id="dots-sue"><button class="slider-dot  active" onclick="slideTo('sue',0)"></button><button class="slider-dot" onclick="slideTo('sue',1)"></button><button class="slider-dot" onclick="slideTo('sue',2)"></button><button class="slider-dot" onclick="slideTo('sue',3)"></button><button class="slider-dot" onclick="slideTo('sue',4)"></button><button class="slider-dot" onclick="slideTo('sue',5)"></button><button class="slider-dot" onclick="slideTo('sue',6)"></button><button class="slider-dot" onclick="slideTo('sue',7)"></button><button class="slider-dot" onclick="slideTo('sue',8)"></button><button class="slider-dot" onclick="slideTo('sue',9)"></button></div><span class="slider-count" id="count-sue">1 / 10</span><button class="slider-btn" onclick="slideStep('sue',1)">→</button></div>
+    </div>
+
+    <!-- KYRA -->
+   
+    <div id="panel-kyra" class="brand-panel reveal">
+      <div class="bp-header">
+        <div class="bp-name">Kyra Fire Co.</div>
+        <div class="bp-sub">Diseño para redes sociales · Hornos para pizza · Chile</div>
+        <div class="bp-tags"><span class="bpt" style="background:var(--naranja);color:white">Social Media Design</span><span class="bpt" style="background:var(--negro);color:var(--crema)">Tecnología</span><span class="bpt" style="background:var(--azul)">Chile</span></div>
+      </div>
+      <div class="brand-slider" id="slider-kyr"><div class="slider-track" id="track-kyr" style="transform:translateX(0%)"><div class="slide"><img src="img/imagen_31.jpeg" alt="Cocina en minutos — Paragon 12"" loading="lazy"></div><div class="slide"><img src="img/imagen_32.jpeg" alt="Kyra Revo 16" — Preventa" loading="lazy"></div><div class="slide"><img src="img/imagen_33.jpeg" alt="Kyra Paragon 12" — Foto producto" loading="lazy"></div><div class="slide"><img src="img/imagen_34.jpeg" alt="Práctico, cómodo, eficiente" loading="lazy"></div></div></div><div class="slider-nav"><button class="slider-btn" onclick="slideStep('kyr',-1)">←</button><div class="slider-dots" id="dots-kyr"><button class="slider-dot  active" onclick="slideTo('kyr',0)"></button><button class="slider-dot" onclick="slideTo('kyr',1)"></button><button class="slider-dot" onclick="slideTo('kyr',2)"></button><button class="slider-dot" onclick="slideTo('kyr',3)"></button></div><span class="slider-count" id="count-kyr">1 / 4</span><button class="slider-btn" onclick="slideStep('kyr',1)">→</button></div>
+    </div>
+
+    <!-- MERCADO PÁDEL -->
+   
+    <div id="panel-mercado" class="brand-panel reveal">
+      <div class="bp-header">
+        <div class="bp-name">Mercado Pádel Chile</div>
+        <div class="bp-sub">Diseño para redes sociales · Deportes · Chile</div>
+        <div class="bp-tags"><span class="bpt" style="background:var(--azul)">Social Media Design</span><span class="bpt" style="background:var(--lime)">Deportes</span><span class="bpt" style="background:var(--naranja);color:white">Chile</span></div>
+      </div>
+      <div class="brand-slider" id="slider-mer"><div class="slider-track" id="track-mer" style="transform:translateX(0%)"><div class="slide"><img src="img/imagen_35.jpeg" alt="Black Crown Hurricane 2022" loading="lazy"></div><div class="slide"><img src="img/imagen_36.jpeg" alt="Starvie Metheora 2022" loading="lazy"></div><div class="slide"><img src="img/imagen_37.jpeg" alt="Babolat Technical Vertuo — versión 1" loading="lazy"></div><div class="slide"><img src="img/imagen_38.jpeg" alt="Babolat Technical Vertuo — versión 2" loading="lazy"></div><div class="slide"><img src="img/imagen_39.jpeg" alt="Black Crown Special Power 2022" loading="lazy"></div><div class="slide"><img src="img/imagen_40.jpeg" alt="Head Flash" loading="lazy"></div><div class="slide"><img src="img/imagen_41.jpeg" alt="Drop Shot Canyon Pro 2022" loading="lazy"></div></div></div><div class="slider-nav"><button class="slider-btn" onclick="slideStep('mer',-1)">←</button><div class="slider-dots" id="dots-mer"><button class="slider-dot  active" onclick="slideTo('mer',0)"></button><button class="slider-dot" onclick="slideTo('mer',1)"></button><button class="slider-dot" onclick="slideTo('mer',2)"></button><button class="slider-dot" onclick="slideTo('mer',3)"></button><button class="slider-dot" onclick="slideTo('mer',4)"></button><button class="slider-dot" onclick="slideTo('mer',5)"></button><button class="slider-dot" onclick="slideTo('mer',6)"></button></div><span class="slider-count" id="count-mer">1 / 7</span><button class="slider-btn" onclick="slideStep('mer',1)">→</button></div>
+    </div>
+
+    <!-- BRUTAL (current) -->
+   
+    <div id="panel-brutal" class="brand-panel reveal">
+      <div class="bp-header">
+        <div class="bp-name">Brutal</div>
+        <div class="bp-sub">Diseño para redes sociales · Eventos &amp; Sunsets · San Rafael, Mendoza · Actualidad</div>
+        <div class="bp-tags"><span class="bpt" style="background:var(--negro);color:var(--lime)">Cliente activo</span><span class="bpt" style="background:var(--lila)">Eventos</span><span class="bpt" style="background:var(--naranja);color:white">Sunsets · Bodegas</span></div>
+      </div>
+      <div class="brand-slider" id="slider-bru"><div class="slider-track" id="track-bru" style="transform:translateX(0%)"><div class="slide"><img src="img/imagen_42.jpeg" alt="Fiesta Brutal + Chapa" loading="lazy"></div><div class="slide"><img src="img/imagen_43.jpeg" alt="Brutal Sunset Algodón — Save the Date" loading="lazy"></div><div class="slide"><img src="img/imagen_44.jpeg" alt="Brutal Sunset Algodón — Line up" loading="lazy"></div><div class="slide"><img src="img/imagen_45.jpeg" alt="Sunset Iaccarini — Save the Date 04.04" loading="lazy"></div><div class="slide"><img src="img/imagen_46.jpeg" alt="Sunset Iaccarini — Info entrada" loading="lazy"></div><div class="slide"><img src="img/imagen_47.jpeg" alt="Sunset Iaccarini — Line up" loading="lazy"></div><div class="slide"><img src="img/imagen_48.jpeg" alt="Sunset Mayo — Save the Date 16.05" loading="lazy"></div><div class="slide"><img src="img/imagen_49.jpeg" alt="Sunset Mayo — Info entrada" loading="lazy"></div><div class="slide"><img src="img/imagen_50.jpeg" alt="Sunset Mayo — Line up Brenda Hetcer" loading="lazy"></div><div class="slide"><img src="img/imagen_51.jpeg" alt="Sunset Bianchi — Día del Amigo Save the Date" loading="lazy"></div><div class="slide"><img src="img/imagen_52.jpeg" alt="Sunset Bianchi — Line up Día del Amigo" loading="lazy"></div></div></div><div class="slider-nav"><button class="slider-btn" onclick="slideStep('bru',-1)">←</button><div class="slider-dots" id="dots-bru"><button class="slider-dot  active" onclick="slideTo('bru',0)"></button><button class="slider-dot" onclick="slideTo('bru',1)"></button><button class="slider-dot" onclick="slideTo('bru',2)"></button><button class="slider-dot" onclick="slideTo('bru',3)"></button><button class="slider-dot" onclick="slideTo('bru',4)"></button><button class="slider-dot" onclick="slideTo('bru',5)"></button><button class="slider-dot" onclick="slideTo('bru',6)"></button><button class="slider-dot" onclick="slideTo('bru',7)"></button><button class="slider-dot" onclick="slideTo('bru',8)"></button><button class="slider-dot" onclick="slideTo('bru',9)"></button><button class="slider-dot" onclick="slideTo('bru',10)"></button></div><span class="slider-count" id="count-bru">1 / 11</span><button class="slider-btn" onclick="slideStep('bru',1)">→</button></div>
+    </div>
+
+    <!-- CHAPA (current) -->
+   
+    <div id="panel-chapa" class="brand-panel reveal">
+      <div class="bp-header">
+        <div class="bp-name">Chapa Club</div>
+        <div class="bp-sub">Diseño para redes sociales · Entretenimiento · San Rafael, Mendoza · Actualidad</div>
+        <div class="bp-tags"><span class="bpt" style="background:var(--negro);color:var(--lime)">Cliente activo</span><span class="bpt" style="background:var(--rosa)">Entretenimiento</span><span class="bpt" style="background:var(--lila)">Eventos</span></div>
+      </div>
+      <div class="brand-slider" id="slider-cha" style="max-width:320px"><div class="slider-track" id="track-cha" style="transform:translateX(0%)"><div class="slide" style="aspect-ratio:9/16"><img src="img/imagen_53.jpeg" alt="Chapa — Sáb 02.05 Leo García + VLZ" loading="lazy"></div><div class="slide" style="aspect-ratio:9/16"><img src="img/imagen_54.jpeg" alt="Chapa — Sáb 30.05 Alexis Videla + Luca Gatto" loading="lazy"></div><div class="slide" style="aspect-ratio:9/16"><img src="img/imagen_55.jpeg" alt="Chapa — Sáb 09.05 Alexis Videla + Jorge Ayala" loading="lazy"></div><div class="slide" style="aspect-ratio:9/16"><img src="img/imagen_56.jpeg" alt="Chapa — Sáb 16.05 Leo García + Braulio" loading="lazy"></div><div class="slide" style="aspect-ratio:9/16"><img src="img/imagen_57.jpeg" alt="Chapa — Finde Carnaval XXL" loading="lazy"></div><div class="slide" style="aspect-ratio:9/16"><img src="img/imagen_58.jpeg" alt="Brutal Año Nuevo — Roman" loading="lazy"></div><div class="slide" style="aspect-ratio:9/16"><img src="img/imagen_59.jpeg" alt="Brutal Año Nuevo — Belico" loading="lazy"></div><div class="slide" style="aspect-ratio:9/16"><img src="img/imagen_60.jpeg" alt="Brutal Año Nuevo — Alex Videla" loading="lazy"></div><div class="slide" style="aspect-ratio:9/16"><img src="img/imagen_61.jpeg" alt="Chapa — Fiesta Navidad 25.12" loading="lazy"></div></div></div><div class="slider-nav" style="max-width:320px"><button class="slider-btn" onclick="slideStep('cha',-1)">←</button><div class="slider-dots" id="dots-cha"><button class="slider-dot  active" onclick="slideTo('cha',0)"></button><button class="slider-dot" onclick="slideTo('cha',1)"></button><button class="slider-dot" onclick="slideTo('cha',2)"></button><button class="slider-dot" onclick="slideTo('cha',3)"></button><button class="slider-dot" onclick="slideTo('cha',4)"></button><button class="slider-dot" onclick="slideTo('cha',5)"></button><button class="slider-dot" onclick="slideTo('cha',6)"></button><button class="slider-dot" onclick="slideTo('cha',7)"></button><button class="slider-dot" onclick="slideTo('cha',8)"></button></div><span class="slider-count" id="count-cha">1 / 9</span><button class="slider-btn" onclick="slideStep('cha',1)">→</button></div>
+    </div>
+
+    <!-- MARTA (current) -->
+    <div id="panel-marta" class="brand-panel reveal">
+      <div class="bp-header">
+        <div class="bp-name">Marta Bassols Coach</div>
+        <div class="bp-sub">Diseño para redes sociales · Coaching · Actualidad</div>
+        <div class="bp-tags"><span class="bpt" style="background:var(--negro);color:var(--lime)">Cliente activa</span><span class="bpt" style="background:var(--azul)">Coaching</span></div>
+      </div>
+      <div class="confidencial-wrap"><p class="conf-icon">🧠</p><p class="conf-title">Trabajo en curso — imágenes bajo solicitud</p><p class="conf-desc">Diseño de contenido visual para coach ejecutiva. Escribime para ver el portfolio.</p><a href="#contacto" class="btn-p" style="margin-top:1.4rem;display:inline-block">Contactar →</a></div>
+    </div>
+
+    <!-- CÁPSULAS (current) -->
+    <div id="panel-capsulas" class="brand-panel reveal">
+      <div class="bp-header">
+        <div class="bp-name">Cápsulas Aura</div>
+        <div class="bp-sub">Diseño para redes sociales · Salud &amp; Bienestar · Córdoba · Actualidad</div>
+        <div class="bp-tags"><span class="bpt" style="background:var(--negro);color:var(--lime)">Cliente activa</span><span class="bpt" style="background:var(--lila)">Salud &amp; Bienestar</span></div>
+      </div>
+      <div class="confidencial-wrap"><p class="conf-icon">✨</p><p class="conf-title">Trabajo en curso — imágenes bajo solicitud</p><p class="conf-desc">Diseño de contenido visual para marca de bienestar con base en Córdoba.</p><a href="#contacto" class="btn-p" style="margin-top:1.4rem;display:inline-block">Contactar →</a></div>
+    </div>
+
+    <!-- INPAR (current) -->
+    <div id="panel-inpar" class="brand-panel reveal">
+      <div class="bp-header">
+        <div class="bp-name">InPar Diseño de Interiores</div>
+        <div class="bp-sub">Diseño para redes sociales · Interiorismo · Actualidad</div>
+        <div class="bp-tags"><span class="bpt" style="background:var(--negro);color:var(--lime)">Cliente activa</span><span class="bpt" style="background:var(--azul)">Interiorismo</span></div>
+      </div>
+      <div class="confidencial-wrap"><p class="conf-icon">🏛️</p><p class="conf-title">Trabajo en curso — imágenes bajo solicitud</p><p class="conf-desc">Contenido visual para estudio de diseño de interiores. Escribime para ver el portfolio.</p><a href="#contacto" class="btn-p" style="margin-top:1.4rem;display:inline-block">Contactar →</a></div>
+    </div>
+
+    <!-- BERLÍN (CM only) -->
+    <div id="panel-berlin" class="brand-panel reveal">
+      <div class="bp-header">
+        <div class="bp-name">Berlín Bar</div>
+        <div class="bp-sub">Community Management · Gastronomía · Actualidad</div>
+        <div class="bp-tags"><span class="bpt" style="background:var(--negro);color:var(--lime)">Cliente activo</span><span class="bpt" style="background:var(--naranja);color:white">Solo CM</span><span class="bpt" style="background:var(--rosa)">Gastronomía</span></div>
+      </div>
+      <div class="cm-only"><div class="cm-only-icon">👥</div><div><h4>Community Management exclusivo</h4><p data-es="Para Berlín Bar me encargo del manejo de la comunidad en redes sociales: gestión de comentarios, DMs, atención y estrategia de interacción. El diseño visual lo realiza el equipo de la marca." data-en="For Berlín Bar I handle social media community management: comment management, DMs, community care and interaction strategy. Visual design is handled by the brand's team.">Para Berlín Bar me encargo del manejo de la comunidad en redes sociales: gestión de comentarios, DMs, atención y estrategia de interacción. El diseño visual lo realiza el equipo de la marca.</p></div></div>
+    </div>
+
+    <!-- AGENCIA LUCERO (CM only) -->
+    <div id="panel-lucero" class="brand-panel reveal">
+      <div class="bp-header">
+        <div class="bp-name">Agencia Lucero</div>
+        <div class="bp-sub">Community Management · Quiniela &amp; Loterías · Actualidad</div>
+        <div class="bp-tags"><span class="bpt" style="background:var(--negro);color:var(--lime)">Cliente activo</span><span class="bpt" style="background:var(--naranja);color:white">Solo CM</span><span class="bpt" style="background:var(--lime)">Agencia de Quiniela</span></div>
+      </div>
+      <div class="cm-only"><div class="cm-only-icon">🎰</div><div><h4>Community Management exclusivo</h4><p data-es="Para Agencia Lucero gestiono la comunidad en redes sociales: respuestas, interacciones, DMs y estrategia de engagement. El diseño visual es responsabilidad del equipo de la agencia." data-en="For Agencia Lucero I manage the social media community: responses, interactions, DMs and engagement strategy. Visual design is the agency's team's responsibility.">Para Agencia Lucero gestiono la comunidad en redes sociales: respuestas, interacciones, DMs y estrategia de engagement. El diseño visual es responsabilidad del equipo de la agencia.</p></div></div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+/* BRAND SLIDER */
+.brand-slider{position:relative;overflow:hidden;border-radius:18px;max-width:540px}
+.slider-track{display:flex;transition:transform 0.4s cubic-bezier(0.22,1,0.36,1)}
+.slide{min-width:100%;aspect-ratio:1/1;overflow:hidden;border-radius:18px}
+.slide img{width:100%;height:100%;object-fit:cover;display:block}
+.slider-nav{display:flex;align-items:center;justify-content:space-between;margin-top:0.85rem;gap:1rem}
+.slider-dots{display:flex;gap:6px;align-items:center}
+.slider-dot{width:7px;height:7px;border-radius:50%;background:rgba(0,0,0,0.15);transition:background 0.2s,width 0.2s;cursor:pointer;border:none;padding:0}
+.slider-dot.active{background:var(--negro);width:18px;border-radius:4px}
+.slider-btn{width:36px;height:36px;border-radius:50%;border:1.5px solid rgba(0,0,0,0.15);background:white;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:0.85rem;transition:all 0.2s;flex-shrink:0}
+.slider-btn:hover{background:var(--negro);color:var(--crema);border-color:var(--negro)}
+.slider-count{font-size:0.72rem;font-weight:600;opacity:0.35;letter-spacing:0.04em}
+.slides-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem}
+.brand-panel{display:none}
+.brand-panel.active{display:block;animation:fadeInUp 0.32s ease}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.bp-header{margin-bottom:1.4rem;padding-bottom:1rem;border-bottom:1px solid rgba(0,0,0,0.08)}
+.bp-name{font-family:'Fraunces',serif;font-weight:900;font-size:1.55rem;letter-spacing:-0.02em;margin-bottom:4px;color:var(--negro)}
+.bp-sub{font-size:0.74rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;opacity:0.38;margin-bottom:0.65rem}
+.bp-tags{display:flex;gap:0.35rem;flex-wrap:wrap}
+.bpt{font-size:0.7rem;font-weight:600;padding:3px 11px;border-radius:100px}
+.confidencial-wrap{background:var(--negro);border-radius:18px;padding:2.5rem;text-align:center}
+.conf-icon{font-size:2rem;margin-bottom:0.75rem}
+.conf-title{font-family:'Fraunces',serif;font-weight:700;font-size:1.05rem;color:var(--lime);margin-bottom:0.4rem}
+.conf-desc{font-size:0.84rem;font-weight:300;color:rgba(255,255,255,0.45);max-width:430px;margin:0 auto;line-height:1.75}
+.cm-only{background:var(--negro);border-radius:18px;padding:2rem;display:flex;align-items:flex-start;gap:1.5rem;flex-wrap:wrap}
+.cm-only-icon{font-size:2rem;flex-shrink:0;margin-top:0.2rem}
+.cm-only h4{font-family:'Fraunces',serif;font-weight:700;font-size:1rem;color:var(--lime);margin-bottom:0.45rem}
+.cm-only p{font-size:0.84rem;font-weight:300;color:rgba(255,255,255,0.48);line-height:1.8}
+@media(max-width:600px){.slides-grid{grid-template-columns:1fr}}
+</style>
+
+<!-- PROCESS -->
+<section class="process" id="proceso">
+  <div class="sl" data-es="Metodología" data-en="Methodology">Metodología</div>
+  <h2 class="sh2 reveal" data-es="Cómo trabajo" data-en="How I work">Cómo trabajo</h2>
+  <p class="reveal" style="font-size:0.95rem;font-weight:300;line-height:1.82;max-width:640px;margin-bottom:2.5rem;opacity:0.65" data-es="Un proceso claro, transparente y flexible. Adapto mi flujo de trabajo según la naturaleza de tu proyecto, combinando criterio estratégico y herramientas avanzadas de IA para optimizar cada etapa." data-en="A clear, transparent and flexible process. I adapt my workflow to the nature of your project, combining strategic judgment and advanced AI tools to optimize each stage.">Un proceso claro, transparente y flexible. Adapto mi flujo de trabajo según la naturaleza de tu proyecto, combinando criterio estratégico y herramientas avanzadas de IA para optimizar cada etapa.</p>
+
+  <div class="reveal" style="margin-bottom:2rem;display:flex;gap:0.5rem">
+    <button class="proc-tab active" id="tab-ux" onclick="setProc('ux')">💻 Web &amp; UX/UI</button>
+    <button class="proc-tab" id="tab-sm" onclick="setProc('sm')">📱 Social Media</button>
+  </div>
+
+  <!-- UX/UI Steps -->
+  <div class="psteps psteps-ux reveal">
+    <div class="pstep">
+      <div class="dot"></div><div class="num">01</div>
+      <h4>Diagnóstico y briefing</h4>
+      <p>Analizo a fondo el contexto de la marca, sus objetivos y su audiencia antes de trazar la primera línea.</p>
+      <p class="pstep-detail">Mapeamos los objetivos del negocio y las necesidades reales del usuario. Definimos el alcance, entregables y tiempos del proyecto.</p>
+    </div>
+    <div class="pstep">
+      <div class="dot"></div><div class="num">02</div>
+      <h4>Investigación y arquitectura</h4>
+      <p>Estructuramos la arquitectura de la información, el mapa del sitio y el moodboard estético.</p>
+      <p class="pstep-detail">Integro IA para acelerar el benchmarking, detectar tendencias y expandir las posibilidades creativas. Presentamos wireframes de baja fidelidad para validar la estructura.</p>
+    </div>
+    <div class="pstep">
+      <div class="dot"></div><div class="num">03</div>
+      <h4>Diseño y co-creación</h4>
+      <p>Diseñamos las pantallas e interfaces paso a paso mediante rondas de revisión estructuradas.</p>
+      <p class="pstep-detail">Prototipado interactivo en Figma. Cada revisión es documentada. No avanzamos a la siguiente etapa sin tu validación explícita.</p>
+    </div>
+    <div class="pstep">
+      <div class="dot"></div><div class="num">04</div>
+      <h4>Entrega y handoff</h4>
+      <p>Tu proyecto queda listo para desarrollo: archivos organizados, componentes limpios y guías de aplicación.</p>
+      <p class="pstep-detail">Entrego un sistema escalable con tokens de diseño, especificaciones para desarrollo y documentación de uso para que funcione de forma autónoma.</p>
+    </div>
+  </div>
+
+  <!-- Social Media Steps -->
+  <div class="psteps psteps-sm reveal" style="display:none">
+    <div class="pstep">
+      <div class="dot"></div><div class="num">01</div>
+      <h4>Diagnóstico y briefing</h4>
+      <p>Realizamos una auditoría completa de tus canales actuales y definimos la identidad y tono de la conversación.</p>
+      <p class="pstep-detail">Analizamos tu competencia, público objetivo y posicionamiento actual. Identificamos qué está funcionando y qué necesita transformarse.</p>
+    </div>
+    <div class="pstep">
+      <div class="dot"></div><div class="num">02</div>
+      <h4>Estrategia y dirección visual</h4>
+      <p>Definimos los pilares de contenido conceptuales y la estrategia de comunicación visual.</p>
+      <p class="pstep-detail">Creo un moodboard visual de la marca, paleta de colores editorial, tipografías y reglas de composición que guiarán todas las piezas. Uso IA para predecir tendencias de contenido.</p>
+    </div>
+    <div class="pstep">
+      <div class="dot"></div><div class="num">03</div>
+      <h4>Producción y calendario</h4>
+      <p>Co-creamos el calendario de contenido estratégico. Tras tu validación, paso al diseño y producción final de las piezas.</p>
+      <p class="pstep-detail">Diseño las piezas gráficas (posts, stories, reels, carousels) en Canva Pro / Photoshop / Illustrator. Entrego en los formatos y medidas correctas para cada plataforma.</p>
+    </div>
+    <div class="pstep">
+      <div class="dot"></div><div class="num">04</div>
+      <h4>Publicación y optimización</h4>
+      <p>Tras la publicación, revisamos métricas de rendimiento y optimizamos la estrategia de forma continua.</p>
+      <p class="pstep-detail">Análisis mensual de métricas (alcance, engagement, crecimiento). Ajustamos pilares de contenido, horarios y formatos basándonos en datos reales para mejorar resultados.</p>
+    </div>
+  </div>
+
+</section>
+
+<!-- SPOTIFY -->
+<section class="spo">
+  <div class="reveal" style="flex:1">
+    <h3 data-es="Lo que suena mientras diseño" data-en="What plays while I design">Lo que suena mientras diseño</h3>
+    <p data-es="La música que elijo mientras trabajo dice algo de cómo pienso y cómo creo." data-en="The music I choose while working says something about how I think and create.">La música que elijo mientras trabajo dice algo de cómo pienso y cómo creo.</p>
+    <a href="https://open.spotify.com/playlist/1nIJr2IOVqm5TQhsgw4Z3Z?si=2159891240a74387" target="_blank" class="spo-btn">
+      <svg viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+      <span data-es="Escuchar playlist" data-en="Listen to playlist">Escuchar playlist</span>
+    </a>
+  </div>
+  <div class="bars" aria-hidden="true"><div class="bar" style="height:60%"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div></div>
+</section>
+
+<!-- CV -->
+<section class="cv-sec" id="curriculum">
+  <div class="reveal" style="margin-bottom:3rem">
+    <div class="sl" data-es="Currículum" data-en="Résumé">Currículum</div>
+    <h2 class="sh2"><span data-es="Trayectoria &" data-en="Experience &">Trayectoria &</span> <em style="color:var(--naranja);font-style:normal"> <span data-es="formación" data-en="education">formación</span></em></h2>
+  </div>
+  <div class="puzzles reveal">
+    <div>
+      <div class="pu-label">✦ Experiencia internacional activa</div>
+      <div class="pu-role">Social Media Specialist & UX/UI Designer</div>
+      <div class="pu-co">Puzzles Consulting — Estados Unidos</div>
+      <p class="pu-desc">Gestión de redes sociales y diseño UX/UI para empresa de consultoría internacional. 7 clientes activos, estrategia de contenido en inglés y producción visual para audiencias de EE.UU.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px;flex-shrink:0">
+      <span class="pu-badge">Dic 2024 — Actualidad</span>
+      <div class="pu-remote">🌎 Remote · International</div>
+    </div>
+  </div>
+  <div class="cv-grid reveal">
+    <div>
+      <h3 class="cvh" data-es="Formación Académica" data-en="Academic Education">Formación Académica</h3>
+      <div class="tl2">
+        <div class="tl2i"><div class="tl2d" style="background:rgba(0,0,0,0.15)"></div><div>
+          <div class="tl2y">2006 — 2018</div>
+          <div class="tl2r">Bachiller Contable</div>
+          <div class="tl2s">Colegio San Rafael Hermanos Maristas · San Rafael, Mendoza</div>
+        </div></div>
+        <div class="tl2i"><div class="tl2d" style="background:var(--lime)"></div><div>
+          <div class="tl2y">2016</div>
+          <div class="tl2r">Inglés Intensivo — Nivel B2</div>
+          <div class="tl2s">Moyle Park College · Dublín, Irlanda</div>
+        </div></div>
+        <div class="tl2i"><div class="tl2d" style="background:var(--lila)"></div><div>
+          <div class="tl2y">2019 — 2022 · Finalizada</div>
+          <div class="tl2r">Diseño Gráfico</div>
+          <div class="tl2s">Universidad de Mendoza · Fac. Arquitectura, Urbanismo y Diseño</div>
+        </div></div>
+        <div class="tl2i"><div class="tl2d" style="background:var(--lila)"></div><div>
+          <div class="tl2y">Durante carrera</div>
+          <div class="tl2r">Ayudantía de Cátedra — Pre-universitario Diseño</div>
+          <div class="tl2s">Universidad de Mendoza · Fac. Arquitectura, Urbanismo y Diseño</div>
+        </div></div>
+        <div class="tl2i"><div class="tl2d" style="background:var(--lila)"></div><div>
+          <div class="tl2y">Durante carrera</div>
+          <div class="tl2r">Participación en EDA</div>
+          <div class="tl2s">Encuentro de Diseñadores y Arquitectos · Universidad de Mendoza</div>
+        </div></div>
+      </div>
+      <h3 class="cvh" style="margin-top:2.5rem" data-es="Formación Profesional" data-en="Professional Training">Formación Profesional</h3>
+      <div class="tl2">
+        <div class="tl2i"><div class="tl2d" style="background:var(--lime)"></div><div>
+          <div class="tl2y">2019</div>
+          <div class="tl2r">Start Up Weekend — Emprendedores</div>
+          <div class="tl2s">Mendoza, Argentina</div>
+        </div></div>
+        <div class="tl2i"><div class="tl2d" style="background:var(--azul)"></div><div>
+          <div class="tl2y">2024 — En curso</div>
+          <div class="tl2r">Certificado Profesional de Diseño UX — Google</div>
+          <div class="tl2s">Google Career Certificates · Plataforma online</div>
+        </div></div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:2.5rem">
+
+      <div>
+        <h3 class="cvh" data-es="Software & herramientas" data-en="Software & tools">Software & herramientas</h3>
+        <div class="sk-bars">
+          <div style="font-size:0.67rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;opacity:0.35;margin-bottom:0.4rem">Adobe Suite</div>
+          <div class="sk-row"><span class="sk-name">Photoshop</span><div class="sk-track"><div class="sk-fill" style="width:99%;background:var(--naranja)"></div></div></div>
+          <div class="sk-row"><span class="sk-name">Illustrator</span><div class="sk-track"><div class="sk-fill" style="width:98%;background:var(--naranja)"></div></div></div>
+          <div class="sk-row"><span class="sk-name">InDesign</span><div class="sk-track"><div class="sk-fill" style="width:96%;background:var(--naranja)"></div></div></div>
+          <div class="sk-row"><span class="sk-name">Corel Draw</span><div class="sk-track"><div class="sk-fill" style="width:93%;background:var(--naranja)"></div></div></div>
+          <div style="font-size:0.67rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;opacity:0.35;margin:0.7rem 0 0.4rem">Diseño & Producción</div>
+          <div class="sk-row"><span class="sk-name">Figma</span><div class="sk-track"><div class="sk-fill" style="width:96%;background:var(--lila)"></div></div></div>
+          <div class="sk-row"><span class="sk-name">Canva Pro</span><div class="sk-track"><div class="sk-fill" style="width:99%;background:var(--lila)"></div></div></div>
+          <div style="font-size:0.67rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;opacity:0.35;margin:0.7rem 0 0.4rem">Social Media & Meta</div>
+          <div class="sk-row"><span class="sk-name">Meta Business Suite</span><div class="sk-track"><div class="sk-fill" style="width:98%;background:var(--lime)"></div></div></div>
+          <div class="sk-row"><span class="sk-name">Ads Manager</span><div class="sk-track"><div class="sk-fill" style="width:92%;background:var(--lime)"></div></div></div>
+          <div class="sk-row"><span class="sk-name">Instagram / TikTok</span><div class="sk-track"><div class="sk-fill" style="width:98%;background:var(--lime)"></div></div></div>
+          <div style="font-size:0.67rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;opacity:0.35;margin:0.7rem 0 0.4rem">Inteligencia Artificial</div>
+          <div class="sk-row"><span class="sk-name">Claude AI</span><div class="sk-track"><div class="sk-fill" style="width:97%;background:var(--azul)"></div></div></div>
+          <div class="sk-row"><span class="sk-name">Gemini</span><div class="sk-track"><div class="sk-fill" style="width:93%;background:var(--azul)"></div></div></div>
+          <div class="sk-row"><span class="sk-name">IA Generativa (imagen)</span><div class="sk-track"><div class="sk-fill" style="width:88%;background:var(--azul)"></div></div></div></div>
+        <div style="margin-top:1.3rem;padding-top:1.3rem;border-top:1px solid rgba(0,0,0,0.07)">
+          <div style="font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;opacity:0.4;margin-bottom:0.65rem">Idiomas</div>
+          <div class="lng-pills"><span class="lp" style="background:var(--negro);color:var(--crema)">Español — Nativo</span><span class="lp" style="background:var(--lila)">Inglés — B2 Intermedio</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contacto">
+  <div class="reveal">
+    <div class="sl" data-es="Contacto" data-en="Contact">Contacto</div>
+    <h2><span data-es="¿Empezamos" data-en="Ready to">¿Empezamos</span><br><em data-es="algo juntos?" data-en="start something?">algo juntos?</em></h2>
+    <p data-es="Disponible para nuevos proyectos, colaboraciones y desafíos creativos. Respondo en menos de 24 horas." data-en="Available for new projects, collaborations and creative challenges. I respond within 24 hours.">Disponible para nuevos proyectos, colaboraciones y desafíos creativos. Respondo en menos de 24 horas.</p>
+    <div class="clinks">
+      <a href="mailto:lu.sofia.romero@gmail.com" class="clink"><div class="cico" style="background:var(--lime)">✉️</div>lu.sofia.romero@gmail.com</a>
+      <a href="https://wa.me/5492604331673" target="_blank" class="clink"><div class="cico" style="background:var(--lime)">📱</div>+549 2604 331673</a>
+      <a href="https://linkedin.com/in/lucianaromero" target="_blank" class="clink"><div class="cico" style="background:var(--azul)">💼</div>linkedin.com/in/lucianaromero</a>
+    </div>
+  </div>
+  <div class="cf reveal">
+    <h3 data-es="Contame tu proyecto" data-en="Tell me about your project">Contame tu proyecto</h3>
+    <div class="fg"><label data-es="Nombre" data-en="Name">Nombre</label><input type="text" placeholder="¿Cómo te llamo?"></div>
+    <div class="fg"><label>Email</label><input type="email" placeholder="tu@email.com"></div>
+    <div class="fg"><label data-es="¿En qué puedo ayudarte?" data-en="How can I help?">¿En qué puedo ayudarte?</label><textarea rows="4" placeholder="Contame tu proyecto..."></textarea></div>
+    <button class="bs" data-es="Enviar mensaje →" data-en="Send message →">Enviar mensaje →</button>
+  </div>
+</section>
+
+<footer>
+  <p data-es="© 2025 Luciana Romero — Diseñadora Gráfica & Social Media Specialist · Mendoza, Argentina" data-en="© 2025 Luciana Romero — Graphic Designer & Social Media Specialist · Mendoza, Argentina">© 2025 Luciana Romero — Diseñadora Gráfica & Social Media Specialist · Mendoza, Argentina</p>
+  <a href="#" class="fback" data-es="Volver arriba ↑" data-en="Back to top ↑">Volver arriba ↑</a>
+</footer>
+
+<script>
+// Cursor
+const cursor=document.getElementById('cursor'),follower=document.getElementById('follower');
+let mx=0,my=0,fx=0,fy=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY});
+(function loop(){cursor.style.left=mx+'px';cursor.style.top=my+'px';fx+=(mx-fx)*0.12;fy+=(my-fy)*0.12;follower.style.left=fx+'px';follower.style.top=fy+'px';requestAnimationFrame(loop)})();
+document.querySelectorAll('a,button,.gi,.svc,.vc,.pill').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{cursor.style.transform='translate(-50%,-50%) scale(2.5)';follower.style.borderColor='var(--naranja)'});
+  el.addEventListener('mouseleave',()=>{cursor.style.transform='translate(-50%,-50%) scale(1)';follower.style.borderColor='var(--negro)'});
+});
+
+// Scroll reveal
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.07});
+document.querySelectorAll('.reveal').forEach(r=>obs.observe(r));
+
+// ============ BRAND GALLERY ============
+function showBrand(id) {
+  document.querySelectorAll('.brand-panel').forEach(p=>{p.style.display='none';p.classList.remove('active')});
+  const panel=document.getElementById('panel-'+id);
+  if(panel){panel.style.display='block';panel.classList.add('active');}
+  document.querySelectorAll('.bpill').forEach(btn=>{
+    const oc=btn.getAttribute('onclick')||'';
+    btn.classList.toggle('active', oc.includes("'"+id+"'"));
+  });
+}
+
+// ============ SLIDER ============
+const _sliders={};
+function initSlider(id,total){_sliders[id]={cur:0,total};}
+function slideTo(id,idx){
+  const s=_sliders[id]; if(!s)return;
+  s.cur=Math.max(0,Math.min(idx,s.total-1));
+  const track=document.getElementById('track-'+id);
+  const count=document.getElementById('count-'+id);
+  const dots=document.getElementById('dots-'+id);
+  if(track)track.style.transform='translateX(-'+s.cur*100+'%)';
+  if(count)count.textContent=(s.cur+1)+' / '+s.total;
+  if(dots)dots.querySelectorAll('.slider-dot').forEach((d,i)=>d.classList.toggle('active',i===s.cur));
+}
+function slideStep(id,dir){const s=_sliders[id];if(s)slideTo(id,s.cur+dir);}
+// Init sliders on load
+document.addEventListener('DOMContentLoaded',function(){
+  initSlider('ant',6);
+  initSlider('bon',7);
+  initSlider('pin',6);
+  initSlider('sue',10);
+  initSlider('kyr',4);
+  initSlider('mer',7);
+  initSlider('bru',11);
+  initSlider('cha',9);
+  // Init brand panels: show first one
+  showBrand('antidoto');
+});
+
+// ============ PROCESS TABS ============
+function setProc(mode){
+  // Toggle tab buttons
+  document.getElementById('tab-ux').classList.toggle('active', mode==='ux');
+  document.getElementById('tab-sm').classList.toggle('active', mode==='sm');
+  // Toggle psteps: hide all, show correct mode
+  document.querySelectorAll('.psteps-ux').forEach(el=>el.style.display= mode==='ux'?'grid':'none');
+  document.querySelectorAll('.psteps-sm').forEach(el=>el.style.display= mode==='sm'?'grid':'none');
+}
+// Init on load
+document.addEventListener('DOMContentLoaded',function(){
+  if(document.getElementById('tab-ux'))setProc('ux');
+});
+
+// Language
+let lang='es';
+function setLang(l){
+  lang=l;
+  document.getElementById('btn-es').classList.toggle('active',l==='es');
+  document.getElementById('btn-en').classList.toggle('active',l==='en');
+  document.querySelectorAll('[data-es][data-en]').forEach(el=>{const v=el.getAttribute('data-'+l);if(v)el.textContent=v});
+  document.documentElement.lang=l;
+}
+
+// Spotify
+const spoBtn=document.getElementById('spo-btn');if(spoBtn)spoBtn.addEventListener('click',function(e){e.preventDefault();window.open('https://open.spotify.com/playlist/1nIJr2IOVqm5TQhsgw4Z3Z?si=2159891240a74387','_blank');});
+
+// Form
+const bsBtn=document.querySelector('.bs');if(bsBtn)bsBtn.addEventListener('click',function(){
+  const m=lang==='es'?'✦ ¡Mensaje enviado!':'✦ Message sent!';
+  this.textContent=m;this.style.background='#1DB954';
+  setTimeout(()=>{this.textContent=lang==='es'?'Enviar mensaje →':'Send message →';this.style.background='var(--negro)'},2500);
+});
+</script>
+</body>
+</html// Slider state
+const sliderState = {};
+
+function initSlider(id, total) {
+  sliderState[id] = { current: 0, total };
+}
+
+function slideTo(id, idx) {
+  const s = sliderState[id];
+  if (!s) return;
+  s.current = Math.max(0, Math.min(idx, s.total - 1));
+  const track = document.getElementById('track-' + id);
+  const countEl = document.getElementById('count-' + id);
+  const dotsEl = document.getElementById('dots-' + id);
+  if (track) track.style.transform = `translateX(-${s.current * 100}%)`;
+  if (countEl) countEl.textContent = (s.current + 1) + ' / ' + s.total;
+  if (dotsEl) {
+    dotsEl.querySelectorAll('.slider-dot').forEach((d, i) => d.classList.toggle('active', i === s.current));
+  }
+}
+
+function slideStep(id, dir) {
+  const s = sliderState[id];
+  if (!s) return;
+  slideTo(id, s.current + dir);
+}
+
+function showBrand(id) {
+  document.querySelectorAll('.brand-panel').forEach(p => {
+    p.style.display = 'none';
+    p.classList.remove('active');
+  });
+  const panel = document.getElementById('panel-' + id);
+  if (panel) { panel.style.display = 'block'; panel.classList.add('active'); }
+  document.querySelectorAll('.bpill').forEach(btn => {
+    const oc = btn.getAttribute('onclick') || '';
+    const isActive = oc.includes("'" + id + "'");
+    btn.classList.toggle('active', isActive);
+  });
+}
+
+>
