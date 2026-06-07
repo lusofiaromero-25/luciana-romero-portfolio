@@ -1,0 +1,1475 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Luciana Romero — Graphic Designer & Social Media Specialist. UX/UI, Branding, Social Media Strategy. 4+ years. Remote.">
+<meta name="keywords" content="diseñadora grafica, social media specialist, community manager, UX UI designer, Mendoza Argentina, remote work, inteligencia artificial diseño">
+<title>Luciana Romero — Diseñadora Gráfica & Social Media</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,700;9..144,900&family=Playfair+Display:ital,wght@0,900;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--lime:#E9F056;--lila:#D7EFFF;--naranja:#FF5C34;--negro:#351E28;--crema:#FAF9F6;--blanco:#FFFFFF;--rosa:#D7EFFF;--azul:#AEB8A0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;font-weight:300;background:var(--crema);color:var(--negro);overflow-x:hidden;cursor:none;-webkit-font-smoothing:antialiased}
+.cursor{width:12px;height:12px;background:var(--naranja);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9999;transition:transform 0.15s;transform:translate(-50%,-50%)}
+.cursor-f{width:36px;height:36px;border:1.5px solid var(--negro);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9998;transition:transform 0.35s,border-color 0.2s;transform:translate(-50%,-50%)}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.1rem 2.5rem;display:flex;align-items:center;justify-content:space-between;background:transparent;border-bottom:none;transition:background 0.3s,backdrop-filter 0.3s,border-color 0.3s}
+nav.scrolled{background:rgba(250,249,246,0.88);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid rgba(0,0,0,0.06)}
+nav.scrolled .nav-links a{color:rgba(0,0,0,0.9)}
+.nav-logo{display:none}
+.nav-links{display:flex;gap:1.8rem;list-style:none}
+.nav-links a{font-size:0.78rem;font-weight:500;color:rgba(0,0,0,0.9);text-decoration:none;letter-spacing:0.07em;text-transform:uppercase;transition:opacity 0.2s}
+.nav-links a:hover{opacity:0.5}
+.lang-toggle{display:flex;background:rgba(255,255,255,0.15);border-radius:100px;padding:4px;gap:2px;backdrop-filter:blur(8px)}
+.lang-btn{font-size:0.7rem;font-weight:700;letter-spacing:0.07em;padding:5px 11px;border-radius:100px;border:none;cursor:none;background:transparent;color:rgba(255,255,255,0.6);transition:background 0.2s,color 0.2s}
+.lang-btn.active{background:var(--naranja);color:var(--blanco)}
+nav.scrolled .lang-toggle{background:rgba(0,0,0,0.08)}
+nav.scrolled .lang-btn{color:rgba(0,0,0,0.45)}
+nav.scrolled .lang-btn.active{background:var(--naranja);color:var(--blanco)}
+
+/* HERO — full bleed foto + tipografía superpuesta */
+.hero{
+  min-height:100vh;
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  align-items:flex-end;
+  padding:0;
+}
+
+/* Foto ocupa todo el hero como fondo */
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 10%;display:block}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(245,240,232,0.06) 0%,rgba(17,17,17,0.0) 25%,rgba(17,17,17,0.4) 65%,rgba(17,17,17,0.68) 100%)}
+
+/* Texto superpuesto */
+.hero-overlay{position:relative;z-index:2;width:100%;padding:0 2.5rem 3.5rem 2.5rem}
+
+/* Título mixto serif bold + italic */
+h1{font-family:'Playfair Display',serif;font-size:clamp(3.8rem,8.5vw,9rem);line-height:0.88;letter-spacing:-0.05em;margin:0 0 1.4rem 0;color:var(--blanco);white-space:nowrap}
+h1 .h1-italic{font-weight:400;font-style:italic;color:var(--blanco);display:block}
+h1 .h1-bold{font-weight:900;font-style:normal;color:var(--blanco);display:block}
+
+/* Subtítulos */
+.hero-subs{display:flex;align-items:center;gap:1.2rem;flex-wrap:wrap;margin-bottom:1.8rem}
+.hero-sub{font-size:clamp(0.78rem,1.4vw,0.95rem);font-weight:300;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.75)}
+.hero-sub-dot{width:4px;height:4px;border-radius:50%;background:var(--lime);flex-shrink:0}
+
+/* Eyebrow tag arriba izquierda */
+.hero-eyebrow{position:absolute;top:7rem;left:2.5rem;z-index:3;display:inline-flex;align-items:center;gap:8px;background:var(--negro);color:var(--lime);font-size:0.68rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:6px 16px;border-radius:100px}
+.hero-eyebrow span.dot{width:6px;height:6px;background:var(--lime);border-radius:50%;flex-shrink:0;animation:blink 1.5s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
+
+/* Badge remoto abajo derecha */
+.hero-badge{position:absolute;bottom:3.5rem;right:2.5rem;z-index:3;background:transparent;padding:0}
+.hero-badge strong{font-weight:600;display:block;font-size:0.82rem;color:var(--blanco);letter-spacing:0.04em}
+.hero-badge p{display:none}
+
+.btn-p{background:var(--negro);color:var(--lime);font-family:'DM Sans',sans-serif;font-weight:500;font-size:0.87rem;padding:13px 26px;border-radius:100px;text-decoration:none;border:none;cursor:none;transition:transform 0.2s,background 0.2s}
+.btn-p:hover{transform:scale(1.04);background:var(--naranja);color:var(--blanco)}
+.btn-o{background:transparent;color:var(--blanco);font-family:'DM Sans',sans-serif;font-weight:500;font-size:0.87rem;padding:13px 26px;border-radius:100px;border:1.5px solid rgba(255,255,255,0.5);text-decoration:none;cursor:none;transition:transform 0.2s,background 0.2s}
+.btn-o:hover{transform:scale(1.04);background:var(--lila);border-color:var(--lila);color:var(--negro)}
+.hero-ctas{display:flex;gap:0.75rem;flex-wrap:wrap;align-items:center}
+
+@media(max-width:1000px){
+  .hero-overlay{padding:0 1.5rem 3rem 1.5rem}
+  .hero-eyebrow{left:1.5rem}
+  .hero-badge{right:1.5rem;bottom:3rem}
+  h1{font-size:clamp(3rem,10vw,6rem)}
+}
+@media(max-width:600px){
+  h1{font-size:clamp(2.6rem,13vw,4.5rem)}
+  .hero-badge{position:static;margin-top:1.5rem;max-width:100%}
+}
+
+/* MARQUEE */
+.mwrap{background:transparent;padding:0.85rem 0;overflow:hidden;white-space:nowrap}
+.mi{display:inline-flex;animation:mq 45s linear infinite}
+.mi span{font-family:'Playfair Display',serif;font-weight:300;font-size:0.95rem;color:var(--negro);letter-spacing:0.04em;padding:0 1rem;text-transform:uppercase}
+.mi .ac{color:var(--lime)}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* COMMONS */
+.sl{font-size:0.7rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--naranja);margin-bottom:1rem;display:flex;align-items:center;gap:8px}
+.sl::before{content:'';display:block;width:20px;height:1.5px;background:var(--naranja)}
+.sh2{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(1.9rem,3.5vw,3rem);line-height:1.05;letter-spacing:-0.025em;margin-bottom:1.5rem}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.65s ease,transform 0.65s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+section{padding:6rem 2.5rem}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ABOUT */
+.about{background:var(--crema);display:grid;grid-template-columns:1.6fr 0.7fr;gap:5rem;align-items:center;padding-left:5rem;padding-right:5rem}
+.about p{font-size:0.955rem;font-weight:300;line-height:1.88;opacity:0.73;margin-bottom:1.1rem}
+.about-img-wrap{width:100%;border-radius:24px;overflow:hidden;aspect-ratio:3/4}
+.about-img-wrap img{width:100%;height:100%;object-fit:cover;object-position:center top}
+@media(max-width:1000px){
+  .about{grid-template-columns:1fr;gap:2.5rem;padding-left:1.5rem;padding-right:1.5rem}
+  .about-img-wrap{aspect-ratio:3/2}
+}
+
+/* EXPERIENCE */
+.exp{background:var(--crema);color:var(--negro)}
+.tl{position:relative;display:flex;flex-direction:column;gap:0}
+/* Línea central */
+.tl::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:1.5px;background:rgba(0,0,0,0.1);transform:translateX(-50%)}
+/* Cada item: dos columnas, el contenido alterna de lado */
+.tli{display:grid;grid-template-columns:1fr 1fr;width:100%;margin-bottom:3.5rem;position:relative}
+.tli:last-child{margin-bottom:0}
+/* Contenido del item */
+.tli-content{padding:0 3rem}
+/* Impares — contenido en columna izquierda */
+.tli:nth-child(odd) .tli-content{grid-column:1;text-align:right}
+.tli:nth-child(odd) .tlts{justify-content:flex-end;margin-left:auto}
+.tli:nth-child(odd) .tldesc{margin-left:auto;text-align:right}
+.tli:nth-child(odd) .tli-spacer{grid-column:2}
+/* Pares — contenido en columna derecha */
+.tli:nth-child(even) .tli-spacer{grid-column:1}
+.tli:nth-child(even) .tli-content{grid-column:2;text-align:left}
+.tli:nth-child(even) .tlts{justify-content:flex-start;margin-right:auto}
+.tli:nth-child(even) .tldesc{margin-right:auto;text-align:left}
+/* Dot centrado en la línea */
+.tld{position:absolute;left:50%;top:6px;width:14px;height:14px;border-radius:50%;background:var(--negro);border:2.5px solid var(--crema);transform:translateX(-50%);z-index:2}
+.tly{font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--naranja);margin-bottom:4px}
+.tlr{font-family:'Fraunces',serif;font-weight:700;font-size:1.15rem;margin-bottom:3px;color:var(--negro)}
+.tlc{font-size:0.85rem;color:rgba(0,0,0,0.4);margin-bottom:0.8rem}
+.tldesc{font-size:0.85rem;font-weight:300;line-height:1.78;color:rgba(0,0,0,0.6);max-width:380px}
+.tlts{display:flex;flex-wrap:wrap;gap:0.35rem;margin-top:0.8rem;max-width:380px}
+.tlt{font-size:0.68rem;padding:3px 10px;border-radius:100px;border:1px solid rgba(0,0,0,0.15);color:rgba(0,0,0,0.45)}
+.tlt.hl{background:var(--negro);color:var(--lime);border-color:var(--negro);font-weight:700}
+.tlt.hl2{background:var(--lila);color:var(--negro);border-color:var(--lila);font-weight:600}
+@media(max-width:768px){
+  .tl::before{left:16px}
+  .tli{grid-template-columns:1fr;margin-bottom:2.5rem}
+  .tli-spacer{display:none}
+  .tli:nth-child(odd) .tli-content,.tli:nth-child(even) .tli-content{grid-column:1;text-align:left;padding-left:2.5rem;padding-right:0}
+  .tli:nth-child(odd) .tlts,.tli:nth-child(even) .tlts{justify-content:flex-start}
+  .tli:nth-child(odd) .tldesc,.tli:nth-child(even) .tldesc{margin-left:0}
+  .tld{left:9px;transform:none}
+}
+
+/* SERVICES — card slider */
+/* SERVICES — static grid */
+.svc-section{background:var(--crema);padding-left:5rem;padding-right:5rem}
+.svc-nav-btn{width:42px;height:42px;border-radius:50%;border:1.5px solid rgba(0,0,0,0.15);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1rem;transition:all 0.2s;color:var(--negro);flex-shrink:0}
+.svc-nav-btn:hover{background:var(--negro);color:var(--crema);border-color:var(--negro)}
+.svc-nav-btn:disabled{opacity:0.3;pointer-events:none}
+.svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:3rem}
+.svc-card-static{background:var(--blanco);border-radius:20px;padding:1.8rem 1.6rem;position:relative;border:1px solid rgba(0,0,0,0.07);display:flex;flex-direction:column;gap:0.8rem}
+.svc-num{font-family:'DM Sans',sans-serif;font-weight:300;font-size:0.72rem;letter-spacing:0.1em;color:var(--naranja);opacity:0.7}
+.svc-card-static h3{font-family:'Fraunces',serif;font-weight:700;font-size:1rem;color:var(--negro);margin:0}
+.svc-card-p{font-size:0.83rem;font-weight:300;line-height:1.72;color:rgba(0,0,0,0.55);margin:0}
+.svc-static-arrow{position:absolute;top:1.2rem;right:1.2rem;font-size:1rem;text-decoration:none;color:var(--negro);transition:color 0.2s,transform 0.2s;background:none;border:none;cursor:pointer}
+.svc-static-arrow:hover{color:var(--naranja);transform:scale(1.2)}
+@media(max-width:1000px){.svc-section{padding-left:1.5rem;padding-right:1.5rem}.svc-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.svc-grid{grid-template-columns:1fr}}
+
+/* COMO DISEÑO — ACCORDION */
+.work-section{background:var(--crema);text-align:center}
+.work-intro{font-size:0.95rem;font-weight:300;line-height:1.8;opacity:0.65;max-width:580px;margin-bottom:2.5rem}
+.brand-pills{display:flex;flex-wrap:wrap;gap:0.6rem;margin-bottom:2.5rem}
+.bpill{font-size:0.82rem;font-weight:600;padding:9px 20px;border-radius:100px;border:1.5px solid rgba(0,0,0,0.18);background:transparent;cursor:pointer;transition:background 0.22s,color 0.22s,border-color 0.22s;font-family:'DM Sans',sans-serif;color:var(--negro)}
+.bpill:hover{border-color:var(--negro);background:var(--negro);color:var(--crema)}
+.bpill.active{background:var(--negro);color:var(--crema);border-color:var(--negro)}
+.bpill.current{background:var(--lime);color:var(--negro);border-color:var(--lime)}
+.bpill.current.active{background:var(--negro);color:var(--lime);border-color:var(--negro)}
+.proc-tab{font-family:'DM Sans',sans-serif;font-size:0.83rem;font-weight:600;padding:9px 22px;border-radius:100px;border:1.5px solid rgba(0,0,0,0.18);background:transparent;cursor:pointer;transition:background 0.22s,color 0.22s,border-color 0.22s;color:var(--negro)}
+.proc-tab:hover{border-color:var(--negro)}
+.proc-tab.active{background:var(--negro);color:var(--crema);border-color:var(--negro)}
+.pstep-detail{margin-top:0.6rem;font-size:0.78rem;font-weight:400;color:rgba(0,0,0,0.5);line-height:1.72;padding-left:0}
+.brand-pill{font-size:0.82rem;font-weight:700;padding:9px 20px;border-radius:100px;border:1.5px solid var(--negro);cursor:none;transition:background 0.2s,color 0.2s,border-color 0.2s;background:transparent;font-family:'DM Sans',sans-serif}
+.brand-pill:hover,.brand-pill.active{background:var(--negro);color:var(--crema);border-color:var(--negro)}
+.brand-pill.active{background:var(--naranja);border-color:var(--naranja)}
+/* WEB MOCKUP SLIDER */
+.web-slider-wrap{overflow:hidden;margin-top:3rem}
+.web-slider-track{display:flex;gap:2rem;transition:transform 0.45s cubic-bezier(0.22,1,0.36,1)}
+.web-card{width:460px;min-width:460px;flex-shrink:0;background:var(--blanco);border-radius:20px;overflow:hidden;border:1px solid rgba(0,0,0,0.07)}
+.web-card.email-card .web-screen{height:380px}
+.web-card-header{padding:1.2rem 1.4rem 1rem;display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;border-bottom:1px solid rgba(0,0,0,0.06)}
+.web-card-name{font-family:'Fraunces',serif;font-weight:700;font-size:1rem;color:var(--negro);margin-bottom:3px}
+.web-card-desc{font-size:0.75rem;font-weight:300;color:rgba(0,0,0,0.45);line-height:1.4}
+.web-card-tags{display:flex;gap:0.35rem;flex-shrink:0;flex-wrap:wrap;justify-content:flex-end}
+.web-browser-bar{background:var(--crema);border-bottom:1px solid rgba(0,0,0,0.07);padding:7px 12px;display:flex;align-items:center;gap:5px}
+.web-dot{width:7px;height:7px;border-radius:50%;background:rgba(0,0,0,0.15);display:inline-block}
+.web-url{font-size:9px;color:rgba(0,0,0,0.35);margin-left:8px;letter-spacing:0.03em}
+.web-screen{width:100%;height:380px;overflow:hidden;position:relative;background:rgba(0,0,0,0.04);cursor:ns-resize}
+.web-screen img{width:100%;display:block;height:auto;transition:opacity 0.3s;margin-top:0}
+.web-screen-nav{display:flex;align-items:center;justify-content:center;gap:0.8rem;padding:0.8rem 1rem;border-top:1px solid rgba(0,0,0,0.06)}
+.web-arrow{width:42px;height:42px;border-radius:50%;border:1.5px solid rgba(0,0,0,0.15);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1rem;transition:all 0.2s;color:var(--negro);flex-shrink:0}
+.web-arrow:hover{background:var(--negro);color:var(--crema);border-color:var(--negro)}
+.web-counter{font-size:0.72rem;font-weight:600;opacity:0.35;letter-spacing:0.04em;min-width:36px;text-align:center}
+@media(max-width:700px){.web-card{min-width:90vw}}
+.work-cats{display:flex;gap:1rem;justify-content:center;margin:2.5rem 0}
+.work-cat{font-family:'DM Sans',sans-serif;font-size:1rem;font-weight:600;padding:14px 36px;border-radius:100px;border:2px solid rgba(0,0,0,0.15);background:transparent;cursor:pointer;transition:all 0.25s;color:var(--negro);letter-spacing:0.01em}
+.work-cat:hover{border-color:var(--negro)}
+.work-cat.active{background:var(--negro);color:var(--crema);border-color:var(--negro)}
+.work-content{display:none;text-align:left;width:100%}.work-content.active{display:block;animation:fadeIn 0.3s ease}
+.work-switch{display:flex;flex-direction:column;align-items:center;gap:0.8rem;margin-top:2.5rem;padding-top:2rem;border-top:1px solid rgba(0,0,0,0.07);text-align:center}
+.work-switch-label{font-size:0.8rem;font-weight:300;opacity:0.5}
+.work-switch-btn{font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:600;padding:8px 20px;border-radius:100px;border:1.5px solid rgba(0,0,0,0.15);background:transparent;cursor:pointer;transition:all 0.2s;color:var(--negro)}
+.work-switch-btn:hover{background:var(--negro);color:var(--crema);border-color:var(--negro)}
+.brand-gallery{display:none;animation:fadeIn 0.3s ease}
+.brand-gallery.open{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.brand-gallery-header{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:1.5rem;padding:1.5rem;background:var(--negro);border-radius:20px;color:var(--crema)}
+.bgh-name{font-family:'Fraunces',serif;font-weight:900;font-size:1.5rem;color:var(--blanco);margin-bottom:4px}
+.bgh-desc{font-size:0.82rem;font-weight:300;color:rgba(255,255,255,0.5);line-height:1.6;max-width:400px}
+.bgh-tags{display:flex;gap:0.4rem;flex-wrap:wrap;margin-top:8px}
+.bgtag{font-size:0.68rem;font-weight:600;padding:4px 11px;border-radius:100px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;margin-top:1rem}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:0.75rem;margin-top:1rem}
+.gi{border-radius:14px;overflow:hidden;aspect-ratio:1/1;position:relative}
+.gi img{width:100%;height:100%;object-fit:cover;transition:transform 0.4s}
+.gi:hover img{transform:scale(1.05)}
+.cm-notice{background:rgba(0,0,0,0.05);border-radius:14px;padding:1.5rem;display:flex;align-items:center;gap:1rem;margin-top:1rem;border-left:3px solid var(--naranja)}
+.cm-notice p{font-size:0.85rem;font-weight:300;line-height:1.7;opacity:0.7}
+.section-divider{margin:3rem 0 2rem;padding-top:2rem;border-top:1.5px solid rgba(0,0,0,0.08)}
+.section-divider h3{font-family:'Fraunces',serif;font-weight:900;font-size:1.4rem;letter-spacing:-0.02em;margin-bottom:0.5rem}
+.section-divider p{font-size:0.88rem;font-weight:300;opacity:0.55;margin-bottom:1.5rem}
+
+/* PROCESS — tabbed by type */
+.process{background:var(--lila);text-align:center}
+.process .sh2{text-align:center}
+.process-intro{font-size:0.95rem;font-weight:300;line-height:1.82;opacity:0.7;max-width:620px;margin:0 auto 2.5rem;text-align:center}
+.ptabs{display:flex;gap:0.5rem;margin-bottom:2rem;flex-wrap:wrap;justify-content:center}
+.ptab{font-size:0.8rem;font-weight:700;padding:8px 20px;border-radius:100px;border:1.5px solid var(--negro);cursor:none;transition:background 0.2s;background:transparent;font-family:'DM Sans',sans-serif}
+.ptab.active{background:var(--negro);color:var(--crema);border-color:var(--negro)}
+.ptab-content{display:none}
+.ptab-content.active{display:block;animation:fadeIn 0.3s ease}
+.psteps{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
+.pstep{background:rgba(255,255,255,0.35);border-radius:18px;padding:1.4rem;text-align:left}
+.pstep .num{font-family:'DM Sans',sans-serif;font-weight:300;font-size:2.5rem;color:rgba(0,0,0,0.12);line-height:1;margin-bottom:0.4rem}
+.pstep h4{font-family:'Fraunces',serif;font-weight:700;font-size:0.94rem;margin-bottom:0.75rem;color:var(--negro)}
+.pstep p{font-size:0.82rem;font-weight:300;line-height:1.75;color:rgba(0,0,0,0.65);margin-bottom:0.4rem;font-family:'DM Sans',sans-serif}
+.pstep p strong{font-weight:300;color:rgba(0,0,0,0.65)}
+.pstep-detail{margin-top:0;padding-left:0}
+.step-type{font-size:0.75rem;font-weight:500;padding:4px 0;display:flex;align-items:flex-start;gap:6px;line-height:1.5;opacity:0.75}
+.step-type+.step-type{margin-top:4px}
+
+/* SPOTIFY */
+.spo{background:var(--negro);display:flex;align-items:center;gap:3rem}
+.spo h3{font-family:'Fraunces',serif;font-weight:900;font-size:1.8rem;color:var(--blanco);margin-bottom:0.65rem;letter-spacing:-0.02em}
+.spo p{font-size:0.9rem;font-weight:300;color:rgba(255,255,255,0.46);line-height:1.75;max-width:370px}
+.spo-btn{display:inline-flex;align-items:center;gap:10px;background:#1DB954;color:var(--blanco);font-family:'DM Sans',sans-serif;font-weight:700;font-size:0.85rem;padding:12px 22px;border-radius:100px;text-decoration:none;margin-top:1.3rem;transition:transform 0.2s}
+.spo-btn:hover{transform:scale(1.05)}
+.spo-btn svg{width:18px;height:18px;fill:white;flex-shrink:0}
+.bars{display:flex;gap:0.5rem;align-items:flex-end;height:64px;flex-shrink:0}
+.bar{width:6px;border-radius:3px;background:var(--lime);animation:bounce 1.4s ease-in-out infinite}
+.bar:nth-child(2){height:40%;animation-delay:0.1s}
+.bar:nth-child(3){height:70%;animation-delay:0.2s;background:var(--lila)}
+.bar:nth-child(4){height:55%;animation-delay:0.05s}
+.bar:nth-child(5){height:90%;animation-delay:0.3s;background:var(--naranja)}
+.bar:nth-child(6){height:45%;animation-delay:0.15s}
+.bar:nth-child(7){height:75%;animation-delay:0.25s;background:var(--rosa)}
+.bar:nth-child(8){height:60%;animation-delay:0.08s}
+@keyframes bounce{0%,100%{transform:scaleY(1)}50%{transform:scaleY(0.35)}}
+
+/* CV */
+.cv-sec{background:var(--crema)}
+.puzzles{background:var(--negro);border-radius:22px;padding:2rem 2.4rem;margin-bottom:3rem;display:flex;align-items:flex-start;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+.pu-label{font-size:0.67rem;font-weight:700;letter-spacing:0.13em;text-transform:uppercase;color:var(--lime);margin-bottom:0.4rem}
+.pu-role{font-family:'Fraunces',serif;font-weight:900;font-size:1.35rem;color:var(--blanco);line-height:1.1;margin-bottom:0.3rem}
+.pu-co{font-size:0.92rem;font-weight:500;color:var(--lime);margin-bottom:0.55rem}
+.pu-desc{font-size:0.85rem;font-weight:300;color:rgba(255,255,255,0.55);line-height:1.8;max-width:540px}
+.pu-badge{background:var(--lime);color:var(--negro);font-size:0.73rem;font-weight:700;padding:7px 16px;border-radius:100px;white-space:nowrap;display:inline-block}
+.pu-remote{font-size:0.7rem;color:rgba(255,255,255,0.28);letter-spacing:0.07em;text-transform:uppercase;margin-top:5px}
+.cv-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem}
+.cvh{font-family:'Fraunces',serif;font-weight:800;font-size:0.98rem;letter-spacing:-0.01em;margin-bottom:1.7rem;padding-bottom:0.65rem;border-bottom:2px solid var(--negro)}
+.tl2{display:flex;flex-direction:column;gap:1.5rem}
+.tl2i{display:flex;gap:1rem}
+.tl2d{flex-shrink:0;width:9px;height:9px;border-radius:50%;margin-top:5px}
+.tl2y{font-size:0.67rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(0,0,0,0.35);margin-bottom:2px}
+.tl2y.or{color:var(--naranja)}
+.tl2r{font-family:'Fraunces',serif;font-weight:700;font-size:0.95rem;margin-bottom:2px}
+.tl2s{font-size:0.79rem;color:rgba(0,0,0,0.42);margin-bottom:5px;line-height:1.4}
+.tl2p{font-size:0.81rem;font-weight:300;line-height:1.75;opacity:0.67}
+.sk-bars{display:flex;flex-direction:column;gap:0.72rem}
+.sk-row{display:flex;align-items:center;gap:12px}
+.sk-name{font-size:0.74rem;font-weight:500;min-width:120px;opacity:0.55}
+.sk-track{flex:1;height:4px;background:rgba(0,0,0,0.08);border-radius:2px;overflow:hidden}
+.sk-fill{height:100%;border-radius:2px}
+.lng-pills{display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:0.85rem}
+.lp{font-size:0.78rem;font-weight:600;padding:5px 13px;border-radius:100px}
+
+/* CONTACT */
+.contact{display:flex;justify-content:center;align-items:center;text-align:center}
+.contact h2{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(2.3rem,4.5vw,4rem);line-height:0.95;letter-spacing:-0.03em;margin-bottom:1.3rem}
+.contact h2 em{font-style:normal;color:var(--naranja)}
+.contact>div:first-child>p{font-size:0.95rem;font-weight:300;line-height:1.85;opacity:0.56;margin-bottom:1.7rem}
+.clinks{display:flex;flex-direction:row;gap:0.75rem;flex-wrap:wrap;margin-top:1.5rem;justify-content:center}
+.clink{display:inline-flex;align-items:center;gap:0.6rem;text-decoration:none;color:var(--negro);font-size:0.85rem;font-weight:600;padding:0.7rem 1.4rem;border:1.5px solid rgba(0,0,0,0.15);border-radius:100px;transition:background 0.2s,color 0.2s,border-color 0.2s;letter-spacing:0.02em}
+.clink:hover{background:var(--negro);color:var(--crema);border-color:var(--negro)}
+.cico{width:22px;height:22px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.cico svg{width:16px;height:16px}
+.cf{background:var(--lime);border-radius:26px;padding:2.2rem}
+.cf h3{font-family:'Fraunces',serif;font-weight:800;font-size:1.25rem;margin-bottom:1.3rem}
+.fg{margin-bottom:0.95rem}
+.fg label{display:block;font-size:0.72rem;font-weight:700;margin-bottom:5px;letter-spacing:0.08em;text-transform:uppercase;opacity:0.62}
+.fg input,.fg textarea{width:100%;padding:10px 13px;border:1.5px solid rgba(0,0,0,0.17);border-radius:10px;background:rgba(255,255,255,0.52);font-family:'DM Sans',sans-serif;font-size:0.88rem;color:var(--negro);outline:none;transition:border-color 0.2s,background 0.2s;resize:none}
+.fg input:focus,.fg textarea:focus{border-color:var(--negro);background:rgba(255,255,255,0.88)}
+.bs{width:100%;background:var(--negro);color:var(--lime);font-family:'DM Sans',sans-serif;font-weight:700;font-size:0.88rem;padding:13px;border:none;border-radius:10px;cursor:none;transition:opacity 0.2s,transform 0.2s}
+.bs:hover{opacity:0.8;transform:translateY(-1px)}
+
+footer{padding:1.7rem 2.5rem;display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(0,0,0,0.07)}
+footer p{font-size:0.74rem;opacity:0.36}
+.fback{display:flex;align-items:center;gap:8px;font-size:0.76rem;font-weight:500;text-decoration:none;color:var(--negro);transition:gap 0.2s}
+.fback:hover{gap:12px}
+
+@media(max-width:1000px){
+  nav{padding:1rem 1.5rem}
+  section{padding:4rem 1.5rem}
+  .about{grid-template-columns:1fr;gap:2.5rem;padding-left:1.5rem;padding-right:1.5rem}
+  .about-img-wrap{aspect-ratio:3/2}
+  .svc-section{padding-left:1.5rem;padding-right:1.5rem}
+  .svc-grid{grid-template-columns:repeat(2,1fr)}
+  .grid3{grid-template-columns:1fr 1fr}
+  .psteps{grid-template-columns:1fr 1fr}
+  .contact{grid-template-columns:1fr}
+  .cv-grid{grid-template-columns:1fr;gap:2.5rem}
+  .spo{flex-direction:column;gap:2rem}
+  .web-card{width:80vw;min-width:80vw}
+}
+
+@media(max-width:600px){
+  /* Nav — hamburger */
+  nav{padding:0.9rem 1.2rem}
+  .nav-links{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--negro);flex-direction:column;align-items:center;justify-content:center;gap:2rem;z-index:200}
+  .nav-links.open{display:flex}
+  .nav-links a{font-size:1.2rem;color:var(--crema);letter-spacing:0.05em}
+  .hamburger{display:flex;flex-direction:column;gap:5px;cursor:pointer;z-index:300;background:none;border:none;padding:4px}
+  .hamburger span{display:block;width:22px;height:2px;background:var(--blanco);border-radius:2px;transition:all 0.3s}
+  .hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+  .hamburger.open span:nth-child(2){opacity:0}
+  .hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+
+  /* Hero */
+  h1{font-size:clamp(2.8rem,14vw,5rem);white-space:normal;line-height:0.9}
+  .hero-overlay{padding:0 1.2rem 2.5rem}
+  .hero-badge{bottom:2rem;right:1.2rem}
+  .hero-ctas{flex-direction:column;gap:0.6rem}
+  .btn-p,.btn-o{text-align:center}
+
+  /* About */
+  .about{grid-template-columns:1fr;padding-left:1.2rem;padding-right:1.2rem}
+  .about-img-wrap{aspect-ratio:4/3}
+
+  /* Experience zigzag → lineal */
+  .tl::before{left:10px;transform:none}
+  .tli{grid-template-columns:1fr;margin-bottom:2.5rem}
+  .tli-spacer{display:none}
+  .tli:nth-child(odd) .tli-content,
+  .tli:nth-child(even) .tli-content{grid-column:1;text-align:left;padding-left:2rem;padding-right:0}
+  .tli:nth-child(odd) .tlts,
+  .tli:nth-child(even) .tlts{justify-content:flex-start;margin-left:0;margin-right:0}
+  .tli:nth-child(odd) .tldesc,
+  .tli:nth-child(even) .tldesc{margin-left:0;text-align:left}
+  .tld{left:3px;top:4px;transform:none}
+
+  /* Services */
+  .svc-section{padding-left:1.2rem;padding-right:1.2rem}
+  .svc-grid{grid-template-columns:1fr;gap:1rem}
+
+  /* Work section */
+  .work-cats{flex-direction:column;gap:0.75rem;align-items:center}
+  .work-cat{width:100%;max-width:300px}
+  .web-card{width:85vw;min-width:85vw}
+
+  /* Process */
+  .psteps{grid-template-columns:1fr;gap:1rem}
+  .process{padding-left:1.2rem;padding-right:1.2rem}
+
+  /* CV */
+  .svc-grid,.grid3,.grid2,.psteps{grid-template-columns:1fr}
+  .cv-grid{grid-template-columns:1fr}
+  .cv-sec{padding-left:1.2rem;padding-right:1.2rem}
+
+  /* Spotify */
+  .spo{flex-direction:column;gap:1.5rem;padding:2rem 1.2rem}
+
+  /* Contact */
+  .clinks{flex-direction:column;align-items:center}
+
+  /* Footer */
+  footer{flex-direction:column;gap:0.8rem;text-align:center;padding:1.5rem 1.2rem}
+}
+</style>
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-f" id="follower"></div>
+
+<nav>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu" style="display:none">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#sobre-mi" data-es="Sobre mí" data-en="About" onclick="closeMenu()">Sobre mí</a></li>
+    <li><a href="#experiencia" data-es="Experiencia" data-en="Experience" onclick="closeMenu()">Experiencia</a></li>
+    <li><a href="#servicios" data-es="Servicios" data-en="Services" onclick="closeMenu()">Servicios</a></li>
+    <li><a href="#como-diseno" data-es="¿Cómo diseño?" data-en="How I design" onclick="closeMenu()">¿Cómo diseño?</a></li>
+    <li><a href="#proceso" data-es="¿Cómo trabajo?" data-en="How I work?" onclick="closeMenu()">¿Cómo trabajo?</a></li>
+    <li><a href="#curriculum" data-es="Formación" data-en="Education" onclick="closeMenu()">Formación</a></li>
+    <li><a href="#contacto" data-es="Contacto" data-en="Contact" onclick="closeMenu()">Contacto</a></li>
+  </ul>
+  <div class="lang-toggle">
+    <button class="lang-btn active" id="btn-es" onclick="setLang('es')">ES</button>
+    <button class="lang-btn" id="btn-en" onclick="setLang('en')">EN</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+
+  <!-- Foto full-bleed como fondo -->
+  <div class="hero-bg">
+    <img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/op1.jpg" alt="Luciana Romero">
+  </div>
+
+  <!-- Badge disponible — abajo derecha -->
+  <div class="hero-badge">
+    <strong data-es="✦ Disponible para proyectos remotos" data-en="✦ Available for remote projects">✦ Disponible para proyectos remotos</strong>
+    <p data-es="AR · CL · EE.UU. · Internacional" data-en="AR · CL · USA · International">AR · CL · EE.UU. · Internacional</p>
+  </div>
+
+  <!-- Texto superpuesto abajo izquierda -->
+  <div class="hero-overlay">
+    <h1><span class="h1-italic">luciana</span><span class="h1-bold">romero</span></h1>
+    <div class="hero-subs">
+      <span class="hero-sub" data-es="Diseñadora UX · UI" data-en="UX · UI Designer">Diseñadora UX · UI</span>
+      <span class="hero-sub-dot" aria-hidden="true"></span>
+      <span class="hero-sub" data-es="Social Media Specialist" data-en="Social Media Specialist">Social Media Specialist</span>
+    </div>
+    <div class="hero-ctas">
+      <a href="#como-diseno" class="btn-p" data-es="Ver mi trabajo →" data-en="See my work →">Ver mi trabajo →</a>
+      <a href="#contacto" class="btn-o" data-es="Hablemos" data-en="Let's talk">Hablemos</a>
+    </div>
+  </div>
+
+</section>
+
+<!-- MARQUEE -->
+<div class="mwrap" aria-hidden="true">
+  <div class="mi">
+    <span>Diseño Gráfico</span><span class="ac">✦</span><span>Social Media</span><span class="ac">✦</span><span>UX / UI</span><span class="ac">✦</span><span>Community Manager</span><span class="ac">✦</span><span>IA Avanzada</span><span class="ac">✦</span><span>Identidad Visual</span><span class="ac">✦</span><span>Content Strategy</span><span class="ac">✦</span><span>Diseño para Redes</span><span class="ac">✦</span>
+    <span>Diseño Gráfico</span><span class="ac">✦</span><span>Social Media</span><span class="ac">✦</span><span>UX / UI</span><span class="ac">✦</span><span>Community Manager</span><span class="ac">✦</span><span>IA Avanzada</span><span class="ac">✦</span><span>Identidad Visual</span><span class="ac">✦</span><span>Content Strategy</span><span class="ac">✦</span><span>Diseño para Redes</span><span class="ac">✦</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="sobre-mi">
+  <div class="reveal">
+    <h2 class="sh2" data-es="Diseño con criterio, IA como aliada" data-en="Design with purpose, AI as an ally">Diseño con criterio,<br>IA como aliada</h2>
+    <p data-es="¡Hola! Soy <strong>Luciana Romero</strong>, <strong>diseñadora gráfica</strong>, <strong>especialista en Social Media</strong> y <strong>diseñadora UX/UI</strong>. Para mí, el entorno digital es, ante todo, un espacio para conectar de forma honesta, auténtica y cercana." data-en="Hi! I'm <strong>Luciana Romero</strong>, <strong>graphic designer</strong>, <strong>Social Media Specialist</strong> and <strong>UX/UI designer</strong>. For me, the digital space is, above all, a place to connect honestly, authentically and closely.">¡Hola! Soy <strong>Luciana Romero</strong>, <strong>diseñadora gráfica</strong>, <strong>especialista en Social Media</strong> y <strong>diseñadora UX/UI</strong>. Para mí, el entorno digital es, ante todo, un espacio para conectar de forma honesta, auténtica y cercana.</p>
+    <p data-es="Mi valor diferencial radica en la evolución constante. Fusiono la <strong>estrategia visual</strong> con la <strong>experiencia de usuario (UX/UI)</strong>, integrando además herramientas de <strong>Inteligencia Artificial</strong> de vanguardia en mi proceso creativo. Esto me permite explorar conceptos disruptivos, anticipar tendencias y optimizar los flujos de trabajo de manera inteligente." data-en="My differentiating value lies in constant evolution. I merge <strong>visual strategy</strong> with <strong>user experience (UX/UI)</strong>, also integrating cutting-edge <strong>Artificial Intelligence</strong> tools into my creative process. This allows me to explore disruptive concepts, anticipate trends and optimize workflows intelligently.">Mi valor diferencial radica en la evolución constante. Fusiono la <strong>estrategia visual</strong> con la <strong>experiencia de usuario (UX/UI)</strong>, integrando además herramientas de <strong>Inteligencia Artificial</strong> de vanguardia en mi proceso creativo. Esto me permite explorar conceptos disruptivos, anticipar tendencias y optimizar los flujos de trabajo de manera inteligente.</p>
+    <p data-es="Trabajar juntos significa elegir un proceso <strong>transparente, seguro y verdaderamente colaborativo</strong>. Veo a la IA como una gran aliada técnica para potenciar nuestras ideas, pero tengo muy claro que el <strong>criterio estético</strong>, la <strong>estrategia</strong> y la <strong>empatía humana</strong> son lo que hacen que una experiencia digital realmente funcione. Juntos, podemos crear algo único, escalable y listo para el futuro." data-en="Working together means choosing a <strong>transparent, safe and truly collaborative</strong> process. I see AI as a great technical ally to enhance our ideas, but I'm clear that <strong>aesthetic judgment</strong>, <strong>strategy</strong> and <strong>human empathy</strong> are what make a digital experience truly work. Together, we can create something unique, scalable and ready for the future.">Trabajar juntos significa elegir un proceso <strong>transparente, seguro y verdaderamente colaborativo</strong>. Veo a la IA como una gran aliada técnica para potenciar nuestras ideas, pero tengo muy claro que el <strong>criterio estético</strong>, la <strong>estrategia</strong> y la <strong>empatía humana</strong> son lo que hacen que una experiencia digital realmente funcione. Juntos, podemos crear algo único, escalable y listo para el futuro.</p>
+  </div>
+  <div class="reveal about-img-wrap">
+    <img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/seccion1.2.jpg" alt="Luciana Romero — Diseñadora" loading="lazy">
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="exp" id="experiencia">
+  <h2 class="sh2 reveal" style="text-align:center"><span data-es="Más de 4 años" data-en="4+ years">Más de 4 años</span><br><em style="color:var(--naranja);font-style:normal"> <span data-es="acompañando marcas" data-en="supporting brands">acompañando marcas</span></em></h2>
+  <div class="tl reveal">
+
+    <!-- Puzzles Consulting -->
+    <div class="tli">
+      <div class="tld"></div>
+      <div class="tli-content">
+        <div class="tly">Dic 2024 — Actualidad</div>
+        <div class="tlr">Social Media Specialist &amp; UX/UI Designer</div>
+        <div class="tlc">Puzzles Consulting · Estados Unidos · Remoto</div>
+        <p class="tldesc">Gestión de redes sociales y diseño UX/UI para empresa de consultoría con sede en EE.UU. Trabajo con 7 clientes activos, desarrollando estrategia de contenido en inglés, producción visual de marca y diseño de interfaces para audiencias internacionales.</p>
+        <div class="tlts"><span class="tlt hl">Internacional</span><span class="tlt hl">7 clientes activos</span><span class="tlt hl">UX/UI Design</span><span class="tlt hl">Social Media Strategy</span><span class="tlt">Inglés B2</span><span class="tlt">Figma</span></div>
+      </div>
+      <div class="tli-spacer"></div>
+    </div>
+
+    <!-- Community Manager -->
+    <div class="tli">
+      <div class="tld" style="background:rgba(0,0,0,0.25)"></div>
+      <div class="tli-spacer"></div>
+      <div class="tli-content">
+        <div class="tly">Actualidad</div>
+        <div class="tlr">Community Manager</div>
+        <div class="tlc">Freelance · San Rafael, Mendoza</div>
+        <p class="tldesc">Gestión e implementación de la estrategia digital y comunicación en redes sociales. Responsable de la planificación de contenidos, moderación de comunidades, atención al cliente y análisis de métricas para optimizar el alcance y el engagement general de las marcas.</p>
+        <div class="tlts"><span class="tlt hl2">Berlín Bar</span><span class="tlt hl2">Agencia Lucero</span></div>
+      </div>
+    </div>
+
+    <!-- Social Media Specialist | Diseño + CM -->
+    <div class="tli">
+      <div class="tld" style="background:rgba(0,0,0,0.25)"></div>
+      <div class="tli-content">
+        <div class="tly">Actualidad</div>
+        <div class="tlr">Social Media Specialist | Diseño + CM</div>
+        <div class="tlc">Freelance · Argentina</div>
+        <p class="tldesc">Rol integral que fusiona el diseño visual con la estrategia de contenidos. Desarrollo de la identidad estética para redes sociales, creación de piezas gráficas y audiovisuales, y gestión activa de las plataformas, asegurando una comunicación cohesiva y alineada a los objetivos de cada proyecto.</p>
+        <div class="tlts"><span class="tlt hl2">Brutal</span><span class="tlt hl2">Chapa Club</span><span class="tlt hl2">Cápsulas Aura</span><span class="tlt hl2">Marta Bassols</span><span class="tlt hl2">Inpar</span></div>
+      </div>
+      <div class="tli-spacer"></div>
+    </div>
+
+    <!-- Diseñadora Gráfica & Social Media -->
+    <div class="tli">
+      <div class="tld" style="background:rgba(0,0,0,0.18)"></div>
+      <div class="tli-spacer"></div>
+      <div class="tli-content">
+        <div class="tly">2020 — 2023</div>
+        <div class="tlr">Diseñadora Gráfica &amp; Social Media</div>
+        <div class="tlc">Múltiples marcas · San Rafael, Mendoza &amp; Chile</div>
+        <p class="tldesc">Desarrollo de proyectos visuales y estratégicos para múltiples marcas. Creación y ejecución de propuestas de identidad corporativa, gestión de social media y diseño de papelería comercial.</p>
+        <div class="tlts"><span class="tlt">Antídoto</span><span class="tlt">Bony's Pizza</span><span class="tlt">El Pinito</span><span class="tlt">Sueños de Estación</span><span class="tlt">Kyra</span><span class="tlt">Mercado Pádel</span></div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="svc-section" id="servicios">
+  <div class="reveal" style="text-align:center">
+    <h2 class="sh2"><em style="color:var(--naranja);font-style:normal" data-es="Servicios" data-en="Services">Servicios</em></h2>
+  </div>
+
+  <div class="svc-grid reveal">
+
+    <div class="svc-card-static">
+      <div class="svc-num">01</div>
+      <h3 style="color:var(--naranja)" data-es="Diseño para Redes Sociales" data-en="Social Media Design">Diseño para Redes Sociales</h3>
+      <p class="svc-card-p" data-es="Producción de piezas gráficas, carousels, stories y reels con coherencia visual sistémica y orientación estratégica al engagement." data-en="Production of graphic pieces, carousels, stories and reels with systemic visual consistency and strategic orientation toward engagement.">Producción de piezas gráficas, carousels, stories y reels con coherencia visual sistémica y orientación estratégica al engagement.</p>
+      <a href="#contacto" class="svc-static-arrow">↗</a>
+    </div>
+
+    <div class="svc-card-static">
+      <div class="svc-num">02</div>
+      <h3 style="color:var(--azul)" data-es="Community Management" data-en="Community Management">Community Management</h3>
+      <p class="svc-card-p" data-es="Gestión integral de redes: planificación editorial, producción de contenido, análisis de métricas y crecimiento de comunidades activas." data-en="Full social media management: editorial planning, content production, metrics analysis and active community growth.">Gestión integral de redes: planificación editorial, producción de contenido, análisis de métricas y crecimiento de comunidades activas.</p>
+      <a href="#contacto" class="svc-static-arrow">↗</a>
+    </div>
+
+    <div class="svc-card-static">
+      <div class="svc-num">03</div>
+      <h3 style="color:var(--negro)" data-es="UX / UI Design" data-en="UX / UI Design">UX / UI Design</h3>
+      <p class="svc-card-p" data-es="Interfaces web y mobile centradas en el usuario: arquitectura de información, wireframes, prototipado interactivo y handoff para desarrollo." data-en="User-centered web and mobile interfaces: information architecture, wireframes, interactive prototyping and development handoff.">Interfaces web y mobile centradas en el usuario: arquitectura de información, wireframes, prototipado interactivo y handoff para desarrollo.</p>
+      <a href="#contacto" class="svc-static-arrow">↗</a>
+    </div>
+
+    <div class="svc-card-static">
+      <div class="svc-num">04</div>
+      <h3 style="color:var(--azul);filter:brightness(0.8)" data-es="Email Marketing & Templates" data-en="Email Marketing & Templates">Email Marketing & Templates</h3>
+      <p class="svc-card-p" data-es="Newsletters y sistemas de templates reutilizables para Mailchimp, Klaviyo y plataformas similares." data-en="Newsletters and reusable template systems for Mailchimp, Klaviyo and similar platforms.">Newsletters y sistemas de templates reutilizables para Mailchimp, Klaviyo y plataformas similares.</p>
+      <a href="#contacto" class="svc-static-arrow">↗</a>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- COMO DISENO -->
+<section class="work-section" id="como-diseno" style="padding:6rem 2.5rem">
+  <div class="reveal" style="text-align:center">
+    <h2 class="sh2" data-es="¿Cómo diseño?" data-en="How I design">¿Cómo diseño?</h2>
+    <p style="font-size:0.95rem;font-weight:300;line-height:1.8;opacity:0.65;max-width:560px;margin:0 auto" data-es="Seleccioná una categoría para ver mi trabajo." data-en="Select a category to see my work.">Seleccioná una categoría para ver mi trabajo.</p>
+    <div class="work-cats">
+      <button class="work-cat" id="cat-web" onclick="setWorkCat('web')">Diseño Web</button>
+      <button class="work-cat" id="cat-sm" onclick="setWorkCat('sm')">Diseño Social Media</button>
+    </div>
+  </div>
+
+  <!-- DISEÑO WEB -->
+  <div class="work-content reveal" id="work-web">
+
+    <!-- SLIDER DE CARDS WEB -->
+    <div class="web-slider-wrap">
+      <div class="web-slider-track" id="web-slider-track">
+
+        <!-- COMPOSITE DECKING LA -->
+        <div class="web-card">
+          <div class="web-card-header">
+            <div>
+              <div class="web-card-name">Composite Decking LA</div>
+              <div class="web-card-desc">Rediseño web · Construcción · EE.UU.</div>
+            </div>
+            <div class="web-card-tags">
+              <span class="bpt" style="background:var(--naranja);color:white">Rediseño</span>
+              <span class="bpt" style="background:var(--azul)">Web Design</span>
+            </div>
+          </div>
+          <div class="web-mockup-wrap">
+            <div class="web-browser-bar"><span class="web-dot"></span><span class="web-dot"></span><span class="web-dot"></span><span class="web-url">composite decking la · rediseño</span></div>
+            <div class="web-screen" id="screen-composite">
+              <img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/COMPOSITE.jpg" alt="Composite Decking LA" id="webimg-composite" style="width:100%;display:block;transition:opacity 0.3s;margin-top:0">
+            </div>
+            <div class="web-screen-nav">
+              <button class="web-arrow" style="opacity:0.3;pointer-events:none">←</button>
+              <span class="web-counter" id="webcnt-composite">1 / 1</span>
+              <button class="web-arrow" style="opacity:0.3;pointer-events:none">→</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- APEX -->
+        <div class="web-card">
+          <div class="web-card-header">
+            <div>
+              <div class="web-card-name">Apex</div>
+              <div class="web-card-desc">Diseño UX/UI · Plataforma de servicios</div>
+            </div>
+            <div class="web-card-tags">
+              <span class="bpt" style="background:var(--negro);color:var(--lime)">UX/UI</span>
+              <span class="bpt" style="background:var(--lila)">Web Design</span>
+            </div>
+          </div>
+          <div class="web-mockup-wrap">
+            <div class="web-browser-bar"><span class="web-dot"></span><span class="web-dot"></span><span class="web-dot"></span><span class="web-url">apex · diseño web</span></div>
+            <div class="web-screen" id="screen-apex">
+              <img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/HOMEAPEX.jpg" alt="Apex — Home" id="webimg-apex" style="width:100%;display:block;transition:opacity 0.3s;margin-top:0">
+            </div>
+            <div class="web-screen-nav">
+              <button class="web-arrow" onclick="webStep('apex',-1)">←</button>
+              <span class="web-counter" id="webcnt-apex">1 / 8</span>
+              <button class="web-arrow" onclick="webStep('apex',1)">→</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- KARINA GRIMALDI -->
+        <div class="web-card">
+          <div class="web-card-header">
+            <div>
+              <div class="web-card-name">Karina Grimaldi</div>
+              <div class="web-card-desc">Diseño UX/UI · Servicio profesional</div>
+            </div>
+            <div class="web-card-tags">
+              <span class="bpt" style="background:var(--negro);color:var(--lime)">UX/UI</span>
+              <span class="bpt" style="background:var(--rosa)">Web Design</span>
+            </div>
+          </div>
+          <div class="web-mockup-wrap">
+            <div class="web-browser-bar"><span class="web-dot"></span><span class="web-dot"></span><span class="web-dot"></span><span class="web-url">karina grimaldi · diseño web</span></div>
+            <div class="web-screen" id="screen-karina">
+              <img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/KARINAHOME.jpg" alt="Karina Grimaldi — Home" id="webimg-karina" style="width:100%;display:block;transition:opacity 0.3s;margin-top:0">
+            </div>
+            <div class="web-screen-nav">
+              <button class="web-arrow" onclick="webStep('karina',-1)">←</button>
+              <span class="web-counter" id="webcnt-karina">1 / 7</span>
+              <button class="web-arrow" onclick="webStep('karina',1)">→</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- KARINA EMAIL TEMPLATES -->
+        <div class="web-card email-card">
+          <div class="web-card-header">
+            <div>
+              <div class="web-card-name">Karina Grimaldi — Email Templates</div>
+              <div class="web-card-desc">Diseño de email marketing · Templates HTML</div>
+            </div>
+            <div class="web-card-tags">
+              <span class="bpt" style="background:var(--rosa)">Email</span>
+              <span class="bpt" style="background:var(--lila)">Templates</span>
+            </div>
+          </div>
+          <div class="web-mockup-wrap">
+            <div class="web-browser-bar"><span class="web-dot"></span><span class="web-dot"></span><span class="web-dot"></span><span class="web-url">karina grimaldi · email templates</span></div>
+            <div class="web-screen" id="screen-karinamail">
+              <img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/KARINAE1.jpg" alt="Karina Email — 1" id="webimg-karinamail" style="width:100%;display:block;transition:opacity 0.3s;margin-top:0">
+            </div>
+            <div class="web-screen-nav">
+              <button class="web-arrow" onclick="webStep('karinamail',-1)">←</button>
+              <span class="web-counter" id="webcnt-karinamail">1 / 6</span>
+              <button class="web-arrow" onclick="webStep('karinamail',1)">→</button>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /web-slider-track -->
+    </div><!-- /web-slider-wrap -->
+
+    <!-- Nav slider web -->
+    <div style="width:100%;display:flex;flex-direction:row;justify-content:flex-end;gap:0.6rem;margin-top:1.2rem;box-sizing:border-box">
+      <button class="svc-nav-btn" id="web-prev" onclick="webSliderStep(-1)" disabled>←</button>
+      <button class="svc-nav-btn" id="web-next" onclick="webSliderStep(1)">→</button>
+    </div>
+    <div class="work-switch">
+      <span class="work-switch-label">¿Querés ver mis diseños de redes?</span>
+      <button class="work-switch-btn" onclick="setWorkCat('sm')">Ver Diseño Social Media →</button>
+    </div>
+  </div>
+
+  <!-- DISEÑO SOCIAL MEDIA -->
+  <div class="work-content reveal" id="work-sm">
+    <div style="text-align:center;width:100%">
+      <p style="font-size:0.68rem;font-weight:700;letter-spacing:0.13em;text-transform:uppercase;opacity:0.35;margin-bottom:0.8rem">Trabajos anteriores</p>
+      <div class="brand-pills">
+        <button class="bpill active" onclick="showBrand('antidoto')">Antídoto Gintonería</button>
+        <button class="bpill" onclick="showBrand('bonys')">Bony&#39;s Pizza</button>
+        <button class="bpill" onclick="showBrand('pinito')">El Pinito Heladería</button>
+        <button class="bpill" onclick="showBrand('suenos')">Sueños de Estación</button>
+        <button class="bpill" onclick="showBrand('kyra')">Kyra</button>
+        <button class="bpill" onclick="showBrand('mercado')">Mercado Pádel Chile</button>
+      </div>
+      <p style="font-size:0.68rem;font-weight:700;letter-spacing:0.13em;text-transform:uppercase;opacity:0.35;margin-bottom:0.8rem;margin-top:1.6rem;text-align:center">Clientes actuales</p>
+      <div class="brand-pills">
+        <button class="bpill current" onclick="showBrand('brutal')">Brutal</button>
+        <button class="bpill current" onclick="showBrand('chapa')">Chapa Club</button>
+        <button class="bpill current" onclick="showBrand('marta')">Marta Bassols Coach</button>
+        <button class="bpill current" onclick="showBrand('capsulas')">Cápsulas Aura</button>
+        <button class="bpill current" onclick="showBrand('inpar')">InPar</button>
+        <button class="bpill current" onclick="showBrand('berlin')">Berlín Bar</button>
+        <button class="bpill current" onclick="showBrand('lucero')">Agencia Lucero</button>
+      </div>
+    </div>
+
+    <div style="margin-top:2.8rem;width:100%;display:flex;justify-content:center">
+      <!-- ANTÍDOTO -->
+      <div id="panel-antidoto" class="brand-panel active reveal">
+      <div class="bp-header">
+        <div class="bp-name">Antídoto Gintonería</div>
+        <div class="bp-sub">Diseño para redes sociales · 2021 · San Rafael, Mendoza</div>
+        <div class="bp-tags"><span class="bpt" style="background:var(--lila)">Social Media Design</span><span class="bpt" style="background:var(--lime)">Contenido Visual</span><span class="bpt" style="background:var(--rosa)">Gastronomía</span></div>
+      </div>
+      <div class="brand-slider" id="slider-ant">
+  <div class="slider-track" id="track-ant" style="transform:translateX(0%)"><div class="slide"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/imagen_2.jpeg" alt="Semana del Malbec" loading="lazy"></div>
+<div class="slide"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/imagen_3.jpeg" alt="DJ Set Duende" loading="lazy"></div>
+<div class="slide"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/imagen_4.jpeg" alt="Noche de Oriente" loading="lazy"></div>
+<div class="slide"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/imagen_5.jpeg" alt="Miércoles Gintonero" loading="lazy"></div>
+<div class="slide"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/imagen_6.jpeg" alt="Sandwich Argento" loading="lazy"></div>
+<div class="slide"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/imagen_7.jpeg" alt="Sorteo Gintonero" loading="lazy"></div>
+</div>
+</div>
+<div class="slider-nav">
+  <button class="slider-btn" onclick="slideStep('ant',-1)">←</button>
+  <div class="slider-dots" id="dots-ant"><button class="slider-dot  active" onclick="slideTo('ant',0)"></button><button class="slider-dot" onclick="slideTo('ant',1)"></button><button class="slider-dot" onclick="slideTo('ant',2)"></button><button class="slider-dot" onclick="slideTo('ant',3)"></button><button class="slider-dot" onclick="slideTo('ant',4)"></button><button class="slider-dot" onclick="slideTo('ant',5)"></button></div>
+  <span class="slider-count" id="count-ant">1 / 6</span>
+  <button class="slider-btn" onclick="slideStep('ant',1)">→</button>
+</div>
+    </div>
+
+    <!-- BONY'S -->
+    <div id="panel-bonys" class="brand-panel reveal">
+      <div class="bp-header">
+        <div class="bp-name">Bony&#39;s Pizza</div>
+        <div class="bp-sub">Diseño para redes sociales · Gastronomía · San Rafael, Mendoza</div>
+        <div class="bp-tags"><span class="bpt" style="background:var(--naranja);color:white">Social Media Design</span><span class="bpt" style="background:var(--rosa)">Gastronomía</span><span class="bpt" style="background:var(--lime)">Contenido Visual</span></div>
+      </div>
+      <div class="brand-slider" id="slider-bon">
+  <div class="slider-track" id="track-bon" style="transform:translateX(0%)"><div class="slide"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/imagen_8.jpeg" alt="Delivery feed" loading="lazy"></div><div class="slide"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/imagen_9.jpeg" alt="Apostá por una pizza" loading="lazy"></div><div class="slide"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/imagen_10.jpeg" alt="Maridar vino con pizza" loading="lazy"></div><div class="slide"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/imagen_11.jpeg" alt="Nuevo horario" loading="lazy"></div></div>
+</div>
+<div class="slider-nav">
+  <button class="slider-btn" onclick="slideStep('bon',-1)">←</button>
+  <div class="slider-dots" id="dots-bon"><button class="slider-dot  active" onclick="slideTo('bon',0)"></button><button class="slider-dot" onclick="slideTo('bon',1)"></button><button class="slider-dot" onclick="slideTo('bon',2)"></button><button class="slider-dot" onclick="slideTo('bon',3)"></button></div>
+  <span class="slider-count" id="count-bon">1 / 4</span>
+  <button class="slider-btn" onclick="slideStep('bon',1)">→</button>
+</div>
+    </div>
+
+    <!-- EL PINITO -->
+   
+    <div id="panel-pinito" class="brand-panel reveal">
+      <div class="bp-header">
+        <div class="bp-name">El Pinito Heladería</div>
+        <div class="bp-sub">Diseño para redes sociales · Helados Artesanales · San Rafael, Mendoza</div>
+        <div class="bp-tags"><span class="bpt" style="background:var(--azul)">Social Media Design</span><span class="bpt" style="background:var(--rosa)">Gastronomía</span><span class="bpt" style="background:var(--lime)">Contenido Visual</span></div>
+      </div>
+      <div class="brand-slider" id="slider-pin"><div class="slider-track" id="track-pin" style="transform:translateX(0%)"><div class="slide r4-5"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/imagen_15.jpeg" alt="Helado en casa" loading="lazy"></div><div class="slide r4-5"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/imagen_16.jpeg" alt="Contenido fotográfico" loading="lazy"></div><div class="slide r4-5"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/imagen_17.jpeg" alt="Copa Helada" loading="lazy"></div><div class="slide r4-5"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/imagen_18.jpeg" alt="Sorteo Día del Padre" loading="lazy"></div><div class="slide r4-5"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/imagen_19.jpeg" alt="Sorteo Semana de la Amistad" loading="lazy"></div><div class="slide r4-5"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/imagen_20.jpeg" alt="Qué helado sos según tu personalidad" loading="lazy"></div></div></div><div class="slider-nav"><button class="slider-btn" onclick="slideStep('pin',-1)">←</button><div class="slider-dots" id="dots-pin"><button class="slider-dot  active" onclick="slideTo('pin',0)"></button><button class="slider-dot" onclick="slideTo('pin',1)"></button><button class="slider-dot" onclick="slideTo('pin',2)"></button><button class="slider-dot" onclick="slideTo('pin',3)"></button><button class="slider-dot" onclick="slideTo('pin',4)"></button><button class="slider-dot" onclick="slideTo('pin',5)"></button></div><span class="slider-count" id="count-pin">1 / 6</span><button class="slider-btn" onclick="slideStep('pin',1)">→</button></div>
+    </div>
+
+    <!-- SUEÑOS DE ESTACIÓN -->
+   
+    <div id="panel-suenos" class="brand-panel reveal">
+      <div class="bp-header">
+        <div class="bp-name">Sueños de Estación Cabañas</div>
+        <div class="bp-sub">Diseño para redes sociales · Turismo &amp; Alojamiento · San Rafael, Mendoza</div>
+        <div class="bp-tags"><span class="bpt" style="background:var(--lime)">Social Media Design</span><span class="bpt" style="background:var(--lila)">Turismo</span><span class="bpt" style="background:var(--azul)">Contenido Visual</span></div>
+      </div>
+      <div class="brand-slider" id="slider-sue"><div class="slider-track" id="track-sue" style="transform:translateX(0%)"><div class="slide"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/imagen_21.jpeg" alt="Como en casa" loading="lazy"></div><div class="slide"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/imagen_22.jpeg" alt="Reseñas — Qué dice la gente" loading="lazy"></div><div class="slide"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/imagen_23.jpeg" alt="Autumn Sale" loading="lazy"></div><div class="slide"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/imagen_24.jpeg" alt="Hospedaje paradisíaco" loading="lazy"></div><div class="slide"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/imagen_25.jpeg" alt="Top 3 Bodegas San Rafael" loading="lazy"></div><div class="slide"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/imagen_26.jpeg" alt="Bodega Alfredo Roca" loading="lazy"></div><div class="slide"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/imagen_27.jpeg" alt="Bodega Murville" loading="lazy"></div><div class="slide"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/imagen_28.jpeg" alt="Bodega Valentín Bianchi" loading="lazy"></div><div class="slide"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/imagen_29.jpeg" alt="Feed" loading="lazy"></div><div class="slide"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/imagen_30.jpeg" alt="Mayo" loading="lazy"></div></div></div><div class="slider-nav"><button class="slider-btn" onclick="slideStep('sue',-1)">←</button><div class="slider-dots" id="dots-sue"><button class="slider-dot  active" onclick="slideTo('sue',0)"></button><button class="slider-dot" onclick="slideTo('sue',1)"></button><button class="slider-dot" onclick="slideTo('sue',2)"></button><button class="slider-dot" onclick="slideTo('sue',3)"></button><button class="slider-dot" onclick="slideTo('sue',4)"></button><button class="slider-dot" onclick="slideTo('sue',5)"></button><button class="slider-dot" onclick="slideTo('sue',6)"></button><button class="slider-dot" onclick="slideTo('sue',7)"></button><button class="slider-dot" onclick="slideTo('sue',8)"></button><button class="slider-dot" onclick="slideTo('sue',9)"></button></div><span class="slider-count" id="count-sue">1 / 10</span><button class="slider-btn" onclick="slideStep('sue',1)">→</button></div>
+    </div>
+
+    <!-- KYRA -->
+   
+    <div id="panel-kyra" class="brand-panel reveal">
+      <div class="bp-header">
+        <div class="bp-name">Kyra Fire Co.</div>
+        <div class="bp-sub">Diseño para redes sociales · Hornos para pizza · Chile</div>
+        <div class="bp-tags"><span class="bpt" style="background:var(--naranja);color:white">Social Media Design</span><span class="bpt" style="background:var(--negro);color:var(--crema)">Tecnología</span><span class="bpt" style="background:var(--azul)">Chile</span></div>
+      </div>
+      <div class="brand-slider" id="slider-kyr"><div class="slider-track" id="track-kyr" style="transform:translateX(0%)"><div class="slide"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/imagen_31.jpeg" alt="Cocina en minutos — Paragon 12"" loading="lazy"></div><div class="slide"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/imagen_32.jpeg" alt="Kyra Revo 16" — Preventa" loading="lazy"></div><div class="slide"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/imagen_33.jpeg" alt="Kyra Paragon 12" — Foto producto" loading="lazy"></div><div class="slide"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/imagen_34.jpeg" alt="Práctico, cómodo, eficiente" loading="lazy"></div></div></div><div class="slider-nav"><button class="slider-btn" onclick="slideStep('kyr',-1)">←</button><div class="slider-dots" id="dots-kyr"><button class="slider-dot  active" onclick="slideTo('kyr',0)"></button><button class="slider-dot" onclick="slideTo('kyr',1)"></button><button class="slider-dot" onclick="slideTo('kyr',2)"></button><button class="slider-dot" onclick="slideTo('kyr',3)"></button></div><span class="slider-count" id="count-kyr">1 / 4</span><button class="slider-btn" onclick="slideStep('kyr',1)">→</button></div>
+    </div>
+
+    <!-- MERCADO PÁDEL -->
+   
+    <div id="panel-mercado" class="brand-panel reveal">
+      <div class="bp-header">
+        <div class="bp-name">Mercado Pádel Chile</div>
+        <div class="bp-sub">Diseño para redes sociales · Deportes · Chile</div>
+        <div class="bp-tags"><span class="bpt" style="background:var(--azul)">Social Media Design</span><span class="bpt" style="background:var(--lime)">Deportes</span><span class="bpt" style="background:var(--naranja);color:white">Chile</span></div>
+      </div>
+      <div class="brand-slider" id="slider-mer"><div class="slider-track" id="track-mer" style="transform:translateX(0%)"><div class="slide"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/imagen_35.jpeg" alt="Black Crown Hurricane 2022" loading="lazy"></div><div class="slide"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/imagen_36.jpeg" alt="Starvie Metheora 2022" loading="lazy"></div><div class="slide"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/imagen_37.jpeg" alt="Babolat Technical Vertuo — versión 1" loading="lazy"></div><div class="slide"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/imagen_38.jpeg" alt="Babolat Technical Vertuo — versión 2" loading="lazy"></div><div class="slide"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/imagen_39.jpeg" alt="Black Crown Special Power 2022" loading="lazy"></div><div class="slide"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/imagen_40.jpeg" alt="Head Flash" loading="lazy"></div><div class="slide"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/imagen_41.jpeg" alt="Drop Shot Canyon Pro 2022" loading="lazy"></div></div></div><div class="slider-nav"><button class="slider-btn" onclick="slideStep('mer',-1)">←</button><div class="slider-dots" id="dots-mer"><button class="slider-dot  active" onclick="slideTo('mer',0)"></button><button class="slider-dot" onclick="slideTo('mer',1)"></button><button class="slider-dot" onclick="slideTo('mer',2)"></button><button class="slider-dot" onclick="slideTo('mer',3)"></button><button class="slider-dot" onclick="slideTo('mer',4)"></button><button class="slider-dot" onclick="slideTo('mer',5)"></button><button class="slider-dot" onclick="slideTo('mer',6)"></button></div><span class="slider-count" id="count-mer">1 / 7</span><button class="slider-btn" onclick="slideStep('mer',1)">→</button></div>
+    </div>
+
+    <!-- BRUTAL (current) -->
+   
+    <div id="panel-brutal" class="brand-panel reveal">
+      <div class="bp-header">
+        <div class="bp-name">Brutal</div>
+        <div class="bp-sub">Diseño para redes sociales · Eventos &amp; Sunsets · San Rafael, Mendoza · Actualidad</div>
+        <div class="bp-tags"><span class="bpt" style="background:var(--negro);color:var(--lime)">Cliente activo</span><span class="bpt" style="background:var(--lila)">Eventos</span><span class="bpt" style="background:var(--naranja);color:white">Sunsets · Bodegas</span></div>
+      </div>
+      <div class="brand-slider" id="slider-bru"><div class="slider-track" id="track-bru" style="transform:translateX(0%)"><div class="slide r4-5"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/imagen_42.jpeg" alt="Fiesta Brutal + Chapa" loading="lazy"></div><div class="slide r4-5"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/imagen_43.jpeg" alt="Brutal Sunset Algodón — Save the Date" loading="lazy"></div><div class="slide r4-5"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/imagen_44.jpeg" alt="Brutal Sunset Algodón — Line up" loading="lazy"></div><div class="slide r4-5"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/imagen_45.jpeg" alt="Sunset Iaccarini — Save the Date 04.04" loading="lazy"></div><div class="slide r4-5"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/imagen_46.jpeg" alt="Sunset Iaccarini — Info entrada" loading="lazy"></div><div class="slide r4-5"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/imagen_47.jpeg" alt="Sunset Iaccarini — Line up" loading="lazy"></div><div class="slide r4-5"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/imagen_48.jpeg" alt="Sunset Mayo — Save the Date 16.05" loading="lazy"></div><div class="slide r4-5"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/imagen_49.jpeg" alt="Sunset Mayo — Info entrada" loading="lazy"></div><div class="slide r4-5"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/imagen_50.jpeg" alt="Sunset Mayo — Line up Brenda Hetcer" loading="lazy"></div><div class="slide r4-5"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/imagen_51.jpeg" alt="Sunset Bianchi — Día del Amigo Save the Date" loading="lazy"></div><div class="slide r4-5"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/imagen_52.jpeg" alt="Sunset Bianchi — Line up Día del Amigo" loading="lazy"></div></div></div><div class="slider-nav"><button class="slider-btn" onclick="slideStep('bru',-1)">←</button><div class="slider-dots" id="dots-bru"><button class="slider-dot  active" onclick="slideTo('bru',0)"></button><button class="slider-dot" onclick="slideTo('bru',1)"></button><button class="slider-dot" onclick="slideTo('bru',2)"></button><button class="slider-dot" onclick="slideTo('bru',3)"></button><button class="slider-dot" onclick="slideTo('bru',4)"></button><button class="slider-dot" onclick="slideTo('bru',5)"></button><button class="slider-dot" onclick="slideTo('bru',6)"></button><button class="slider-dot" onclick="slideTo('bru',7)"></button><button class="slider-dot" onclick="slideTo('bru',8)"></button><button class="slider-dot" onclick="slideTo('bru',9)"></button><button class="slider-dot" onclick="slideTo('bru',10)"></button></div><span class="slider-count" id="count-bru">1 / 11</span><button class="slider-btn" onclick="slideStep('bru',1)">→</button></div>
+    </div>
+
+    <!-- CHAPA (current) -->
+   
+    <div id="panel-chapa" class="brand-panel reveal">
+      <div class="bp-header">
+        <div class="bp-name">Chapa Club</div>
+        <div class="bp-sub">Diseño para redes sociales · Entretenimiento · San Rafael, Mendoza · Actualidad</div>
+        <div class="bp-tags"><span class="bpt" style="background:var(--negro);color:var(--lime)">Cliente activo</span><span class="bpt" style="background:var(--rosa)">Entretenimiento</span><span class="bpt" style="background:var(--lila)">Eventos</span></div>
+      </div>
+      <div class="brand-slider" id="slider-cha"><div class="slider-track" id="track-cha" style="transform:translateX(0%)"><div class="slide r9-16"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/imagen_53.jpeg" alt="Chapa — Sáb 02.05 Leo García + VLZ" loading="lazy"></div><div class="slide r9-16"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/imagen_54.jpeg" alt="Chapa — Sáb 30.05 Alexis Videla + Luca Gatto" loading="lazy"></div><div class="slide r9-16"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/imagen_55.jpeg" alt="Chapa — Sáb 09.05 Alexis Videla + Jorge Ayala" loading="lazy"></div><div class="slide r9-16"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/imagen_56.jpeg" alt="Chapa — Sáb 16.05 Leo García + Braulio" loading="lazy"></div><div class="slide r9-16"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/imagen_57.jpeg" alt="Chapa — Finde Carnaval XXL" loading="lazy"></div><div class="slide r9-16"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/imagen_58.jpeg" alt="Brutal Año Nuevo — Roman" loading="lazy"></div><div class="slide r9-16"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/imagen_59.jpeg" alt="Brutal Año Nuevo — Belico" loading="lazy"></div><div class="slide r9-16"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/imagen_60.jpeg" alt="Brutal Año Nuevo — Alex Videla" loading="lazy"></div><div class="slide r9-16"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/imagen_61.jpeg" alt="Chapa — Fiesta Navidad 25.12" loading="lazy"></div></div></div><div class="slider-nav"><button class="slider-btn" onclick="slideStep('cha',-1)">←</button><div class="slider-dots" id="dots-cha"><button class="slider-dot  active" onclick="slideTo('cha',0)"></button><button class="slider-dot" onclick="slideTo('cha',1)"></button><button class="slider-dot" onclick="slideTo('cha',2)"></button><button class="slider-dot" onclick="slideTo('cha',3)"></button><button class="slider-dot" onclick="slideTo('cha',4)"></button><button class="slider-dot" onclick="slideTo('cha',5)"></button><button class="slider-dot" onclick="slideTo('cha',6)"></button><button class="slider-dot" onclick="slideTo('cha',7)"></button><button class="slider-dot" onclick="slideTo('cha',8)"></button></div><span class="slider-count" id="count-cha">1 / 9</span><button class="slider-btn" onclick="slideStep('cha',1)">→</button></div>
+    </div>
+
+    <!-- MARTA (current) -->
+    <div id="panel-marta" class="brand-panel reveal">
+      <div class="bp-header">
+        <div class="bp-name">Marta Bassols Coach</div>
+        <div class="bp-sub">Diseño para redes sociales · Coaching · Actualidad</div>
+        <div class="bp-tags"><span class="bpt" style="background:var(--negro);color:var(--lime)">Cliente activa</span><span class="bpt" style="background:var(--azul)">Coaching</span></div>
+      </div>
+      <div class="brand-slider" id="slider-mar">
+        <div class="slider-track" id="track-mar" style="transform:translateX(0%)">
+          <div class="slide r4-5"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/mb1.jpg" alt="Marta Bassols Coach — 1" loading="lazy"></div>
+          <div class="slide r4-5"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/mb2.jpg" alt="Marta Bassols Coach — 2" loading="lazy"></div>
+          <div class="slide r4-5"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/mb3.jpg" alt="Marta Bassols Coach — 3" loading="lazy"></div>
+          <div class="slide r4-5"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/mb4.jpg" alt="Marta Bassols Coach — 4" loading="lazy"></div>
+          <div class="slide r4-5"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/mb5.jpg" alt="Marta Bassols Coach — 5" loading="lazy"></div>
+          <div class="slide r4-5"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/mb6.jpg" alt="Marta Bassols Coach — 6" loading="lazy"></div>
+          <div class="slide r4-5"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/mb7.jpg" alt="Marta Bassols Coach — 7" loading="lazy"></div>
+          <div class="slide r4-5"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/mb8.jpg" alt="Marta Bassols Coach — 8" loading="lazy"></div>
+          <div class="slide r4-5"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/mb9.jpg" alt="Marta Bassols Coach — 9" loading="lazy"></div>
+          <div class="slide r4-5"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/mb10.jpg" alt="Marta Bassols Coach — 10" loading="lazy"></div>
+          <div class="slide r4-5"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/mb11.jpg" alt="Marta Bassols Coach — 11" loading="lazy"></div>
+          <div class="slide r4-5"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/mb12.jpg" alt="Marta Bassols Coach — 12" loading="lazy"></div>
+          <div class="slide r4-5"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/mb13.jpg" alt="Marta Bassols Coach — 13" loading="lazy"></div>
+        </div>
+      </div>
+      <div class="slider-nav">
+        <button class="slider-btn" onclick="slideStep('mar',-1)">←</button>
+        <div class="slider-dots" id="dots-mar">
+          <button class="slider-dot active" onclick="slideTo('mar',0)"></button>
+          <button class="slider-dot" onclick="slideTo('mar',1)"></button>
+          <button class="slider-dot" onclick="slideTo('mar',2)"></button>
+          <button class="slider-dot" onclick="slideTo('mar',3)"></button>
+          <button class="slider-dot" onclick="slideTo('mar',4)"></button>
+          <button class="slider-dot" onclick="slideTo('mar',5)"></button>
+          <button class="slider-dot" onclick="slideTo('mar',6)"></button>
+          <button class="slider-dot" onclick="slideTo('mar',7)"></button>
+          <button class="slider-dot" onclick="slideTo('mar',8)"></button>
+          <button class="slider-dot" onclick="slideTo('mar',9)"></button>
+          <button class="slider-dot" onclick="slideTo('mar',10)"></button>
+          <button class="slider-dot" onclick="slideTo('mar',11)"></button>
+          <button class="slider-dot" onclick="slideTo('mar',12)"></button>
+        </div>
+        <span class="slider-count" id="count-mar">1 / 13</span>
+        <button class="slider-btn" onclick="slideStep('mar',1)">→</button>
+      </div>
+    </div>
+
+    <!-- CÁPSULAS (current) -->
+    <div id="panel-capsulas" class="brand-panel reveal">
+      <div class="bp-header">
+        <div class="bp-name">Cápsulas Aura</div>
+        <div class="bp-sub">Diseño para redes sociales · Salud &amp; Bienestar · Córdoba · Actualidad</div>
+        <div class="bp-tags"><span class="bpt" style="background:var(--negro);color:var(--lime)">Cliente activa</span><span class="bpt" style="background:var(--lila)">Salud &amp; Bienestar</span></div>
+      </div>
+      <div class="brand-slider" id="slider-cap">
+        <div class="slider-track" id="track-cap" style="transform:translateX(0%)">
+          <div class="slide r4-5"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/ca1.jpg" alt="Cápsulas Aura — 1" loading="lazy"></div>
+          <div class="slide r4-5"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/ca2.jpg" alt="Cápsulas Aura — 2" loading="lazy"></div>
+          <div class="slide r4-5"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/ca3.jpg" alt="Cápsulas Aura — 3" loading="lazy"></div>
+          <div class="slide r4-5"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/ca4.jpg" alt="Cápsulas Aura — 4" loading="lazy"></div>
+          <div class="slide r4-5"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/ca5.jpg" alt="Cápsulas Aura — 5" loading="lazy"></div>
+          <div class="slide r4-5"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/ca6.jpg" alt="Cápsulas Aura — 6" loading="lazy"></div>
+          <div class="slide r4-5"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/ca7.jpg" alt="Cápsulas Aura — 7" loading="lazy"></div>
+          <div class="slide r4-5"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/ca8.jpg" alt="Cápsulas Aura — 8" loading="lazy"></div>
+          <div class="slide r4-5"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/ca9.jpg" alt="Cápsulas Aura — 9" loading="lazy"></div>
+          <div class="slide r4-5"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/ca10.jpg" alt="Cápsulas Aura — 10" loading="lazy"></div>
+        </div>
+      </div>
+      <div class="slider-nav">
+        <button class="slider-btn" onclick="slideStep('cap',-1)">←</button>
+        <div class="slider-dots" id="dots-cap">
+          <button class="slider-dot active" onclick="slideTo('cap',0)"></button>
+          <button class="slider-dot" onclick="slideTo('cap',1)"></button>
+          <button class="slider-dot" onclick="slideTo('cap',2)"></button>
+          <button class="slider-dot" onclick="slideTo('cap',3)"></button>
+          <button class="slider-dot" onclick="slideTo('cap',4)"></button>
+          <button class="slider-dot" onclick="slideTo('cap',5)"></button>
+          <button class="slider-dot" onclick="slideTo('cap',6)"></button>
+          <button class="slider-dot" onclick="slideTo('cap',7)"></button>
+          <button class="slider-dot" onclick="slideTo('cap',8)"></button>
+          <button class="slider-dot" onclick="slideTo('cap',9)"></button>
+        </div>
+        <span class="slider-count" id="count-cap">1 / 10</span>
+        <button class="slider-btn" onclick="slideStep('cap',1)">→</button>
+      </div>
+    </div>
+
+    <!-- INPAR (current) -->
+    <div id="panel-inpar" class="brand-panel reveal">
+      <div class="bp-header">
+        <div class="bp-name">InPar Diseño de Interiores</div>
+        <div class="bp-sub">Diseño para redes sociales · Interiorismo · Actualidad</div>
+        <div class="bp-tags"><span class="bpt" style="background:var(--negro);color:var(--lime)">Cliente activa</span><span class="bpt" style="background:var(--azul)">Interiorismo</span></div>
+      </div>
+      <div class="brand-slider" id="slider-inp" style="max-width:380px">
+        <div class="slider-track" id="track-inp" style="transform:translateX(0%)">
+          <div class="slide r9-16"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/in1.jpg" alt="InPar Diseño de Interiores — 1" loading="lazy"></div>
+          <div class="slide r9-16"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/in2.jpg" alt="InPar Diseño de Interiores — 2" loading="lazy"></div>
+          <div class="slide r9-16"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/in3.jpg" alt="InPar Diseño de Interiores — 3" loading="lazy"></div>
+          <div class="slide r4-5"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/in4.jpg" alt="InPar Diseño de Interiores — 4" loading="lazy"></div>
+          <div class="slide r4-5"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/in5.jpg" alt="InPar Diseño de Interiores — 5" loading="lazy"></div>
+          <div class="slide r4-5"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/in6.jpg" alt="InPar Diseño de Interiores — 6" loading="lazy"></div>
+          <div class="slide r4-5"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/in7.jpg" alt="InPar Diseño de Interiores — 7" loading="lazy"></div>
+          <div class="slide r4-5"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/in8.jpg" alt="InPar Diseño de Interiores — 8" loading="lazy"></div>
+          <div class="slide r4-5"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/in9.jpg" alt="InPar Diseño de Interiores — 9" loading="lazy"></div>
+          <div class="slide r4-5"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/in10.jpg" alt="InPar Diseño de Interiores — 10" loading="lazy"></div>
+          <div class="slide r4-5"><img src="https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/in11.jpg" alt="InPar Diseño de Interiores — 11" loading="lazy"></div>
+        </div>
+      </div>
+      <div class="slider-nav" style="max-width:380px">
+        <button class="slider-btn" onclick="slideStep('inp',-1)">←</button>
+        <div class="slider-dots" id="dots-inp">
+          <button class="slider-dot active" onclick="slideTo('inp',0)"></button>
+          <button class="slider-dot" onclick="slideTo('inp',1)"></button>
+          <button class="slider-dot" onclick="slideTo('inp',2)"></button>
+          <button class="slider-dot" onclick="slideTo('inp',3)"></button>
+          <button class="slider-dot" onclick="slideTo('inp',4)"></button>
+          <button class="slider-dot" onclick="slideTo('inp',5)"></button>
+          <button class="slider-dot" onclick="slideTo('inp',6)"></button>
+          <button class="slider-dot" onclick="slideTo('inp',7)"></button>
+          <button class="slider-dot" onclick="slideTo('inp',8)"></button>
+          <button class="slider-dot" onclick="slideTo('inp',9)"></button>
+          <button class="slider-dot" onclick="slideTo('inp',10)"></button>
+        </div>
+        <span class="slider-count" id="count-inp">1 / 11</span>
+        <button class="slider-btn" onclick="slideStep('inp',1)">→</button>
+      </div>
+    </div>
+
+    <!-- BERLÍN (CM only) -->
+    <div id="panel-berlin" class="brand-panel reveal">
+      <div class="bp-header">
+        <div class="bp-name">Berlín Bar</div>
+        <div class="bp-sub">Community Management · Gastronomía · Actualidad</div>
+        <div class="bp-tags"><span class="bpt" style="background:var(--negro);color:var(--lime)">Cliente activo</span><span class="bpt" style="background:var(--naranja);color:white">Solo CM</span><span class="bpt" style="background:var(--rosa)">Gastronomía</span></div>
+      </div>
+      <div class="cm-only"><div class="cm-only-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--lime)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="3"/><circle cx="17" cy="10" r="2"/><path d="M3 20c0-3.3 2.7-6 6-6h2"/><path d="M15 20c0-2.2 1.8-4 4-4"/></svg></div><div><h4>Community Management exclusivo</h4><p data-es="Para Berlín Bar me encargo del manejo de la comunidad en redes sociales: gestión de comentarios, DMs, atención y estrategia de interacción. El diseño visual lo realiza el equipo de la marca." data-en="For Berlín Bar I handle social media community management: comment management, DMs, community care and interaction strategy. Visual design is handled by the brand's team.">Para Berlín Bar me encargo del manejo de la comunidad en redes sociales: gestión de comentarios, DMs, atención y estrategia de interacción. El diseño visual lo realiza el equipo de la marca.</p></div></div>
+    </div>
+
+    <!-- AGENCIA LUCERO (CM only) -->
+    <div id="panel-lucero" class="brand-panel reveal">
+      <div class="bp-header">
+        <div class="bp-name">Agencia Lucero</div>
+        <div class="bp-sub">Community Management · Quiniela &amp; Loterías · Actualidad</div>
+        <div class="bp-tags"><span class="bpt" style="background:var(--negro);color:var(--lime)">Cliente activo</span><span class="bpt" style="background:var(--naranja);color:white">Solo CM</span><span class="bpt" style="background:var(--lime)">Agencia de Quiniela</span></div>
+      </div>
+      <div class="cm-only"><div class="cm-only-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--lime)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="3"/><circle cx="17" cy="10" r="2"/><path d="M3 20c0-3.3 2.7-6 6-6h2"/><path d="M15 20c0-2.2 1.8-4 4-4"/></svg></div><div><h4>Community Management exclusivo</h4><p data-es="Para Agencia Lucero gestiono la comunidad en redes sociales: respuestas, interacciones, DMs y estrategia de engagement. El diseño visual es responsabilidad del equipo de la agencia." data-en="For Agencia Lucero I manage the social media community: responses, interactions, DMs and engagement strategy. Visual design is the agency's team's responsibility.">Para Agencia Lucero gestiono la comunidad en redes sociales: respuestas, interacciones, DMs y estrategia de engagement. El diseño visual es responsabilidad del equipo de la agencia.</p></div></div>
+    </div><!-- /panel lucero -->
+
+  </div><!-- /panels container -->
+
+  </div><!-- /work-sm -->
+
+</section>
+
+<style>
+/* BRAND SLIDER */
+.brand-slider{position:relative;overflow:hidden;border-radius:18px;max-width:380px;width:100%}
+.slider-track{display:flex;transition:transform 0.4s cubic-bezier(0.22,1,0.36,1)}
+.slide{min-width:100%;aspect-ratio:1/1;overflow:hidden;border-radius:18px}
+.slide.r4-5{aspect-ratio:4/5}
+.slide.r9-16{aspect-ratio:9/16;max-width:260px}
+.slide img{width:100%;height:100%;object-fit:cover;display:block}
+.slider-nav{display:flex;align-items:center;justify-content:space-between;margin-top:0.85rem;gap:0.5rem;max-width:380px;width:100%}
+.brand-pills{display:flex;flex-wrap:wrap;gap:0.6rem;margin-bottom:2.5rem;justify-content:center}
+.slider-dots{display:flex;gap:6px;align-items:center;justify-content:center;flex:1}
+.slider-dot{width:7px;height:7px;border-radius:50%;background:rgba(0,0,0,0.15);transition:background 0.2s,width 0.2s;cursor:pointer;border:none;padding:0}
+.slider-dot.active{background:var(--negro);width:18px;border-radius:4px}
+.slider-btn{width:42px;height:42px;border-radius:50%;border:1.5px solid rgba(0,0,0,0.15);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1rem;transition:all 0.2s;flex-shrink:0;color:var(--negro)}
+.slider-btn:hover{background:var(--negro);color:var(--crema);border-color:var(--negro)}
+.slider-count{font-size:0.72rem;font-weight:600;opacity:0.35;letter-spacing:0.04em;margin-right:0.5rem}
+.slides-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem}
+.brand-panel{display:none}
+.brand-panel.active{display:flex;flex-direction:column;align-items:center;animation:fadeInUp 0.32s ease;width:100%;max-width:420px}
+.brand-panel .bp-switch{text-align:center;margin-top:1.2rem;width:100%}
+.brand-panel .bp-switch p{font-size:0.78rem;font-weight:300;opacity:0.5;margin-bottom:0.5rem}
+.brand-panel .bp-switch button{font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:600;padding:8px 20px;border-radius:100px;border:1.5px solid rgba(0,0,0,0.15);background:transparent;cursor:pointer;transition:all 0.2s;color:var(--negro)}
+.brand-panel .bp-switch button:hover{background:var(--negro);color:var(--crema);border-color:var(--negro)}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.bp-header{margin-bottom:1.4rem;padding-bottom:1rem;border-bottom:1px solid rgba(0,0,0,0.08);width:100%;max-width:380px;text-align:center}
+.bp-name{font-family:'Fraunces',serif;font-weight:900;font-size:1.55rem;letter-spacing:-0.02em;margin-bottom:4px;color:var(--negro)}
+.bp-sub{font-size:0.74rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;opacity:0.38;margin-bottom:0.65rem}
+.bp-tags{display:flex;gap:0.35rem;flex-wrap:wrap;justify-content:center}
+.bpt{font-size:0.7rem;font-weight:600;padding:3px 11px;border-radius:100px}
+.confidencial-wrap{background:var(--negro);border-radius:18px;padding:2.5rem;text-align:center}
+.conf-icon{font-size:2rem;margin-bottom:0.75rem}
+.conf-title{font-family:'Fraunces',serif;font-weight:700;font-size:1.05rem;color:var(--lime);margin-bottom:0.4rem}
+.conf-desc{font-size:0.84rem;font-weight:300;color:rgba(255,255,255,0.45);max-width:430px;margin:0 auto;line-height:1.75}
+.cm-only{background:var(--negro);border-radius:18px;padding:2rem;display:flex;align-items:flex-start;gap:1.5rem;flex-wrap:wrap}
+.cm-only-icon{width:36px;height:36px;flex-shrink:0;margin-top:0.2rem;display:flex;align-items:center;justify-content:center}
+.cm-only-icon svg{width:28px;height:28px}
+.cm-only h4{font-family:'Fraunces',serif;font-weight:700;font-size:1rem;color:var(--lime);margin-bottom:0.45rem}
+.cm-only p{font-size:0.84rem;font-weight:300;color:rgba(255,255,255,0.48);line-height:1.8}
+@media(max-width:600px){.slides-grid{grid-template-columns:1fr}}
+</style>
+
+<!-- PROCESS -->
+<section class="process" id="proceso">
+  <h2 class="sh2 reveal" data-es="Cómo trabajo" data-en="How I work">Cómo trabajo</h2>
+  <p class="reveal" style="font-size:0.95rem;font-weight:300;line-height:1.82;max-width:640px;margin:0 auto 2.5rem;opacity:0.65;text-align:center" data-es="Un proceso claro, transparente y flexible. Adapto mi flujo de trabajo según la naturaleza de tu proyecto, combinando criterio estratégico y herramientas avanzadas de IA para optimizar cada etapa." data-en="A clear, transparent and flexible process. I adapt my workflow to the nature of your project, combining strategic judgment and advanced AI tools to optimize each stage.">Un proceso claro, transparente y flexible. Adapto mi flujo de trabajo según la naturaleza de tu proyecto, combinando criterio estratégico y herramientas avanzadas de IA para optimizar cada etapa.</p>
+
+  <div class="reveal" style="margin-bottom:2rem;display:flex;gap:0.5rem;justify-content:center">
+    <button class="proc-tab active" id="tab-ux" onclick="setProc('ux')">Web &amp; UX/UI</button>
+    <button class="proc-tab" id="tab-sm" onclick="setProc('sm')">Social Media</button>
+  </div>
+
+  <!-- UX/UI Steps -->
+  <div class="psteps psteps-ux reveal">
+    <div class="pstep">
+      <div class="num">01</div>
+      <h4>Diagnóstico y briefing</h4>
+      <p>Analizo a fondo el <strong>contexto de la marca</strong>, sus objetivos y su audiencia antes de trazar la primera línea. Mapeamos los <strong>objetivos del negocio</strong> y las necesidades reales del usuario. Definimos el <strong>alcance, entregables y tiempos</strong> del proyecto.</p>
+    </div>
+    <div class="pstep">
+      <div class="num">02</div>
+      <h4>Investigación y arquitectura</h4>
+      <p>Estructuramos la <strong>arquitectura de la información</strong>, el mapa del sitio y el moodboard estético. Integro <strong>IA para acelerar el benchmarking</strong> y detectar tendencias. Presentamos <strong>wireframes de baja fidelidad</strong> para validar la estructura.</p>
+    </div>
+    <div class="pstep">
+      <div class="num">03</div>
+      <h4>Diseño y co-creación</h4>
+      <p>Diseñamos las pantallas e interfaces paso a paso mediante <strong>rondas de revisión estructuradas</strong>. <strong>Prototipado interactivo en Figma</strong>. Cada revisión es documentada. No avanzamos sin tu <strong>validación explícita</strong>.</p>
+    </div>
+    <div class="pstep">
+      <div class="num">04</div>
+      <h4>Entrega y handoff</h4>
+      <p>Tu proyecto queda listo para desarrollo con <strong>archivos organizados y componentes limpios</strong>. Entrego un <strong>sistema escalable</strong> con tokens de diseño, especificaciones para desarrollo y <strong>documentación de uso</strong>.</p>
+    </div>
+  </div>
+
+  <!-- Social Media Steps -->
+  <div class="psteps psteps-sm reveal" style="display:none">
+    <div class="pstep">
+      <div class="num">01</div>
+      <h4>Diagnóstico y briefing</h4>
+      <p>Realizamos una <strong>auditoría completa de tus canales</strong> y definimos la identidad y tono de la conversación. Analizamos tu <strong>competencia, público objetivo</strong> y posicionamiento actual para identificar qué necesita transformarse.</p>
+    </div>
+    <div class="pstep">
+      <div class="num">02</div>
+      <h4>Estrategia y dirección visual</h4>
+      <p>Definimos los <strong>pilares de contenido</strong> y la estrategia de comunicación visual. Creo un <strong>moodboard editorial</strong> con paleta, tipografías y reglas de composición. Uso <strong>IA para predecir tendencias</strong> de contenido.</p>
+    </div>
+    <div class="pstep">
+      <div class="num">03</div>
+      <h4>Producción y calendario</h4>
+      <p>Co-creamos el <strong>calendario de contenido estratégico</strong>. Tras tu validación, diseño las <strong>piezas gráficas</strong> — posts, stories, reels y carousels — en los formatos correctos para cada plataforma.</p>
+    </div>
+    <div class="pstep">
+      <div class="num">04</div>
+      <h4>Publicación y optimización</h4>
+      <p>Tras la publicación, revisamos <strong>métricas de rendimiento</strong> y optimizamos la estrategia de forma continua. <strong>Análisis mensual</strong> de alcance, engagement y crecimiento para mejorar resultados con datos reales.</p>
+    </div>
+  </div>
+
+</section>
+
+<!-- SPOTIFY -->
+<section class="spo">
+  <div class="reveal" style="flex:1">
+    <h3 data-es="Lo que suena mientras diseño" data-en="What plays while I design">Lo que suena mientras diseño</h3>
+    <p data-es="La música que elijo mientras trabajo dice algo de cómo pienso y cómo creo." data-en="The music I choose while working says something about how I think and create.">La música que elijo mientras trabajo dice algo de cómo pienso y cómo creo.</p>
+    <a href="https://open.spotify.com/playlist/1nIJr2IOVqm5TQhsgw4Z3Z?si=2159891240a74387" target="_blank" class="spo-btn">
+      <svg viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+      <span data-es="Escuchar playlist" data-en="Listen to playlist">Escuchar playlist</span>
+    </a>
+  </div>
+  <div class="bars" aria-hidden="true"><div class="bar" style="height:60%"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div></div>
+</section>
+
+<!-- CV -->
+<section class="cv-sec" id="curriculum">
+  <div class="reveal" style="margin-bottom:3rem">
+    <h2 class="sh2" data-es="Formación" data-en="Education">Formación</h2>
+    <p style="font-size:0.82rem;font-weight:400;color:rgba(0,0,0,0.45);letter-spacing:0.08em;text-transform:uppercase;margin-top:-0.8rem" data-es="Currículum" data-en="Résumé">Currículum</p>
+  </div>
+  <div class="puzzles reveal">
+    <div>
+      <div class="pu-label">✦ Experiencia internacional activa</div>
+      <div class="pu-role">Social Media Specialist & UX/UI Designer</div>
+      <div class="pu-co">Puzzles Consulting — Estados Unidos</div>
+      <p class="pu-desc">Gestión de redes sociales y diseño UX/UI para empresa de consultoría internacional. 7 clientes activos, estrategia de contenido en inglés y producción visual para audiencias de EE.UU.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;gap:5px;flex-shrink:0">
+      <span class="pu-badge">Dic 2024 — Actualidad</span>
+      <div class="pu-remote">Remote · International</div>
+    </div>
+  </div>
+  <div class="cv-grid reveal">
+    <div>
+      <h3 class="cvh" data-es="Formación Académica" data-en="Academic Education">Formación Académica</h3>
+      <div class="tl2">
+        <div class="tl2i"><div class="tl2d" style="background:rgba(0,0,0,0.15)"></div><div>
+          <div class="tl2y">2006 — 2018</div>
+          <div class="tl2r">Bachiller Contable</div>
+          <div class="tl2s">Colegio San Rafael Hermanos Maristas · San Rafael, Mendoza</div>
+        </div></div>
+        <div class="tl2i"><div class="tl2d" style="background:var(--lime)"></div><div>
+          <div class="tl2y">2016</div>
+          <div class="tl2r">Inglés Intensivo — Nivel B2</div>
+          <div class="tl2s">Moyle Park College · Dublín, Irlanda</div>
+        </div></div>
+        <div class="tl2i"><div class="tl2d" style="background:var(--lila)"></div><div>
+          <div class="tl2y">2019 — 2022 · Finalizada</div>
+          <div class="tl2r">Diseño Gráfico</div>
+          <div class="tl2s">Universidad de Mendoza · Fac. Arquitectura, Urbanismo y Diseño</div>
+        </div></div>
+        <div class="tl2i"><div class="tl2d" style="background:var(--lila)"></div><div>
+          <div class="tl2y">Durante carrera</div>
+          <div class="tl2r">Ayudantía de Cátedra — Pre-universitario Diseño</div>
+          <div class="tl2s">Universidad de Mendoza · Fac. Arquitectura, Urbanismo y Diseño</div>
+        </div></div>
+        <div class="tl2i"><div class="tl2d" style="background:var(--lila)"></div><div>
+          <div class="tl2y">Durante carrera</div>
+          <div class="tl2r">Participación en EDA</div>
+          <div class="tl2s">Encuentro de Diseñadores y Arquitectos · Universidad de Mendoza</div>
+        </div></div>
+      </div>
+      <h3 class="cvh" style="margin-top:2.5rem" data-es="Formación Profesional" data-en="Professional Training">Formación Profesional</h3>
+      <div class="tl2">
+        <div class="tl2i"><div class="tl2d" style="background:var(--lime)"></div><div>
+          <div class="tl2y">2019</div>
+          <div class="tl2r">Start Up Weekend — Emprendedores</div>
+          <div class="tl2s">Mendoza, Argentina</div>
+        </div></div>
+        <div class="tl2i"><div class="tl2d" style="background:var(--azul)"></div><div>
+          <div class="tl2y">2024 — En curso</div>
+          <div class="tl2r">Certificado Profesional de Diseño UX — Google</div>
+          <div class="tl2s">Google Career Certificates · Plataforma online</div>
+        </div></div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:2.5rem">
+
+      <div>
+        <h3 class="cvh" data-es="Software & herramientas" data-en="Software & tools">Software & herramientas</h3>
+        <div class="sk-bars">
+          <div style="font-size:0.67rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;opacity:0.35;margin-bottom:0.4rem">Social Media</div>
+          <div class="sk-row"><span class="sk-name">Photoshop</span><div class="sk-track"><div class="sk-fill" style="width:100%;background:var(--naranja)"></div></div></div>
+          <div class="sk-row"><span class="sk-name">Illustrator</span><div class="sk-track"><div class="sk-fill" style="width:100%;background:var(--naranja)"></div></div></div>
+          <div class="sk-row"><span class="sk-name">InDesign</span><div class="sk-track"><div class="sk-fill" style="width:100%;background:var(--naranja)"></div></div></div>
+          <div class="sk-row"><span class="sk-name">Corel Draw</span><div class="sk-track"><div class="sk-fill" style="width:100%;background:var(--naranja)"></div></div></div>
+          <div class="sk-row"><span class="sk-name">Lightroom</span><div class="sk-track"><div class="sk-fill" style="width:100%;background:var(--naranja)"></div></div></div>
+          <div class="sk-row"><span class="sk-name">Meta Business Suite</span><div class="sk-track"><div class="sk-fill" style="width:100%;background:var(--naranja)"></div></div></div>
+          <div class="sk-row"><span class="sk-name">Meta Ads Manager</span><div class="sk-track"><div class="sk-fill" style="width:100%;background:var(--naranja)"></div></div></div>
+          <div class="sk-row"><span class="sk-name">Instagram</span><div class="sk-track"><div class="sk-fill" style="width:100%;background:var(--naranja)"></div></div></div>
+          <div class="sk-row"><span class="sk-name">Facebook</span><div class="sk-track"><div class="sk-fill" style="width:100%;background:var(--naranja)"></div></div></div>
+          <div class="sk-row"><span class="sk-name">Linktree</span><div class="sk-track"><div class="sk-fill" style="width:100%;background:var(--naranja)"></div></div></div>
+          <div style="font-size:0.67rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;opacity:0.35;margin:0.7rem 0 0.4rem">Web</div>
+          <div class="sk-row"><span class="sk-name">Figma</span><div class="sk-track"><div class="sk-fill" style="width:100%;background:var(--lila)"></div></div></div>
+          <div style="font-size:0.67rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;opacity:0.35;margin:0.7rem 0 0.4rem">Inteligencia Artificial</div>
+          <div class="sk-row"><span class="sk-name">Claude</span><div class="sk-track"><div class="sk-fill" style="width:100%;background:var(--azul)"></div></div></div>
+          <div class="sk-row"><span class="sk-name">Gemini</span><div class="sk-track"><div class="sk-fill" style="width:100%;background:var(--azul)"></div></div></div>
+          <div class="sk-row"><span class="sk-name">Nano Banana</span><div class="sk-track"><div class="sk-fill" style="width:100%;background:var(--azul)"></div></div></div>
+          <div class="sk-row"><span class="sk-name">Chat GPT</span><div class="sk-track"><div class="sk-fill" style="width:100%;background:var(--azul)"></div></div></div></div>
+        <div style="margin-top:1.3rem;padding-top:1.3rem;border-top:1px solid rgba(0,0,0,0.07)">
+          <div style="font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;opacity:0.4;margin-bottom:0.65rem">Idiomas</div>
+          <div class="lng-pills"><span class="lp" style="background:var(--negro);color:var(--crema)">Español — Nativo</span><span class="lp" style="background:var(--lila)">Inglés — B2 Intermedio</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contacto">
+  <div class="reveal">
+    <h2><span data-es="¿Trabajamos" data-en="Shall we">¿Trabajamos</span><br><em data-es="juntos?" data-en="work together?">juntos?</em></h2>
+    <p style="font-size:0.95rem;font-weight:300;line-height:1.85;opacity:0.65;max-width:480px;margin:0 auto 0.5rem;text-align:center" data-es="Detrás de cada marca hay una historia que vale la pena contar bien. Si querés que trabajemos juntos para darle voz e identidad visual a la tuya, estoy acá." data-en="Behind every brand there's a story worth telling well. If you'd like us to work together to give yours a visual voice and identity, I'm here.">Detrás de cada marca hay una historia que vale la pena contar bien. Si querés que trabajemos juntos para darle voz e identidad visual a la tuya, estoy acá.</p>
+    <div class="clinks">
+      <a href="mailto:lu.sofia.romero@gmail.com" class="clink"><div class="cico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="13" rx="2"/><path d="M2 9l10 6 10-6"/></svg></div>lu.sofia.romero@gmail.com</a>
+      <a href="https://wa.me/5492604331673" target="_blank" class="clink"><div class="cico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>WhatsApp</a>
+      <a href="https://www.linkedin.com/in/lucianaromerodg/" target="_blank" class="clink"><div class="cico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="4"/><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 0 1 4 0v4M11 10v7"/></svg></div>LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p data-es="© 2025 Luciana Romero — Diseñadora Gráfica & Social Media Specialist · Mendoza, Argentina" data-en="© 2025 Luciana Romero — Graphic Designer & Social Media Specialist · Mendoza, Argentina">© 2025 Luciana Romero — Diseñadora Gráfica & Social Media Specialist · Mendoza, Argentina</p>
+  <a href="#" class="fback" data-es="Volver arriba ↑" data-en="Back to top ↑">Volver arriba ↑</a>
+</footer>
+
+<script>
+// Cursor
+const cursor=document.getElementById('cursor'),follower=document.getElementById('follower');
+let mx=0,my=0,fx=0,fy=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY});
+(function loop(){cursor.style.left=mx+'px';cursor.style.top=my+'px';fx+=(mx-fx)*0.12;fy+=(my-fy)*0.12;follower.style.left=fx+'px';follower.style.top=fy+'px';requestAnimationFrame(loop)})();
+document.querySelectorAll('a,button,.gi,.svc,.vc,.pill').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{cursor.style.transform='translate(-50%,-50%) scale(2.5)';follower.style.borderColor='var(--naranja)'});
+  el.addEventListener('mouseleave',()=>{cursor.style.transform='translate(-50%,-50%) scale(1)';follower.style.borderColor='var(--negro)'});
+});
+
+// Scroll reveal
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.07});
+document.querySelectorAll('.reveal').forEach(r=>obs.observe(r));
+
+// ============ BRAND GALLERY ============
+function showBrand(id) {
+  document.querySelectorAll('.brand-panel').forEach(p=>{p.style.display='none';p.classList.remove('active')});
+  const panel=document.getElementById('panel-'+id);
+  if(panel){
+    panel.style.display='block';
+    panel.classList.add('active');
+    // Add switch button if not already there
+    if(!panel.querySelector('.bp-switch')){
+      const sw=document.createElement('div');
+      sw.className='bp-switch';
+      sw.innerHTML='<p>¿Querés ver mis proyectos web?</p><button onclick="setWorkCat(\'web\');setTimeout(()=>{document.getElementById(\'como-diseno\').scrollIntoView({behavior:\'smooth\'})},100)">Ver Diseño Web →</button>';
+      panel.appendChild(sw);
+    }
+  }
+  document.querySelectorAll('.bpill').forEach(btn=>{
+    const oc=btn.getAttribute('onclick')||'';
+    btn.classList.toggle('active', oc.includes("'"+id+"'"));
+  });
+}
+
+// ============ SLIDER ============
+const _sliders={};
+function initSlider(id,total){_sliders[id]={cur:0,total};}
+function slideTo(id,idx){
+  const s=_sliders[id]; if(!s)return;
+  s.cur=Math.max(0,Math.min(idx,s.total-1));
+  const track=document.getElementById('track-'+id);
+  const count=document.getElementById('count-'+id);
+  const dots=document.getElementById('dots-'+id);
+  if(track)track.style.transform='translateX(-'+s.cur*100+'%)';
+  if(count)count.textContent=(s.cur+1)+' / '+s.total;
+  if(dots)dots.querySelectorAll('.slider-dot').forEach((d,i)=>d.classList.toggle('active',i===s.cur));
+}
+function slideStep(id,dir){const s=_sliders[id];if(s)slideTo(id,s.cur+dir);}
+// Init sliders on load
+document.addEventListener('DOMContentLoaded',function(){
+  initSlider('ant',6);
+  initSlider('bon',4);
+  initSlider('pin',6);
+  initSlider('sue',10);
+  initSlider('kyr',4);
+  initSlider('mer',7);
+  initSlider('bru',11);
+  initSlider('cha',9);
+  initSlider('mar',13);
+  initSlider('cap',10);
+  initSlider('inp',11);
+  // Init brand panels: show first one
+  showBrand('antidoto');
+});
+
+// ============ PROCESS TABS ============
+function setProc(mode){
+  // Toggle tab buttons
+  document.getElementById('tab-ux').classList.toggle('active', mode==='ux');
+  document.getElementById('tab-sm').classList.toggle('active', mode==='sm');
+  // Toggle psteps: hide all, show correct mode
+  document.querySelectorAll('.psteps-ux').forEach(el=>el.style.display= mode==='ux'?'grid':'none');
+  document.querySelectorAll('.psteps-sm').forEach(el=>el.style.display= mode==='sm'?'grid':'none');
+}
+// Init on load
+document.addEventListener('DOMContentLoaded',function(){
+  if(document.getElementById('tab-ux'))setProc('ux');
+});
+
+// Services slider
+let svcCur = 0;
+const svcTotal = 4;
+const svcVisible = 2;
+function svcStep(dir) {
+  svcCur = Math.max(0, Math.min(svcCur + dir, svcTotal - svcVisible));
+  const track = document.getElementById('svc-track');
+  const cardW = track.children[0].offsetWidth + 29; // width + gap (1.8rem ≈ 29px)
+  track.style.transform = 'translateX(-' + (svcCur * cardW) + 'px)';
+  document.getElementById('svc-prev').disabled = svcCur === 0;
+  document.getElementById('svc-next').disabled = svcCur >= svcTotal - svcVisible;
+}
+
+// Web cards slider
+let webSliderCur = 0;
+const webSliderTotal = 4;
+const webSliderVisible = 2;
+function webSliderStep(dir) {
+  webSliderCur = Math.max(0, Math.min(webSliderCur + dir, webSliderTotal - webSliderVisible));
+  const cardW = 460 + 32; // width + gap
+  document.getElementById('web-slider-track').style.transform = 'translateX(-' + (webSliderCur * cardW) + 'px)';
+  document.getElementById('web-prev').disabled = webSliderCur === 0;
+  document.getElementById('web-next').disabled = webSliderCur >= webSliderTotal - webSliderVisible;
+}
+
+// Web mockup navigation
+const webProjects = {
+  apex: { imgs: ['HOMEAPEX','SERVICEINDIVAPEX','SERVICEAPEX','ABOUTAPEX','ARTICLEAPEX','CONDITIONAPEX','CONTACTAPEX','FAQSAPEX'], cur: 0 },
+  karina: { imgs: ['KARINAHOME','KARINAABOUT','KARINAPRODUCT','KARINAARTICLES','KARINAMEASURING','KARINACONTACT','KARINAFAQS'], cur: 0 },
+  karinamail: { imgs: ['KARINAE1','KARINAE2','KARINAE3','KARINAE4','KARINAE5','KARINAE6'], cur: 0 },
+  composite: { imgs: ['compositedecking'], cur: 0 }
+};
+const base = 'https://raw.githubusercontent.com/lusofiaromero-25/luciana-romero-portfolio/main/img/';
+
+function webSetImg(id) {
+  const p = webProjects[id];
+  const img = document.getElementById('webimg-' + id);
+  img.style.opacity = '0';
+  setTimeout(() => { img.src = base + p.imgs[p.cur] + '.jpg'; img.style.opacity = '1'; img.style.marginTop = '0px'; }, 200);
+  document.getElementById('webcnt-' + id).textContent = (p.cur + 1) + ' / ' + p.imgs.length;
+}
+
+function webStep(id, dir) {
+  const p = webProjects[id];
+  p.cur = Math.max(0, Math.min(p.cur + dir, p.imgs.length - 1));
+  webSetImg(id);
+}
+
+// Scroll with mouse inside each web card
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.web-screen').forEach(screen => {
+    const img = screen.querySelector('img');
+    screen.addEventListener('wheel', (e) => {
+      e.preventDefault();
+      const maxScroll = img.offsetHeight - screen.offsetHeight;
+      if (maxScroll <= 0) return;
+      let current = parseInt(img.style.marginTop || '0');
+      current -= e.deltaY * 0.6;
+      current = Math.min(0, Math.max(-maxScroll, current));
+      img.style.marginTop = current + 'px';
+    }, { passive: false });
+  });
+});
+
+// Work category selector
+function setWorkCat(cat) {
+  document.querySelectorAll('.work-cat').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.work-content').forEach(c => c.classList.remove('active'));
+  document.getElementById('cat-' + cat).classList.add('active');
+  document.getElementById('work-' + cat).classList.add('active');
+}
+
+// Hamburger menu
+function toggleMenu(){
+  const h=document.getElementById('hamburger');
+  const n=document.getElementById('nav-links');
+  h.classList.toggle('open');
+  n.classList.toggle('open');
+}
+function closeMenu(){
+  document.getElementById('hamburger').classList.remove('open');
+  document.getElementById('nav-links').classList.remove('open');
+}
+function checkMobile(){
+  const h=document.getElementById('hamburger');
+  h.style.display=window.innerWidth<=600?'flex':'none';
+}
+window.addEventListener('resize',checkMobile);
+checkMobile();
+
+// Nav scroll glass
+const nav = document.querySelector('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// Language
+let lang='es';
+function setLang(l){
+  lang=l;
+  document.getElementById('btn-es').classList.toggle('active',l==='es');
+  document.getElementById('btn-en').classList.toggle('active',l==='en');
+  document.querySelectorAll('[data-es][data-en]').forEach(el=>{
+    const v=el.getAttribute('data-'+l);
+    if(v) el.innerHTML=v;
+  });
+  document.documentElement.lang=l;
+}
+
+// Spotify
+const spoBtn=document.getElementById('spo-btn');if(spoBtn)spoBtn.addEventListener('click',function(e){e.preventDefault();window.open('https://open.spotify.com/playlist/1nIJr2IOVqm5TQhsgw4Z3Z?si=2159891240a74387','_blank');});
+
+// Form
+const bsBtn=document.querySelector('.bs');if(bsBtn)bsBtn.addEventListener('click',function(){
+  const m=lang==='es'?'✦ ¡Mensaje enviado!':'✦ Message sent!';
+  this.textContent=m;this.style.background='#1DB954';
+  setTimeout(()=>{this.textContent=lang==='es'?'Enviar mensaje →':'Send message →';this.style.background='var(--negro)'},2500);
+});
+</script>
+
+<script>
+// Slider state
+const sliderState = {};
+
+function initSlider(id, total) {
+  sliderState[id] = { current: 0, total };
+}
+
+function slideTo(id, idx) {
+  const s = sliderState[id];
+  if (!s) return;
+  s.current = Math.max(0, Math.min(idx, s.total - 1));
+  const track = document.getElementById('track-' + id);
+  const countEl = document.getElementById('count-' + id);
+  const dotsEl = document.getElementById('dots-' + id);
+  if (track) track.style.transform = `translateX(-${s.current * 100}%)`;
+  if (countEl) countEl.textContent = (s.current + 1) + ' / ' + s.total;
+  if (dotsEl) {
+    dotsEl.querySelectorAll('.slider-dot').forEach((d, i) => d.classList.toggle('active', i === s.current));
+  }
+}
+
+function slideStep(id, dir) {
+  const s = sliderState[id];
+  if (!s) return;
+  slideTo(id, s.current + dir);
+}
+
+function showBrand(id) {
+  document.querySelectorAll('.brand-panel').forEach(p => {
+    p.style.display = 'none';
+    p.classList.remove('active');
+  });
+  const panel = document.getElementById('panel-' + id);
+  if (panel) {
+    panel.style.display = 'block';
+    panel.classList.add('active');
+    if(!panel.querySelector('.bp-switch')){
+      const sw=document.createElement('div');
+      sw.className='bp-switch';
+      sw.innerHTML='<p>¿Querés ver mis proyectos web?</p><button onclick="setWorkCat(\'web\');setTimeout(()=>{document.getElementById(\'como-diseno\').scrollIntoView({behavior:\'smooth\'})},100)">Ver Diseño Web →</button>';
+      panel.appendChild(sw);
+    }
+  }
+  document.querySelectorAll('.bpill').forEach(btn => {
+    const oc = btn.getAttribute('onclick') || '';
+    const isActive = oc.includes("'" + id + "'");
+    btn.classList.toggle('active', isActive);
+  });
+}
+</script>
+</body>
+</html>
